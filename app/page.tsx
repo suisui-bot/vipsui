@@ -1,43 +1,37 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { watchProducts } from "./data/watches";
+import { catalog, catalogBrands, catalogCategories, catalogProducts, proxiedImage } from "./data/catalog";
 
-const categories = ["All", "Classic", "Sport", "Dress"] as const;
-const brands = ["All", ...Array.from(new Set(watchProducts.map((product) => product.brand)))] as const;
+const allOption = "All";
 
 export default function Home() {
   const [query, setQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState<(typeof categories)[number]>("All");
-  const [activeBrand, setActiveBrand] = useState<(typeof brands)[number]>("All");
-  const featured = watchProducts[0];
+  const [activeBrand, setActiveBrand] = useState(allOption);
+  const [activeCategory, setActiveCategory] = useState(allOption);
+  const featured = catalogProducts[0];
 
   const filteredProducts = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
 
-    return watchProducts.filter((product) => {
-      const matchesCategory = activeCategory === "All" || product.category === activeCategory;
-      const matchesBrand = activeBrand === "All" || product.brand === activeBrand;
-      const searchable = [
-        product.productNumber,
-        product.name,
-        product.brand,
-        product.category,
-        product.description,
-        product.tagline,
-      ]
-        .join(" ")
-        .toLowerCase();
+    return catalogProducts.filter((product) => {
+      const matchesBrand = activeBrand === allOption || product.brand === activeBrand;
+      const matchesCategory = activeCategory === allOption || product.category === activeCategory;
+      const matchesQuery =
+        normalizedQuery.length === 0 ||
+        product.searchText.includes(normalizedQuery) ||
+        product.productNumber.toLowerCase().includes(normalizedQuery);
 
-      return matchesCategory && matchesBrand && (normalizedQuery.length === 0 || searchable.includes(normalizedQuery));
+      return matchesBrand && matchesCategory && matchesQuery;
     });
   }, [activeBrand, activeCategory, query]);
 
+  const heroProducts = catalogProducts.slice(0, 6);
+
   return (
     <main className="min-h-screen overflow-hidden bg-[#050604] text-[#f7f0df]">
-      <header className="fixed left-0 right-0 top-0 z-30 border-b border-[#d6b45a]/15 bg-[#050604]/75 backdrop-blur-xl">
+      <header className="fixed left-0 right-0 top-0 z-30 border-b border-[#d6b45a]/15 bg-[#050604]/80 backdrop-blur-xl">
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="text-lg font-semibold tracking-[0.35em] text-[#f5d172]">
             VIPSUI
@@ -46,8 +40,8 @@ export default function Home() {
             <a href="#collection" className="transition hover:text-[#f5d172]">
               Collection
             </a>
-            <a href="#craft" className="transition hover:text-[#f5d172]">
-              Craft
+            <a href="#database" className="transition hover:text-[#f5d172]">
+              Database
             </a>
             <a href="#contact" className="transition hover:text-[#f5d172]">
               Contact
@@ -62,28 +56,28 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="relative flex min-h-[94vh] items-end pt-16">
+      <section className="relative min-h-[92vh] pt-16">
         <div className="absolute inset-0">
-          <Image src={featured.image} alt={featured.name} fill priority sizes="100vw" className="object-cover object-center" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(5,6,4,0.96)_0%,_rgba(5,6,4,0.72)_42%,_rgba(5,6,4,0.18)_100%)]" />
+          <img src={proxiedImage(featured.cover)} alt={featured.name} className="h-full w-full object-cover object-center" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(5,6,4,0.96)_0%,_rgba(5,6,4,0.76)_44%,_rgba(5,6,4,0.28)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#050604] to-transparent" />
         </div>
 
-        <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 pb-14 sm:px-6 lg:grid-cols-[0.82fr_0.52fr] lg:px-8 lg:pb-20">
+        <div className="relative mx-auto grid min-h-[calc(92vh-4rem)] max-w-7xl items-end gap-10 px-4 pb-14 sm:px-6 lg:grid-cols-[0.78fr_0.52fr] lg:px-8 lg:pb-20">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.56em] text-[#d6b45a]">Luxury watch house</p>
+            <p className="text-xs uppercase tracking-[0.56em] text-[#d6b45a]">Yupoo master catalog</p>
             <h1 className="mt-5 max-w-4xl text-5xl font-semibold leading-[0.98] text-white sm:text-7xl lg:text-8xl">
-              Timepieces with a private-room presence.
+              {catalog.stats.totalAlbums} watches in one private gallery.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-[#d9d0bd] sm:text-lg">
-              A polished VIPSUI gallery for collectors who want sculptural cases, quiet motion, and a deep black, gold, and green buying experience.
+              VIPSUI now imports the full Yupoo album database with luxury browsing, product-number search, brand filters, and detail galleries.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#collection"
                 className="rounded-full bg-[#d6b45a] px-6 py-4 text-center text-xs font-bold uppercase tracking-[0.24em] text-[#071006] transition hover:bg-[#f5d172]"
               >
-                View collection
+                View all products
               </a>
               <Link
                 href={`/product/${featured.slug}`}
@@ -94,87 +88,89 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hidden self-end border-l border-[#d6b45a]/25 pl-8 lg:block">
-            <p className="text-xs uppercase tracking-[0.4em] text-[#d6b45a]">{featured.productNumber}</p>
-            <h2 className="mt-4 text-3xl font-semibold text-white">{featured.name}</h2>
-            <p className="mt-4 text-sm leading-7 text-[#bcb29d]">{featured.tagline}</p>
+          <div className="hidden grid-cols-3 gap-3 self-end lg:grid">
+            {heroProducts.map((product) => (
+              <Link key={product.id} href={`/product/${product.slug}`} className="group relative aspect-[3/4] overflow-hidden border border-[#d6b45a]/18">
+                <img
+                  src={proxiedImage(product.cover)}
+                  alt={product.name}
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <span className="absolute bottom-3 left-3 right-3 text-xs font-semibold text-white">{product.productNumber}</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="craft" className="border-y border-[#d6b45a]/10 bg-[#07110a]">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-3 lg:px-8">
-          {[
-            ["Gallery motion", "Slow reveals, tactile hover states, and image-forward browsing."],
-            ["Collector search", "Find pieces by product number, name, category, or maison."],
-            ["Private contact", "A direct WhatsApp path stays close without interrupting browsing."],
-          ].map(([title, text]) => (
-            <div key={title} className="border-t border-[#d6b45a]/30 pt-6">
-              <h2 className="text-xl font-semibold text-white">{title}</h2>
-              <p className="mt-3 text-sm leading-7 text-[#bcb29d]">{text}</p>
-            </div>
-          ))}
+      <section id="database" className="border-y border-[#d6b45a]/10 bg-[#07110a]">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+          <Stat label="Brands" value={catalog.stats.totalBrands} />
+          <Stat label="Categories" value={catalog.stats.totalCategories} />
+          <Stat label="Albums" value={catalog.stats.totalAlbums} />
+          <Stat label="Estimated products" value={catalog.stats.estimatedProducts} />
         </div>
       </section>
 
       <section id="collection" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="grid gap-8 lg:grid-cols-[0.55fr_1fr] lg:items-end">
           <div>
-            <p className="text-xs uppercase tracking-[0.54em] text-[#d6b45a]">Elegant watch gallery</p>
-            <h2 className="mt-4 text-4xl font-semibold text-white sm:text-5xl">Curated for close inspection.</h2>
+            <p className="text-xs uppercase tracking-[0.54em] text-[#d6b45a]">Complete watch gallery</p>
+            <h2 className="mt-4 text-4xl font-semibold text-white sm:text-5xl">Search every imported album.</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-[1fr_auto]">
             <label className="flex min-h-14 items-center gap-3 border border-[#d6b45a]/20 bg-black/35 px-5 text-sm text-[#d9d0bd]">
               <span className="text-[#f5d172]">Search</span>
               <input
                 aria-label="Search by product number"
-                placeholder="Product number, name, or category"
+                placeholder="Product number, brand, series, size"
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 className="w-full bg-transparent outline-none placeholder:text-[#827866]"
               />
             </label>
             <span className="flex min-h-14 items-center justify-center border border-[#d6b45a]/20 px-5 text-xs uppercase tracking-[0.24em] text-[#bcb29d]">
-              {filteredProducts.length} pieces
+              {filteredProducts.length} products
             </span>
           </div>
         </div>
 
-        <div className="mt-8 grid gap-4 lg:grid-cols-[0.42fr_1fr]">
-          <div className="space-y-5">
-            <FilterGroup title="Brand" items={brands} activeItem={activeBrand} onSelect={setActiveBrand} />
-            <FilterGroup title="Category" items={categories} activeItem={activeCategory} onSelect={setActiveCategory} />
-          </div>
+        <div className="mt-8 grid gap-4 lg:grid-cols-[0.34fr_1fr]">
+          <aside className="space-y-5 lg:sticky lg:top-20 lg:self-start">
+            <FilterSelect label="Brand" value={activeBrand} values={[allOption, ...catalogBrands]} onChange={setActiveBrand} />
+            <FilterSelect label="Category" value={activeCategory} values={[allOption, ...catalogCategories]} onChange={setActiveCategory} />
+          </aside>
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {filteredProducts.map((product) => (
               <Link
                 href={`/product/${product.slug}`}
-                key={product.slug}
+                key={product.id}
                 className="group block overflow-hidden border border-[#d6b45a]/14 bg-[#090b08] transition duration-500 hover:-translate-y-1 hover:border-[#d6b45a]/55 hover:shadow-[0_24px_80px_rgba(0,0,0,0.38)]"
               >
                 <div className="relative aspect-[3/4] overflow-hidden bg-[#0d130e]">
-                  <Image
-                    src={product.image}
+                  <img
+                    src={proxiedImage(product.cover)}
                     alt={product.name}
-                    fill
-                    sizes="(min-width: 1280px) 28vw, (min-width: 768px) 44vw, 100vw"
-                    className="object-cover transition duration-700 ease-out group-hover:scale-110"
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-70" />
-                  <span className="absolute left-4 top-4 bg-black/55 px-3 py-2 text-[0.68rem] uppercase tracking-[0.24em] text-[#f5d172] backdrop-blur">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80" />
+                  <span className="absolute left-4 top-4 bg-black/55 px-3 py-2 text-[0.68rem] uppercase tracking-[0.18em] text-[#f5d172] backdrop-blur">
                     {product.productNumber}
                   </span>
                 </div>
                 <div className="space-y-3 p-5">
-                  <div className="flex items-center justify-between gap-3 text-[0.68rem] uppercase tracking-[0.24em] text-[#bcb29d]">
-                    <span>{product.brand}</span>
-                    <span>{product.category}</span>
+                  <div className="flex items-center justify-between gap-3 text-[0.68rem] uppercase tracking-[0.18em] text-[#bcb29d]">
+                    <span className="truncate">{product.brand}</span>
+                    <span>{product.photoCount} photos</span>
                   </div>
                   <h3 className="text-xl font-semibold text-white">{product.name}</h3>
-                  <p className="line-clamp-2 text-sm leading-7 text-[#a79e8c]">{product.description}</p>
-                  <div className="flex items-center justify-between pt-2 text-xs uppercase tracking-[0.22em]">
-                    <span className="text-[#d6b45a]">{product.priceLabel}</span>
+                  <p className="line-clamp-2 text-sm leading-7 text-[#a79e8c]">{product.category}</p>
+                  <div className="flex items-center justify-between pt-2 text-xs uppercase tracking-[0.18em]">
+                    <span className="text-[#d6b45a]">{product.size || "Imported"}</span>
                     <span className="text-white transition group-hover:text-[#f5d172]">Details</span>
                   </div>
                 </div>
@@ -210,36 +206,40 @@ export default function Home() {
   );
 }
 
-function FilterGroup<T extends string>({
-  title,
-  items,
-  activeItem,
-  onSelect,
+function Stat({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="border-t border-[#d6b45a]/30 pt-5">
+      <p className="text-4xl font-semibold text-white">{value.toLocaleString()}</p>
+      <p className="mt-2 text-xs uppercase tracking-[0.32em] text-[#d6b45a]">{label}</p>
+    </div>
+  );
+}
+
+function FilterSelect({
+  label,
+  value,
+  values,
+  onChange,
 }: {
-  title: string;
-  items: readonly T[];
-  activeItem: T;
-  onSelect: (item: T) => void;
+  label: string;
+  value: string;
+  values: string[];
+  onChange: (value: string) => void;
 }) {
   return (
-    <div className="border border-[#d6b45a]/14 bg-black/25 p-4">
-      <p className="mb-3 text-xs uppercase tracking-[0.32em] text-[#d6b45a]">{title}</p>
-      <div className="flex flex-wrap gap-2">
-        {items.map((item) => (
-          <button
-            key={item}
-            type="button"
-            onClick={() => onSelect(item)}
-            className={`min-h-10 border px-4 text-xs uppercase tracking-[0.22em] transition ${
-              activeItem === item
-                ? "border-[#d6b45a] bg-[#d6b45a] text-black"
-                : "border-[#d6b45a]/20 text-[#d9d0bd] hover:border-[#d6b45a] hover:text-[#f5d172]"
-            }`}
-          >
+    <label className="block border border-[#d6b45a]/14 bg-black/25 p-4">
+      <span className="mb-3 block text-xs uppercase tracking-[0.32em] text-[#d6b45a]">{label}</span>
+      <select
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className="min-h-12 w-full border border-[#d6b45a]/20 bg-[#050604] px-3 text-sm text-[#f7f0df] outline-none"
+      >
+        {values.map((item) => (
+          <option key={item} value={item}>
             {item}
-          </button>
+          </option>
         ))}
-      </div>
-    </div>
+      </select>
+    </label>
   );
 }
