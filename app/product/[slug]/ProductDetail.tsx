@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { CatalogProduct } from "../../data/catalog";
-import { proxiedImage } from "../../data/catalog";
+import { imagePath } from "../../data/catalog";
 
 export default function ProductDetail({ product }: { product: CatalogProduct }) {
-  const gallery = product.images.length > 0 ? product.images : [product.cover];
+  const gallery = product.galleryImages.length > 0 ? product.galleryImages : [product.coverImage];
   const [activeIndex, setActiveIndex] = useState(0);
   const [zoomOpen, setZoomOpen] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
-  const activeImage = gallery[activeIndex] ?? product.cover;
+  const activeImage = gallery[activeIndex] ?? product.coverImage;
   const canMove = gallery.length > 1;
 
   function showPrevious() {
@@ -57,8 +57,8 @@ export default function ProductDetail({ product }: { product: CatalogProduct }) 
             onTouchEnd={(event) => handleTouchEnd(event.changedTouches[0]?.clientX ?? 0)}
           >
             <img
-              src={proxiedImage(activeImage)}
-              alt={product.name}
+              src={imagePath(activeImage)}
+              alt={product.productNumber}
               className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/38 via-transparent to-transparent" />
@@ -99,13 +99,13 @@ export default function ProductDetail({ product }: { product: CatalogProduct }) 
               <button
                 key={`${image}-${index}`}
                 type="button"
-                aria-label={`View ${product.name} image ${index + 1}`}
+                aria-label={`View ${product.productNumber} image ${index + 1}`}
                 onClick={() => setActiveIndex(index)}
                 className={`relative h-24 w-24 shrink-0 overflow-hidden border transition sm:h-28 sm:w-28 ${
                   activeIndex === index ? "border-[#d6b45a]" : "border-[#d6b45a]/16 hover:border-[#d6b45a]/55"
                 }`}
               >
-                <img src={proxiedImage(image)} alt="" loading="lazy" className="h-full w-full object-cover" />
+                <img src={imagePath(image)} alt="" loading="lazy" className="h-full w-full object-cover" />
                 <span className="absolute bottom-1 right-1 bg-black/65 px-1.5 py-1 text-[0.62rem] text-white">{index + 1}</span>
               </button>
             ))}
@@ -114,15 +114,19 @@ export default function ProductDetail({ product }: { product: CatalogProduct }) 
 
         <aside className="flex flex-col justify-center">
           <p className="text-xs uppercase tracking-[0.54em] text-[#d6b45a]">{product.brand}</p>
-          <h1 className="mt-5 text-4xl font-semibold leading-tight text-white sm:text-6xl">{product.name}</h1>
-          <p className="mt-5 text-xl text-[#f1dfad]">{product.category}</p>
+          <h1 className="mt-5 text-4xl font-semibold leading-tight text-white sm:text-6xl">{product.productNumber}</h1>
+          <p className="mt-5 text-xl text-[#f1dfad]">
+            {product.collection} / {product.series} / {product.version}
+          </p>
+          <p className="mt-3 text-sm uppercase tracking-[0.24em] text-[#d6b45a]">{product.publicPriceLabel}</p>
+          <p className="mt-3 text-sm text-[#827866]">{product.categoryPath.join(" > ")}</p>
           <p className="mt-6 max-w-xl whitespace-pre-line text-base leading-8 text-[#bcb29d]">{product.description}</p>
 
           <div className="mt-9 grid gap-4 sm:grid-cols-2">
-            <Info label="Album ID" value={product.id} />
+            <Info label="Album ID" value={product.albumId} />
             <Info label="Gallery" value={`${gallery.length} images`} />
+            <Info label="Version" value={product.version} />
             <Info label="Size" value={product.size || "See description"} />
-            <Info label="Movement" value={product.movement || "See description"} />
           </div>
 
           {product.specs.length > 0 && (
@@ -141,13 +145,13 @@ export default function ProductDetail({ product }: { product: CatalogProduct }) 
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href={`https://wa.me/8617336648172?text=${encodeURIComponent(`Hello, I am interested in ${product.name} (${product.productNumber}).`)}`}
+              href={`https://wa.me/8617336648172?text=${encodeURIComponent(`Hello, I am interested in ${product.brand} ${product.collection} (${product.productNumber}).`)}`}
               className="rounded-full bg-[#d6b45a] px-6 py-4 text-center text-xs font-bold uppercase tracking-[0.22em] text-[#071006] transition hover:bg-[#f5d172]"
             >
               Ask on WhatsApp
             </a>
             <a
-              href={product.sourceUrl}
+              href={product.yupooUrl}
               target="_blank"
               rel="noreferrer"
               className="rounded-full border border-[#d6b45a]/28 px-6 py-4 text-center text-xs font-bold uppercase tracking-[0.22em] text-white transition hover:border-[#d6b45a] hover:text-[#f5d172]"
@@ -203,7 +207,7 @@ export default function ProductDetail({ product }: { product: CatalogProduct }) 
             </>
           )}
           <div className="flex h-full w-full items-center justify-center p-4 sm:p-8">
-            <img src={proxiedImage(activeImage)} alt={product.name} className="max-h-full max-w-full object-contain" />
+            <img src={imagePath(activeImage)} alt={product.productNumber} className="max-h-full max-w-full object-contain" />
           </div>
         </div>
       )}

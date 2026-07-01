@@ -1,0 +1,661 @@
+[
+  {
+    "brand": "Audemars Piguet",
+    "name": "CODE 11:59",
+    "slug": "audemars-piguet-code-11-59",
+    "productCount": 2,
+    "series": [
+      "CODE 11:59"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Audemars Piguet",
+    "name": "Royal Oak",
+    "slug": "audemars-piguet-royal-oak",
+    "productCount": 75,
+    "series": [
+      "皇家橡树"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Audemars Piguet",
+    "name": "Royal Oak Offshore",
+    "slug": "audemars-piguet-royal-oak-offshore",
+    "productCount": 9,
+    "series": [
+      "皇家橡树离岸系列"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "BVLGARI",
+    "name": "SERPENTI系列",
+    "slug": "bvlgari-serpenti系列",
+    "productCount": 1,
+    "series": [
+      "SERPENTI系列"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Breitling",
+    "name": "Chronomat",
+    "slug": "breitling-chronomat",
+    "productCount": 4,
+    "series": [
+      "机械计时"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Breitling",
+    "name": "Navitimer",
+    "slug": "breitling-navitimer",
+    "productCount": 11,
+    "series": [
+      "航空计时"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Breitling",
+    "name": "Superocean",
+    "slug": "breitling-superocean",
+    "productCount": 8,
+    "series": [
+      "超级海洋"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Breitling",
+    "name": "专业系列",
+    "slug": "breitling-专业系列",
+    "productCount": 2,
+    "series": [
+      "专业系列"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Breitling",
+    "name": "传奇航空",
+    "slug": "breitling-传奇航空",
+    "productCount": 1,
+    "series": [
+      "传奇航空"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Breitling",
+    "name": "璞雅",
+    "slug": "breitling-璞雅",
+    "productCount": 3,
+    "series": [
+      "璞雅"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Cartier",
+    "name": "Ballon Bleu",
+    "slug": "cartier-ballon-bleu",
+    "productCount": 5,
+    "series": [
+      "蓝气球"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Cartier",
+    "name": "Panthere",
+    "slug": "cartier-panthere",
+    "productCount": 18,
+    "series": [
+      "小猎豹"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Cartier",
+    "name": "Santos",
+    "slug": "cartier-santos",
+    "productCount": 39,
+    "series": [
+      "山度士 40mm"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Cartier",
+    "name": "Tank",
+    "slug": "cartier-tank",
+    "productCount": 1,
+    "series": [
+      "坦克"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Cartier",
+    "name": "卡地亚",
+    "slug": "cartier-卡地亚",
+    "productCount": 1,
+    "series": [
+      "卡地亚"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Hublot",
+    "name": "BIG BANG",
+    "slug": "hublot-big-bang",
+    "productCount": 2,
+    "series": [
+      "BIG BANG"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Hublot",
+    "name": "经典款",
+    "slug": "hublot-经典款",
+    "productCount": 19,
+    "series": [
+      "经典款"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "IWC",
+    "name": "Pilot",
+    "slug": "iwc-pilot",
+    "productCount": 13,
+    "series": [
+      "飞行员"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "IWC",
+    "name": "Portofino",
+    "slug": "iwc-portofino",
+    "productCount": 4,
+    "series": [
+      "柏涛菲诺"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "IWC",
+    "name": "Portugieser",
+    "slug": "iwc-portugieser",
+    "productCount": 9,
+    "series": [
+      "葡萄牙系列"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "IWC",
+    "name": "工程师",
+    "slug": "iwc-工程师",
+    "productCount": 2,
+    "series": [
+      "工程师"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Jaeger-LeCoultre",
+    "name": "积家",
+    "slug": "jaeger-lecoultre-积家",
+    "productCount": 1,
+    "series": [
+      "积家"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Longines",
+    "name": "康卡斯",
+    "slug": "longines-康卡斯",
+    "productCount": 3,
+    "series": [
+      "康卡斯"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Omega",
+    "name": "Constellation",
+    "slug": "omega-constellation",
+    "productCount": 2,
+    "series": [
+      "星座系列"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Omega",
+    "name": "De Ville",
+    "slug": "omega-de-ville",
+    "productCount": 2,
+    "series": [
+      "碟飞系列"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Omega",
+    "name": "Seamaster",
+    "slug": "omega-seamaster",
+    "productCount": 73,
+    "series": [
+      "海马系列"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Omega",
+    "name": "Speedmaster",
+    "slug": "omega-speedmaster",
+    "productCount": 6,
+    "series": [
+      "超霸系列"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Panerai",
+    "name": "沛纳海",
+    "slug": "panerai-沛纳海",
+    "productCount": 5,
+    "series": [
+      "沛纳海"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Patek Philippe",
+    "name": "Aquanaut",
+    "slug": "patek-philippe-aquanaut",
+    "productCount": 6,
+    "series": [
+      "AQUANAUT"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Patek Philippe",
+    "name": "Nautilus",
+    "slug": "patek-philippe-nautilus",
+    "productCount": 34,
+    "series": [
+      "运动优雅系列【鹦鹉螺】"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Patek Philippe",
+    "name": "古典系列",
+    "slug": "patek-philippe-古典系列",
+    "productCount": 3,
+    "series": [
+      "古典系列"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Patek Philippe",
+    "name": "超级复杂功能时计（星空款）",
+    "slug": "patek-philippe-超级复杂功能时计-星空款",
+    "productCount": 2,
+    "series": [
+      "超级复杂功能时计（星空款）"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Richard Mille",
+    "name": "理查德米勒",
+    "slug": "richard-mille-理查德米勒",
+    "productCount": 6,
+    "series": [
+      "理查德米勒"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Rolex",
+    "name": "Air-King",
+    "slug": "rolex-air-king",
+    "productCount": 2,
+    "series": [
+      "空中霸王"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Rolex",
+    "name": "Datejust",
+    "slug": "rolex-datejust",
+    "productCount": 99,
+    "series": [
+      "日志 28mm",
+      "日志 31mm",
+      "日志 36mm",
+      "日志 40mm"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Rolex",
+    "name": "Day-Date",
+    "slug": "rolex-day-date",
+    "productCount": 52,
+    "series": [
+      "日志双历",
+      "日志双历 36mm"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Rolex",
+    "name": "Daytona",
+    "slug": "rolex-daytona",
+    "productCount": 85,
+    "series": [
+      "迪通拿"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Rolex",
+    "name": "Deepsea",
+    "slug": "rolex-deepsea",
+    "productCount": 12,
+    "series": [
+      "鬼王"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Rolex",
+    "name": "Explorer",
+    "slug": "rolex-explorer",
+    "productCount": 4,
+    "series": [
+      "探险家"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Rolex",
+    "name": "GMT",
+    "slug": "rolex-gmt",
+    "productCount": 18,
+    "series": [
+      "格林尼治"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Rolex",
+    "name": "Land-Dweller",
+    "slug": "rolex-land-dweller",
+    "productCount": 7,
+    "series": [
+      "陆使"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Rolex",
+    "name": "Milgauss",
+    "slug": "rolex-milgauss",
+    "productCount": 8,
+    "series": [
+      "格磁型"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Rolex",
+    "name": "Oyster Perpetual",
+    "slug": "rolex-oyster-perpetual",
+    "productCount": 10,
+    "series": [
+      "蚝式恒动"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Rolex",
+    "name": "Sky-Dweller",
+    "slug": "rolex-sky-dweller",
+    "productCount": 8,
+    "series": [
+      "天行者"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Rolex",
+    "name": "Submariner",
+    "slug": "rolex-submariner",
+    "productCount": 7,
+    "series": [
+      "水鬼"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Rolex",
+    "name": "Yacht-Master",
+    "slug": "rolex-yacht-master",
+    "productCount": 11,
+    "series": [
+      "游艇名仕"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Rolex",
+    "name": "切利尼日历型",
+    "slug": "rolex-切利尼日历型",
+    "productCount": 1,
+    "series": [
+      "切利尼日历型"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "TAG Heuer",
+    "name": "F1 系列",
+    "slug": "tag-heuer-f1-系列",
+    "productCount": 6,
+    "series": [
+      "F1 系列"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Tudor",
+    "name": "Black Bay",
+    "slug": "tudor-black-bay",
+    "productCount": 9,
+    "series": [
+      "碧湾系列"
+    ],
+    "versions": [
+      "Premium Version",
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Tudor",
+    "name": "Pelagos",
+    "slug": "tudor-pelagos",
+    "productCount": 2,
+    "series": [
+      "领潜系列"
+    ],
+    "versions": [
+      "Premium Version"
+    ]
+  },
+  {
+    "brand": "Tudor",
+    "name": "启承系列",
+    "slug": "tudor-启承系列",
+    "productCount": 2,
+    "series": [
+      "启承系列"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  },
+  {
+    "brand": "Vacheron Constantin",
+    "name": "江诗丹顿",
+    "slug": "vacheron-constantin-江诗丹顿",
+    "productCount": 5,
+    "series": [
+      "江诗丹顿"
+    ],
+    "versions": [
+      "Standard Version"
+    ]
+  }
+]

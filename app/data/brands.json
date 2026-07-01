@@ -1,0 +1,166 @@
+[
+  {
+    "name": "Audemars Piguet",
+    "slug": "audemars-piguet",
+    "productCount": 86,
+    "collections": [
+      "CODE 11:59",
+      "Royal Oak",
+      "Royal Oak Offshore"
+    ]
+  },
+  {
+    "name": "BVLGARI",
+    "slug": "bvlgari",
+    "productCount": 1,
+    "collections": [
+      "SERPENTI系列"
+    ]
+  },
+  {
+    "name": "Breitling",
+    "slug": "breitling",
+    "productCount": 29,
+    "collections": [
+      "Chronomat",
+      "Navitimer",
+      "Superocean",
+      "专业系列",
+      "传奇航空",
+      "璞雅"
+    ]
+  },
+  {
+    "name": "Cartier",
+    "slug": "cartier",
+    "productCount": 64,
+    "collections": [
+      "Ballon Bleu",
+      "Panthere",
+      "Santos",
+      "Tank",
+      "卡地亚"
+    ]
+  },
+  {
+    "name": "Hublot",
+    "slug": "hublot",
+    "productCount": 21,
+    "collections": [
+      "BIG BANG",
+      "经典款"
+    ]
+  },
+  {
+    "name": "IWC",
+    "slug": "iwc",
+    "productCount": 28,
+    "collections": [
+      "Pilot",
+      "Portofino",
+      "Portugieser",
+      "工程师"
+    ]
+  },
+  {
+    "name": "Jaeger-LeCoultre",
+    "slug": "jaeger-lecoultre",
+    "productCount": 1,
+    "collections": [
+      "积家"
+    ]
+  },
+  {
+    "name": "Longines",
+    "slug": "longines",
+    "productCount": 3,
+    "collections": [
+      "康卡斯"
+    ]
+  },
+  {
+    "name": "Omega",
+    "slug": "omega",
+    "productCount": 83,
+    "collections": [
+      "Constellation",
+      "De Ville",
+      "Seamaster",
+      "Speedmaster"
+    ]
+  },
+  {
+    "name": "Panerai",
+    "slug": "panerai",
+    "productCount": 5,
+    "collections": [
+      "沛纳海"
+    ]
+  },
+  {
+    "name": "Patek Philippe",
+    "slug": "patek-philippe",
+    "productCount": 45,
+    "collections": [
+      "Aquanaut",
+      "Nautilus",
+      "古典系列",
+      "超级复杂功能时计（星空款）"
+    ]
+  },
+  {
+    "name": "Richard Mille",
+    "slug": "richard-mille",
+    "productCount": 6,
+    "collections": [
+      "理查德米勒"
+    ]
+  },
+  {
+    "name": "Rolex",
+    "slug": "rolex",
+    "productCount": 324,
+    "collections": [
+      "Air-King",
+      "Datejust",
+      "Day-Date",
+      "Daytona",
+      "Deepsea",
+      "Explorer",
+      "GMT",
+      "Land-Dweller",
+      "Milgauss",
+      "Oyster Perpetual",
+      "Sky-Dweller",
+      "Submariner",
+      "Yacht-Master",
+      "切利尼日历型"
+    ]
+  },
+  {
+    "name": "TAG Heuer",
+    "slug": "tag-heuer",
+    "productCount": 6,
+    "collections": [
+      "F1 系列"
+    ]
+  },
+  {
+    "name": "Tudor",
+    "slug": "tudor",
+    "productCount": 13,
+    "collections": [
+      "Black Bay",
+      "Pelagos",
+      "启承系列"
+    ]
+  },
+  {
+    "name": "Vacheron Constantin",
+    "slug": "vacheron-constantin",
+    "productCount": 5,
+    "collections": [
+      "江诗丹顿"
+    ]
+  }
+]

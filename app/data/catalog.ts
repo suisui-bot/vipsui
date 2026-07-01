@@ -1,21 +1,44 @@
-import catalogData from "./yupooCatalog.json";
+import catalogData from "./catalog.json";
+import productsData from "./products.json";
 
 export type CatalogProduct = {
-  id: string;
+  albumId: string;
   slug: string;
   productNumber: string;
-  name: string;
   brand: string;
-  category: string;
-  size: string;
-  movement: string;
+  exactBrand: string;
+  collection: string;
+  series: string;
+  version: string;
+  categoryPath: string[];
+  exactCategoryName: string;
+  coverImage: string;
+  galleryImages: string[];
+  imageCount: number;
+  yupooUrl: string;
+  internalPrice: number | null;
+  publicPriceLabel: "Price on Request";
   description: string;
   specs: string[];
-  cover: string;
-  images: string[];
-  photoCount: number;
-  sourceUrl: string;
+  size: string;
+  movement: string;
   searchText: string;
+};
+
+export type CatalogBrand = {
+  name: string;
+  slug: string;
+  productCount: number;
+  collections: string[];
+};
+
+export type CatalogCollection = {
+  brand: string;
+  name: string;
+  slug: string;
+  productCount: number;
+  series: string[];
+  versions: string[];
 };
 
 export type Catalog = {
@@ -23,36 +46,27 @@ export type Catalog = {
   generatedAt: string;
   stats: {
     totalBrands: number;
-    totalCategories: number;
-    totalAlbums: number;
-    estimatedProducts: number;
-    failedAlbums: number;
+    totalCollections: number;
+    totalProducts: number;
+    totalImages: number;
+    unassignedProducts: number;
   };
-  brands: string[];
-  categories: string[];
-  categoryTree: Array<{
-    id: string;
-    name: string;
-    href: string;
-    children: Array<{ id: string; name: string; href: string }>;
-  }>;
+  categoryCounts: Array<{ id: string; path: string[]; albumCount: number }>;
+  unassignedAlbumIds: string[];
+  brands: CatalogBrand[];
+  collections: CatalogCollection[];
   products: CatalogProduct[];
-  failures: Array<{ album_id: string; error: string }>;
 };
 
 export const catalog = catalogData as Catalog;
-export const catalogProducts = catalog.products;
+export const catalogProducts = productsData as CatalogProduct[];
 export const catalogBrands = catalog.brands;
-export const catalogCategories = catalog.categories;
+export const catalogCollections = catalog.collections;
 
 export function getProductBySlug(slug: string) {
   return catalogProducts.find((product) => product.slug === slug);
 }
 
-export function proxiedImage(url: string) {
-  if (url.startsWith("/")) {
-    return url;
-  }
-
-  return `/api/yupoo-image?url=${encodeURIComponent(url)}`;
+export function imagePath(url: string) {
+  return url;
 }
