@@ -50,5 +50,9 @@ export function getProductBySlug(slug: string) {
 }
 
 export function proxiedImage(url: string) {
+  if (url.startsWith("/")) {
+    return url;
+  }
+
   return `/api/yupoo-image?url=${encodeURIComponent(url)}`;
 }
