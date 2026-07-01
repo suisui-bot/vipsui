@@ -5,176 +5,241 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { watchProducts } from "./data/watches";
 
-const brandMarks = ["Cartier", "Rolex", "Omega", "Patek", "Audemars"];
 const categories = ["All", "Classic", "Sport", "Dress"] as const;
+const brands = ["All", ...Array.from(new Set(watchProducts.map((product) => product.brand)))] as const;
 
 export default function Home() {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<(typeof categories)[number]>("All");
+  const [activeBrand, setActiveBrand] = useState<(typeof brands)[number]>("All");
+  const featured = watchProducts[0];
 
   const filteredProducts = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
 
     return watchProducts.filter((product) => {
       const matchesCategory = activeCategory === "All" || product.category === activeCategory;
-      const matchesQuery =
-        normalizedQuery.length === 0 ||
-        [product.name, product.brand, product.description, product.tagline]
-          .join(" ")
-          .toLowerCase()
-          .includes(normalizedQuery);
+      const matchesBrand = activeBrand === "All" || product.brand === activeBrand;
+      const searchable = [
+        product.productNumber,
+        product.name,
+        product.brand,
+        product.category,
+        product.description,
+        product.tagline,
+      ]
+        .join(" ")
+        .toLowerCase();
 
-      return matchesCategory && matchesQuery;
+      return matchesCategory && matchesBrand && (normalizedQuery.length === 0 || searchable.includes(normalizedQuery));
     });
-  }, [activeCategory, query]);
+  }, [activeBrand, activeCategory, query]);
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(212,175,55,0.2),_transparent_32%),linear-gradient(135deg,_#060606,_#181818)] text-stone-100">
-      <section className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
-        <header className="flex flex-col gap-4 rounded-[2rem] border border-amber-500/20 bg-black/70 px-6 py-5 shadow-[0_0_70px_rgba(212,175,55,0.1)] backdrop-blur md:flex-row md:items-center md:justify-between md:px-8">
-          <div>
-            <p className="text-sm uppercase tracking-[0.5em] text-amber-400">VIPSUI</p>
-            <h1 className="mt-2 text-3xl font-semibold tracking-[0.24em] text-white sm:text-4xl">
-              LUXURY WATCH HOUSE
-            </h1>
-          </div>
-          <div className="flex flex-wrap items-center gap-3 text-sm text-stone-300">
-            <a href="#collection" className="rounded-full border border-stone-700 px-4 py-2 transition hover:border-amber-400 hover:text-amber-300">
+    <main className="min-h-screen overflow-hidden bg-[#050604] text-[#f7f0df]">
+      <header className="fixed left-0 right-0 top-0 z-30 border-b border-[#d6b45a]/15 bg-[#050604]/75 backdrop-blur-xl">
+        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <Link href="/" className="text-lg font-semibold tracking-[0.35em] text-[#f5d172]">
+            VIPSUI
+          </Link>
+          <div className="hidden items-center gap-8 text-xs uppercase tracking-[0.28em] text-[#d9d0bd] md:flex">
+            <a href="#collection" className="transition hover:text-[#f5d172]">
               Collection
             </a>
-            <a href="#categories" className="rounded-full border border-stone-700 px-4 py-2 transition hover:border-amber-400 hover:text-amber-300">
-              Categories
+            <a href="#craft" className="transition hover:text-[#f5d172]">
+              Craft
+            </a>
+            <a href="#contact" className="transition hover:text-[#f5d172]">
+              Contact
             </a>
           </div>
-        </header>
+          <a
+            href="#collection"
+            className="rounded-full border border-[#d6b45a]/50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#f5d172] transition hover:bg-[#d6b45a] hover:text-black"
+          >
+            Explore
+          </a>
+        </nav>
+      </header>
 
-        <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="overflow-hidden rounded-[2rem] border border-stone-800 bg-zinc-950 shadow-[0_0_80px_rgba(0,0,0,0.4)]">
-            <Image
-              src="https://photo.yupoo.com/1688dafan/cacbeacc4a/medium.jpg"
-              alt="Luxury watch showcase"
-              width={1400}
-              height={900}
-              priority
-              className="h-[420px] w-full object-cover sm:h-[540px]"
-            />
-          </div>
-          <div className="flex flex-col justify-between rounded-[2rem] border border-amber-500/20 bg-black/70 p-6 shadow-[0_0_60px_rgba(212,175,55,0.12)] backdrop-blur sm:p-8">
-            <div>
-              <p className="text-sm uppercase tracking-[0.5em] text-amber-400">Featured release</p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-[0.2em] text-white sm:text-4xl">
-                Crafted for the modern collector
-              </h2>
-              <p className="mt-4 max-w-lg text-base leading-8 text-stone-400">
-                Discover sculptural timepieces with a black-and-gold palette, precision detailing, and a timeless presence built for private collections.
-              </p>
-            </div>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#collection" className="rounded-full bg-amber-500 px-5 py-3 text-center text-sm font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-amber-400">
-                Explore watches
+      <section className="relative flex min-h-[94vh] items-end pt-16">
+        <div className="absolute inset-0">
+          <Image src={featured.image} alt={featured.name} fill priority sizes="100vw" className="object-cover object-center" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(5,6,4,0.96)_0%,_rgba(5,6,4,0.72)_42%,_rgba(5,6,4,0.18)_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#050604] to-transparent" />
+        </div>
+
+        <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 pb-14 sm:px-6 lg:grid-cols-[0.82fr_0.52fr] lg:px-8 lg:pb-20">
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.56em] text-[#d6b45a]">Luxury watch house</p>
+            <h1 className="mt-5 max-w-4xl text-5xl font-semibold leading-[0.98] text-white sm:text-7xl lg:text-8xl">
+              Timepieces with a private-room presence.
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[#d9d0bd] sm:text-lg">
+              A polished VIPSUI gallery for collectors who want sculptural cases, quiet motion, and a deep black, gold, and green buying experience.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#collection"
+                className="rounded-full bg-[#d6b45a] px-6 py-4 text-center text-xs font-bold uppercase tracking-[0.24em] text-[#071006] transition hover:bg-[#f5d172]"
+              >
+                View collection
               </a>
-              <a href="#categories" className="rounded-full border border-stone-700 px-5 py-3 text-center text-sm font-semibold uppercase tracking-[0.3em] text-stone-100 transition hover:border-amber-400 hover:text-amber-300">
-                Browse categories
-              </a>
+              <Link
+                href={`/product/${featured.slug}`}
+                className="rounded-full border border-white/25 px-6 py-4 text-center text-xs font-bold uppercase tracking-[0.24em] text-white transition hover:border-[#d6b45a] hover:text-[#f5d172]"
+              >
+                Featured watch
+              </Link>
             </div>
           </div>
-        </section>
 
-        <section className="rounded-[2rem] border border-stone-800 bg-stone-950/70 p-6 shadow-[0_0_50px_rgba(0,0,0,0.25)] sm:p-8">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <div>
-              <p className="text-sm uppercase tracking-[0.4em] text-amber-400">Trusted marks</p>
-              <h3 className="mt-2 text-2xl font-semibold tracking-[0.2em] text-white">Curated icons from the world’s most esteemed maisons</h3>
-            </div>
-            <div className="flex flex-wrap gap-3 text-sm uppercase tracking-[0.35em] text-stone-400">
-              {brandMarks.map((mark) => (
-                <span key={mark} className="rounded-full border border-stone-800 px-3 py-2">
-                  {mark}
-                </span>
-              ))}
-            </div>
+          <div className="hidden self-end border-l border-[#d6b45a]/25 pl-8 lg:block">
+            <p className="text-xs uppercase tracking-[0.4em] text-[#d6b45a]">{featured.productNumber}</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white">{featured.name}</h2>
+            <p className="mt-4 text-sm leading-7 text-[#bcb29d]">{featured.tagline}</p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="categories" className="grid gap-4 rounded-[2rem] border border-stone-800 bg-black/70 p-6 backdrop-blur sm:grid-cols-3 sm:p-8">
+      <section id="craft" className="border-y border-[#d6b45a]/10 bg-[#07110a]">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-3 lg:px-8">
           {[
-            { title: "Classic", text: "Sculptural silhouettes with evening elegance." },
-            { title: "Sport", text: "Precision-built for motion and modern contrast." },
-            { title: "Dress", text: "Ceremonial profiles with high-gloss detail." },
-          ].map((item) => (
-            <div key={item.title} className="rounded-[1.25rem] border border-stone-800 bg-stone-950/70 p-5">
-              <p className="text-sm uppercase tracking-[0.35em] text-amber-400">{item.title}</p>
-              <p className="mt-3 text-sm leading-7 text-stone-400">{item.text}</p>
+            ["Gallery motion", "Slow reveals, tactile hover states, and image-forward browsing."],
+            ["Collector search", "Find pieces by product number, name, category, or maison."],
+            ["Private contact", "A direct WhatsApp path stays close without interrupting browsing."],
+          ].map(([title, text]) => (
+            <div key={title} className="border-t border-[#d6b45a]/30 pt-6">
+              <h2 className="text-xl font-semibold text-white">{title}</h2>
+              <p className="mt-3 text-sm leading-7 text-[#bcb29d]">{text}</p>
             </div>
           ))}
-        </section>
+        </div>
+      </section>
 
-        <section id="collection" className="space-y-6">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-sm uppercase tracking-[0.45em] text-amber-400">Signature collection</p>
-              <h3 className="text-3xl font-semibold tracking-[0.2em] text-white">Discover refined watches</h3>
-            </div>
-            <label className="flex items-center gap-3 rounded-full border border-stone-700 bg-black/60 px-4 py-3 text-sm text-stone-300">
-              <span className="text-amber-400">⌕</span>
+      <section id="collection" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div className="grid gap-8 lg:grid-cols-[0.55fr_1fr] lg:items-end">
+          <div>
+            <p className="text-xs uppercase tracking-[0.54em] text-[#d6b45a]">Elegant watch gallery</p>
+            <h2 className="mt-4 text-4xl font-semibold text-white sm:text-5xl">Curated for close inspection.</h2>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-[1fr_auto]">
+            <label className="flex min-h-14 items-center gap-3 border border-[#d6b45a]/20 bg-black/35 px-5 text-sm text-[#d9d0bd]">
+              <span className="text-[#f5d172]">Search</span>
               <input
-                aria-label="Search watches"
-                placeholder="Search"
+                aria-label="Search by product number"
+                placeholder="Product number, name, or category"
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
-                className="w-full bg-transparent outline-none placeholder:text-stone-500"
+                className="w-full bg-transparent outline-none placeholder:text-[#827866]"
               />
             </label>
+            <span className="flex min-h-14 items-center justify-center border border-[#d6b45a]/20 px-5 text-xs uppercase tracking-[0.24em] text-[#bcb29d]">
+              {filteredProducts.length} pieces
+            </span>
+          </div>
+        </div>
+
+        <div className="mt-8 grid gap-4 lg:grid-cols-[0.42fr_1fr]">
+          <div className="space-y-5">
+            <FilterGroup title="Brand" items={brands} activeItem={activeBrand} onSelect={setActiveBrand} />
+            <FilterGroup title="Category" items={categories} activeItem={activeCategory} onSelect={setActiveCategory} />
           </div>
 
-          <div className="flex flex-wrap gap-3">
-            {categories.map((category) => (
-              <button
-                key={category}
-                type="button"
-                onClick={() => setActiveCategory(category)}
-                className={`rounded-full border px-4 py-2 text-sm uppercase tracking-[0.3em] transition ${
-                  activeCategory === category
-                    ? "border-amber-400 bg-amber-500 text-black"
-                    : "border-stone-700 bg-black/50 text-stone-300 hover:border-amber-400 hover:text-amber-300"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {filteredProducts.map((product) => (
-              <article key={product.slug} className="group overflow-hidden rounded-[1.6rem] border border-stone-800 bg-stone-950/90 shadow-[0_10px_50px_rgba(0,0,0,0.25)]">
-                <div className="relative h-72 overflow-hidden">
+              <Link
+                href={`/product/${product.slug}`}
+                key={product.slug}
+                className="group block overflow-hidden border border-[#d6b45a]/14 bg-[#090b08] transition duration-500 hover:-translate-y-1 hover:border-[#d6b45a]/55 hover:shadow-[0_24px_80px_rgba(0,0,0,0.38)]"
+              >
+                <div className="relative aspect-[3/4] overflow-hidden bg-[#0d130e]">
                   <Image
                     src={product.image}
                     alt={product.name}
-                    width={700}
-                    height={900}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    fill
+                    sizes="(min-width: 1280px) 28vw, (min-width: 768px) 44vw, 100vw"
+                    className="object-cover transition duration-700 ease-out group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-70" />
+                  <span className="absolute left-4 top-4 bg-black/55 px-3 py-2 text-[0.68rem] uppercase tracking-[0.24em] text-[#f5d172] backdrop-blur">
+                    {product.productNumber}
+                  </span>
                 </div>
-                <div className="space-y-3 p-6">
-                  <div className="flex items-center justify-between gap-3">
-                    <p className="text-sm uppercase tracking-[0.35em] text-amber-400">{product.brand}</p>
-                    <span className="text-xs uppercase tracking-[0.3em] text-stone-500">{product.category}</span>
+                <div className="space-y-3 p-5">
+                  <div className="flex items-center justify-between gap-3 text-[0.68rem] uppercase tracking-[0.24em] text-[#bcb29d]">
+                    <span>{product.brand}</span>
+                    <span>{product.category}</span>
                   </div>
-                  <h4 className="text-xl font-semibold text-white">{product.name}</h4>
-                  <p className="text-sm leading-7 text-stone-400">{product.description}</p>
-                  <div className="flex items-center justify-between pt-2">
-                    <span className="text-sm text-stone-400">{product.priceLabel}</span>
-                    <Link href={`/product/${product.slug}`} className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-400 transition hover:text-amber-300">
-                      View details
-                    </Link>
+                  <h3 className="text-xl font-semibold text-white">{product.name}</h3>
+                  <p className="line-clamp-2 text-sm leading-7 text-[#a79e8c]">{product.description}</p>
+                  <div className="flex items-center justify-between pt-2 text-xs uppercase tracking-[0.22em]">
+                    <span className="text-[#d6b45a]">{product.priceLabel}</span>
+                    <span className="text-white transition group-hover:text-[#f5d172]">Details</span>
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
-        </section>
+        </div>
       </section>
+
+      <section id="contact" className="bg-[#07110a] px-4 py-14 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 border-y border-[#d6b45a]/20 py-10 md:flex-row md:items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.5em] text-[#d6b45a]">Private sourcing</p>
+            <h2 className="mt-3 text-3xl font-semibold text-white">Ask for availability and close-up media.</h2>
+          </div>
+          <a
+            href="https://wa.me/8617336648172"
+            className="rounded-full bg-[#d6b45a] px-6 py-4 text-center text-xs font-bold uppercase tracking-[0.24em] text-[#071006] transition hover:bg-[#f5d172]"
+          >
+            WhatsApp +86 17336648172
+          </a>
+        </div>
+      </section>
+
+      <a
+        href="https://wa.me/8617336648172"
+        aria-label="Contact VIPSUI on WhatsApp"
+        className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#1f7a43] text-sm font-bold text-white shadow-[0_14px_40px_rgba(0,0,0,0.35)] transition hover:scale-105 hover:bg-[#269653]"
+      >
+        WA
+      </a>
     </main>
+  );
+}
+
+function FilterGroup<T extends string>({
+  title,
+  items,
+  activeItem,
+  onSelect,
+}: {
+  title: string;
+  items: readonly T[];
+  activeItem: T;
+  onSelect: (item: T) => void;
+}) {
+  return (
+    <div className="border border-[#d6b45a]/14 bg-black/25 p-4">
+      <p className="mb-3 text-xs uppercase tracking-[0.32em] text-[#d6b45a]">{title}</p>
+      <div className="flex flex-wrap gap-2">
+        {items.map((item) => (
+          <button
+            key={item}
+            type="button"
+            onClick={() => onSelect(item)}
+            className={`min-h-10 border px-4 text-xs uppercase tracking-[0.22em] transition ${
+              activeItem === item
+                ? "border-[#d6b45a] bg-[#d6b45a] text-black"
+                : "border-[#d6b45a]/20 text-[#d9d0bd] hover:border-[#d6b45a] hover:text-[#f5d172]"
+            }`}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 }
