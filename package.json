@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "import:wechat-album": "python3 scripts/import_wechat_album_catalog.py"
   },
   "dependencies": {
     "next": "16.2.9",
