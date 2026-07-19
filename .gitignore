@@ -20,6 +20,10 @@
 # production
 /build
 
+# local import archives
+/data/wecatalog/
+/public/wecatalog-gallery/
+
 # misc
 .DS_Store
 *.pem

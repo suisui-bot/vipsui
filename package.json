@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "NODE_OPTIONS=--max-old-space-size=8192 next build",
     "start": "next start",
     "lint": "eslint",
-    "import:wechat-album": "python3 scripts/import_wechat_album_catalog.py"
+    "import:wechat-album": "python3 scripts/import_wechat_album_catalog.py",
+    "import:wecatalog": "python3 scripts/import_wecatalog_store.py"
   },
   "dependencies": {
     "next": "16.2.9",

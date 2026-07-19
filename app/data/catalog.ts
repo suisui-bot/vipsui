@@ -50,6 +50,9 @@ export type Catalog = {
     totalProducts: number;
     totalImages: number;
     unassignedProducts: number;
+    publicCategories: number;
+    sourceGroups: number;
+    sourceTags: number;
   };
   categoryCounts: Array<{ id: string; path: string[]; albumCount: number }>;
   unassignedAlbumIds: string[];

@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { catalog, catalogBrands, catalogProducts, imagePath } from "./data/catalog";
 
 const allOption = "All";
+const visibleProductLimit = 180;
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -51,6 +52,7 @@ export default function Home() {
   }, [activeBrand, activeCollection, activeVersion, query]);
 
   const heroProducts = catalogProducts.slice(0, 6);
+  const visibleProducts = filteredProducts.slice(0, visibleProductLimit);
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#050604] text-[#f7f0df]">
@@ -131,7 +133,7 @@ export default function Home() {
       <section id="database" className="border-y border-[#d6b45a]/10 bg-[#07110a]">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
           <Stat label="Brands" value={catalog.stats.totalBrands} />
-          <Stat label="Collections" value={catalog.stats.totalCollections} />
+          <Stat label="Source Nodes" value={catalog.stats.publicCategories} />
           <Stat label="Products" value={catalog.stats.totalProducts} />
           <Stat label="Images" value={catalog.stats.totalImages} />
         </div>
@@ -155,7 +157,7 @@ export default function Home() {
               />
             </label>
             <span className="flex min-h-14 items-center justify-center border border-[#d6b45a]/20 px-5 text-xs uppercase tracking-[0.24em] text-[#bcb29d]">
-              {filteredProducts.length} products
+              {filteredProducts.length.toLocaleString()} products
             </span>
           </div>
         </div>
@@ -185,7 +187,7 @@ export default function Home() {
           </aside>
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {filteredProducts.map((product) => (
+            {visibleProducts.map((product) => (
               <Link
                 href={`/product/${product.slug}`}
                 key={product.albumId}
@@ -219,6 +221,11 @@ export default function Home() {
                 </div>
               </Link>
             ))}
+            {filteredProducts.length > visibleProducts.length && (
+              <div className="border border-[#d6b45a]/14 bg-[#090b08] p-6 text-sm leading-7 text-[#bcb29d] md:col-span-2 xl:col-span-3">
+                Showing {visibleProducts.length.toLocaleString()} of {filteredProducts.length.toLocaleString()} matching products. Refine by source category or product number to open the exact item.
+              </div>
+            )}
           </div>
         </div>
       </section>

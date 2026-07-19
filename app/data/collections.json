@@ -1,661 +1,3407 @@
 [
   {
-    "brand": "Audemars Piguet",
-    "name": "CODE 11:59",
-    "slug": "audemars-piguet-code-11-59",
-    "productCount": 2,
-    "series": [
-      "CODE 11:59"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Audemars Piguet",
-    "name": "Royal Oak",
-    "slug": "audemars-piguet-royal-oak",
-    "productCount": 75,
-    "series": [
-      "皇家橡树"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Audemars Piguet",
-    "name": "Royal Oak Offshore",
-    "slug": "audemars-piguet-royal-oak-offshore",
-    "productCount": 9,
-    "series": [
-      "皇家橡树离岸系列"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "BVLGARI",
-    "name": "SERPENTI系列",
-    "slug": "bvlgari-serpenti系列",
-    "productCount": 1,
-    "series": [
-      "SERPENTI系列"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Breitling",
-    "name": "Chronomat",
-    "slug": "breitling-chronomat",
-    "productCount": 4,
-    "series": [
-      "机械计时"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Breitling",
-    "name": "Navitimer",
-    "slug": "breitling-navitimer",
-    "productCount": 11,
-    "series": [
-      "航空计时"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Breitling",
-    "name": "Superocean",
-    "slug": "breitling-superocean",
-    "productCount": 8,
-    "series": [
-      "超级海洋"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Breitling",
-    "name": "专业系列",
-    "slug": "breitling-专业系列",
-    "productCount": 2,
-    "series": [
-      "专业系列"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Breitling",
-    "name": "传奇航空",
-    "slug": "breitling-传奇航空",
-    "productCount": 1,
-    "series": [
-      "传奇航空"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Breitling",
-    "name": "璞雅",
-    "slug": "breitling-璞雅",
-    "productCount": 3,
-    "series": [
-      "璞雅"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Cartier",
-    "name": "Ballon Bleu",
-    "slug": "cartier-ballon-bleu",
+    "brand": "未分组",
+    "name": "发货实拍",
+    "slug": "item",
     "productCount": 5,
     "series": [
-      "蓝气球"
+      "发货实拍"
     ],
     "versions": [
-      "Premium Version",
-      "Standard Version"
+      "发货实拍"
+    ],
+    "models": [
+      "发货实拍"
     ]
   },
   {
-    "brand": "Cartier",
-    "name": "Panthere",
-    "slug": "cartier-panthere",
+    "brand": "未分组",
+    "name": "手套",
+    "slug": "item",
+    "productCount": 7,
+    "series": [
+      "手套"
+    ],
+    "versions": [
+      "手套"
+    ],
+    "models": [
+      "手套"
+    ]
+  },
+  {
+    "brand": "未分组",
+    "name": "罗意威 拖鞋",
+    "slug": "item",
+    "productCount": 4,
+    "series": [
+      "罗意威 拖鞋"
+    ],
+    "versions": [
+      "罗意威 拖鞋"
+    ],
+    "models": [
+      "罗意威 拖鞋"
+    ]
+  },
+  {
+    "brand": "未分组",
+    "name": "袜子【不退换】",
+    "slug": "item",
+    "productCount": 148,
+    "series": [
+      "袜子【不退换】"
+    ],
+    "versions": [
+      "袜子【不退换】"
+    ],
+    "models": [
+      "袜子【不退换】"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "LP",
+    "slug": "lp",
+    "productCount": 151,
+    "series": [
+      "LP"
+    ],
+    "versions": [
+      "LP"
+    ],
+    "models": [
+      "LP"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "Lemaire",
+    "slug": "lemaire",
     "productCount": 18,
     "series": [
-      "小猎豹"
+      "Lemaire"
     ],
     "versions": [
-      "Premium Version",
-      "Standard Version"
+      "Lemaire"
+    ],
+    "models": [
+      "Lemaire"
     ]
   },
   {
-    "brand": "Cartier",
-    "name": "Santos",
-    "slug": "cartier-santos",
+    "brand": "高奢名包",
+    "name": "MCM",
+    "slug": "mcm",
+    "productCount": 103,
+    "series": [
+      "MCM"
+    ],
+    "versions": [
+      "MCM"
+    ],
+    "models": [
+      "MCM"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "The row",
+    "slug": "the-row",
+    "productCount": 84,
+    "series": [
+      "The row"
+    ],
+    "versions": [
+      "The row"
+    ],
+    "models": [
+      "The row"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "YSL",
+    "slug": "ysl",
+    "productCount": 532,
+    "series": [
+      "YSL"
+    ],
+    "versions": [
+      "YSL"
+    ],
+    "models": [
+      "YSL"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "克洛伊",
+    "slug": "item",
+    "productCount": 14,
+    "series": [
+      "克洛伊"
+    ],
+    "versions": [
+      "克洛伊"
+    ],
+    "models": [
+      "克洛伊"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "古驰",
+    "slug": "item",
+    "productCount": 1468,
+    "series": [
+      "古驰"
+    ],
+    "versions": [
+      "古驰"
+    ],
+    "models": [
+      "古驰"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "宝格丽",
+    "slug": "item",
+    "productCount": 55,
+    "series": [
+      "宝格丽"
+    ],
+    "versions": [
+      "宝格丽"
+    ],
+    "models": [
+      "宝格丽"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "巴宝莉",
+    "slug": "item",
+    "productCount": 259,
+    "series": [
+      "巴宝莉"
+    ],
+    "versions": [
+      "巴宝莉"
+    ],
+    "models": [
+      "巴宝莉"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "巴黎世家",
+    "slug": "item",
+    "productCount": 310,
+    "series": [
+      "巴黎世家"
+    ],
+    "versions": [
+      "巴黎世家"
+    ],
+    "models": [
+      "巴黎世家"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "德尔沃",
+    "slug": "item",
+    "productCount": 68,
+    "series": [
+      "德尔沃"
+    ],
+    "versions": [
+      "德尔沃"
+    ],
+    "models": [
+      "德尔沃"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "戈雅(Goyard)",
+    "slug": "goyard",
+    "productCount": 378,
+    "series": [
+      "戈雅(Goyard)"
+    ],
+    "versions": [
+      "戈雅(Goyard)"
+    ],
+    "models": [
+      "戈雅(Goyard)"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "普拉达",
+    "slug": "item",
+    "productCount": 973,
+    "series": [
+      "普拉达"
+    ],
+    "versions": [
+      "普拉达"
+    ],
+    "models": [
+      "普拉达"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "缪缪（MiuMiu）",
+    "slug": "miumiu",
+    "productCount": 839,
+    "series": [
+      "缪缪（MiuMiu）"
+    ],
+    "versions": [
+      "缪缪（MiuMiu）"
+    ],
+    "models": [
+      "缪缪（MiuMiu）"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "芬迪",
+    "slug": "item",
+    "productCount": 279,
+    "series": [
+      "芬迪"
+    ],
+    "versions": [
+      "芬迪"
+    ],
+    "models": [
+      "芬迪"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "葆蝶家（BV）",
+    "slug": "bv",
+    "productCount": 425,
+    "series": [
+      "葆蝶家（BV）"
+    ],
+    "versions": [
+      "葆蝶家（BV）"
+    ],
+    "models": [
+      "葆蝶家（BV）"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "赛琳",
+    "slug": "item",
+    "productCount": 480,
+    "series": [
+      "赛琳"
+    ],
+    "versions": [
+      "赛琳"
+    ],
+    "models": [
+      "赛琳"
+    ]
+  },
+  {
+    "brand": "高奢名包",
+    "name": "迪奥",
+    "slug": "item",
+    "productCount": 1032,
+    "series": [
+      "迪奥"
+    ],
+    "versions": [
+      "迪奥"
+    ],
+    "models": [
+      "迪奥"
+    ]
+  },
+  {
+    "brand": "高奢围巾",
+    "name": "LP围巾/斗篷",
+    "slug": "lp",
+    "productCount": 18,
+    "series": [
+      "LP围巾/斗篷"
+    ],
+    "versions": [
+      "LP围巾/斗篷"
+    ],
+    "models": [
+      "LP围巾/斗篷"
+    ]
+  },
+  {
+    "brand": "高奢围巾",
+    "name": "LV围巾/斗篷",
+    "slug": "lv",
+    "productCount": 223,
+    "series": [
+      "LV围巾/斗篷"
+    ],
+    "versions": [
+      "LV围巾/斗篷"
+    ],
+    "models": [
+      "LV围巾/斗篷"
+    ]
+  },
+  {
+    "brand": "高奢围巾",
+    "name": "miumiu围巾/斗篷",
+    "slug": "miumiu",
+    "productCount": 63,
+    "series": [
+      "miumiu围巾/斗篷"
+    ],
+    "versions": [
+      "miumiu围巾/斗篷"
+    ],
+    "models": [
+      "miumiu围巾/斗篷"
+    ]
+  },
+  {
+    "brand": "高奢围巾",
+    "name": "古驰围巾/斗篷",
+    "slug": "item",
+    "productCount": 137,
+    "series": [
+      "古驰围巾/斗篷"
+    ],
+    "versions": [
+      "古驰围巾/斗篷"
+    ],
+    "models": [
+      "古驰围巾/斗篷"
+    ]
+  },
+  {
+    "brand": "高奢围巾",
+    "name": "圣罗兰围巾/斗篷",
+    "slug": "item",
+    "productCount": 1,
+    "series": [
+      "圣罗兰围巾/斗篷"
+    ],
+    "versions": [
+      "圣罗兰围巾/斗篷"
+    ],
+    "models": [
+      "圣罗兰围巾/斗篷"
+    ]
+  },
+  {
+    "brand": "高奢围巾",
+    "name": "巴黎世家围巾/斗篷",
+    "slug": "item",
+    "productCount": 75,
+    "series": [
+      "巴黎世家围巾/斗篷"
+    ],
+    "versions": [
+      "巴黎世家围巾/斗篷"
+    ],
+    "models": [
+      "巴黎世家围巾/斗篷"
+    ]
+  },
+  {
+    "brand": "高奢围巾",
+    "name": "爱马仕围巾/斗篷",
+    "slug": "item",
+    "productCount": 215,
+    "series": [
+      "爱马仕围巾/斗篷"
+    ],
+    "versions": [
+      "爱马仕围巾/斗篷"
+    ],
+    "models": [
+      "爱马仕围巾/斗篷"
+    ]
+  },
+  {
+    "brand": "高奢围巾",
+    "name": "纪梵希围巾/斗篷",
+    "slug": "item",
+    "productCount": 32,
+    "series": [
+      "纪梵希围巾/斗篷"
+    ],
+    "versions": [
+      "纪梵希围巾/斗篷"
+    ],
+    "models": [
+      "纪梵希围巾/斗篷"
+    ]
+  },
+  {
+    "brand": "高奢围巾",
+    "name": "罗意威围巾/斗篷",
+    "slug": "item",
+    "productCount": 25,
+    "series": [
+      "罗意威围巾/斗篷"
+    ],
+    "versions": [
+      "罗意威围巾/斗篷"
+    ],
+    "models": [
+      "罗意威围巾/斗篷"
+    ]
+  },
+  {
+    "brand": "高奢围巾",
+    "name": "赛琳围巾/斗篷",
+    "slug": "item",
+    "productCount": 12,
+    "series": [
+      "赛琳围巾/斗篷"
+    ],
+    "versions": [
+      "赛琳围巾/斗篷"
+    ],
+    "models": [
+      "赛琳围巾/斗篷"
+    ]
+  },
+  {
+    "brand": "高奢围巾",
+    "name": "迪奥围巾/斗篷",
+    "slug": "item",
+    "productCount": 58,
+    "series": [
+      "迪奥围巾/斗篷"
+    ],
+    "versions": [
+      "迪奥围巾/斗篷"
+    ],
+    "models": [
+      "迪奥围巾/斗篷"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "BV🕶️",
+    "slug": "bv",
+    "productCount": 128,
+    "series": [
+      "BV🕶️"
+    ],
+    "versions": [
+      "BV🕶️"
+    ],
+    "models": [
+      "BV🕶️"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "GM🕶️",
+    "slug": "gm",
+    "productCount": 354,
+    "series": [
+      "GM🕶️"
+    ],
+    "versions": [
+      "GM🕶️"
+    ],
+    "models": [
+      "GM🕶️"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "LV🕶️",
+    "slug": "lv",
+    "productCount": 318,
+    "series": [
+      "LV🕶️"
+    ],
+    "versions": [
+      "LV🕶️"
+    ],
+    "models": [
+      "LV🕶️"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "万宝龙🕶️",
+    "slug": "item",
+    "productCount": 11,
+    "series": [
+      "万宝龙🕶️"
+    ],
+    "versions": [
+      "万宝龙🕶️"
+    ],
+    "models": [
+      "万宝龙🕶️"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "古驰🕶️",
+    "slug": "item",
+    "productCount": 542,
+    "series": [
+      "古驰🕶️"
+    ],
+    "versions": [
+      "古驰🕶️"
+    ],
+    "models": [
+      "古驰🕶️"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "巴宝莉🕶️",
+    "slug": "item",
+    "productCount": 20,
+    "series": [
+      "巴宝莉🕶️"
+    ],
+    "versions": [
+      "巴宝莉🕶️"
+    ],
+    "models": [
+      "巴宝莉🕶️"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "巴黎世家🕶️",
+    "slug": "item",
+    "productCount": 326,
+    "series": [
+      "巴黎世家🕶️"
+    ],
+    "versions": [
+      "巴黎世家🕶️"
+    ],
+    "models": [
+      "巴黎世家🕶️"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "普拉达🕶️",
+    "slug": "item",
+    "productCount": 302,
+    "series": [
+      "普拉达🕶️"
+    ],
+    "versions": [
+      "普拉达🕶️"
+    ],
+    "models": [
+      "普拉达🕶️"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "罗意威🕶️",
+    "slug": "item",
+    "productCount": 6,
+    "series": [
+      "罗意威🕶️"
+    ],
+    "versions": [
+      "罗意威🕶️"
+    ],
+    "models": [
+      "罗意威🕶️"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "芬迪🕶️",
+    "slug": "item",
+    "productCount": 13,
+    "series": [
+      "芬迪🕶️"
+    ],
+    "versions": [
+      "芬迪🕶️"
+    ],
+    "models": [
+      "芬迪🕶️"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "范思哲🕶️",
+    "slug": "item",
+    "productCount": 15,
+    "series": [
+      "范思哲🕶️"
+    ],
+    "versions": [
+      "范思哲🕶️"
+    ],
+    "models": [
+      "范思哲🕶️"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "菲拉🕶️",
+    "slug": "item",
+    "productCount": 1,
+    "series": [
+      "菲拉🕶️"
+    ],
+    "versions": [
+      "菲拉🕶️"
+    ],
+    "models": [
+      "菲拉🕶️"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "赛琳🕶️",
+    "slug": "item",
+    "productCount": 264,
+    "series": [
+      "赛琳🕶️"
+    ],
+    "versions": [
+      "赛琳🕶️"
+    ],
+    "models": [
+      "赛琳🕶️"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "迪奥🕶️",
+    "slug": "item",
+    "productCount": 225,
+    "series": [
+      "迪奥🕶️"
+    ],
+    "versions": [
+      "迪奥🕶️"
+    ],
+    "models": [
+      "迪奥🕶️"
+    ]
+  },
+  {
+    "brand": "高奢墨镜",
+    "name": "香奈儿🕶️",
+    "slug": "item",
+    "productCount": 1188,
+    "series": [
+      "香奈儿🕶️"
+    ],
+    "versions": [
+      "香奈儿🕶️"
+    ],
+    "models": [
+      "香奈儿🕶️"
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "Acne Studios",
+    "slug": "acne-studios",
+    "productCount": 223,
+    "series": [
+      "Acne Studios"
+    ],
+    "versions": [
+      "Acne Studios"
+    ],
+    "models": [
+      "Acne Studios"
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "BC",
+    "slug": "bc",
+    "productCount": 86,
+    "series": [
+      "BC"
+    ],
+    "versions": [
+      "BC"
+    ],
+    "models": [
+      "BC"
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "Balmain",
+    "slug": "balmain",
+    "productCount": 5,
+    "series": [
+      "Balmain"
+    ],
+    "versions": [
+      "Balmain"
+    ],
+    "models": [
+      "Balmain"
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "LV.",
+    "slug": "lv",
+    "productCount": 747,
+    "series": [
+      "LV."
+    ],
+    "versions": [
+      "LV."
+    ],
+    "models": [
+      "LV."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "Loro piana",
+    "slug": "loro-piana",
+    "productCount": 157,
+    "series": [
+      "Loro piana"
+    ],
+    "versions": [
+      "Loro piana"
+    ],
+    "models": [
+      "Loro piana"
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "Maxmara",
+    "slug": "maxmara",
+    "productCount": 59,
+    "series": [
+      "Maxmara"
+    ],
+    "versions": [
+      "Maxmara"
+    ],
+    "models": [
+      "Maxmara"
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "MiuMiu",
+    "slug": "miumiu",
+    "productCount": 2487,
+    "series": [
+      "MiuMiu"
+    ],
+    "versions": [
+      "MiuMiu"
+    ],
+    "models": [
+      "MiuMiu"
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "TB.",
+    "slug": "tb",
+    "productCount": 91,
+    "series": [
+      "TB."
+    ],
+    "versions": [
+      "TB."
+    ],
+    "models": [
+      "TB."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "亚历山大王",
+    "slug": "item",
+    "productCount": 98,
+    "series": [
+      "亚历山大王"
+    ],
+    "versions": [
+      "亚历山大王"
+    ],
+    "models": [
+      "亚历山大王"
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "克罗心.",
+    "slug": "item",
+    "productCount": 508,
+    "series": [
+      "克罗心."
+    ],
+    "versions": [
+      "克罗心."
+    ],
+    "models": [
+      "克罗心."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "华伦天奴..",
+    "slug": "item",
+    "productCount": 244,
+    "series": [
+      "华伦天奴.."
+    ],
+    "versions": [
+      "华伦天奴.."
+    ],
+    "models": [
+      "华伦天奴.."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "古驰..",
+    "slug": "item",
+    "productCount": 240,
+    "series": [
+      "古驰.."
+    ],
+    "versions": [
+      "古驰.."
+    ],
+    "models": [
+      "古驰.."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "圣罗兰.",
+    "slug": "item",
+    "productCount": 117,
+    "series": [
+      "圣罗兰."
+    ],
+    "versions": [
+      "圣罗兰."
+    ],
+    "models": [
+      "圣罗兰."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "寇依",
+    "slug": "item",
+    "productCount": 75,
+    "series": [
+      "寇依"
+    ],
+    "versions": [
+      "寇依"
+    ],
+    "models": [
+      "寇依"
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "巴宝莉..",
+    "slug": "item",
+    "productCount": 162,
+    "series": [
+      "巴宝莉.."
+    ],
+    "versions": [
+      "巴宝莉.."
+    ],
+    "models": [
+      "巴宝莉.."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "巴黎世家.",
+    "slug": "item",
+    "productCount": 34,
+    "series": [
+      "巴黎世家."
+    ],
+    "versions": [
+      "巴黎世家."
+    ],
+    "models": [
+      "巴黎世家."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "普拉达.",
+    "slug": "item",
+    "productCount": 970,
+    "series": [
+      "普拉达."
+    ],
+    "versions": [
+      "普拉达."
+    ],
+    "models": [
+      "普拉达."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "爱马仕.",
+    "slug": "item",
+    "productCount": 248,
+    "series": [
+      "爱马仕."
+    ],
+    "versions": [
+      "爱马仕."
+    ],
+    "models": [
+      "爱马仕."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "纪梵希.",
+    "slug": "item",
+    "productCount": 2,
+    "series": [
+      "纪梵希."
+    ],
+    "versions": [
+      "纪梵希."
+    ],
+    "models": [
+      "纪梵希."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "罗意威..",
+    "slug": "item",
+    "productCount": 553,
+    "series": [
+      "罗意威.."
+    ],
+    "versions": [
+      "罗意威.."
+    ],
+    "models": [
+      "罗意威.."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "芬迪.",
+    "slug": "item",
+    "productCount": 180,
+    "series": [
+      "芬迪."
+    ],
+    "versions": [
+      "芬迪."
+    ],
+    "models": [
+      "芬迪."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "葆蝶家.",
+    "slug": "item",
+    "productCount": 20,
+    "series": [
+      "葆蝶家."
+    ],
+    "versions": [
+      "葆蝶家."
+    ],
+    "models": [
+      "葆蝶家."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "蒙口",
+    "slug": "item",
+    "productCount": 143,
+    "series": [
+      "蒙口"
+    ],
+    "versions": [
+      "蒙口"
+    ],
+    "models": [
+      "蒙口"
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "迪奥.",
+    "slug": "item",
+    "productCount": 1469,
+    "series": [
+      "迪奥."
+    ],
+    "versions": [
+      "迪奥."
+    ],
+    "models": [
+      "迪奥."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "香奈儿.",
+    "slug": "item",
+    "productCount": 1097,
+    "series": [
+      "香奈儿."
+    ],
+    "versions": [
+      "香奈儿."
+    ],
+    "models": [
+      "香奈儿."
+    ]
+  },
+  {
+    "brand": "高奢女装",
+    "name": "🇨🇦加拿大鹅",
+    "slug": "item",
+    "productCount": 8,
+    "series": [
+      "🇨🇦加拿大鹅"
+    ],
+    "versions": [
+      "🇨🇦加拿大鹅"
+    ],
+    "models": [
+      "🇨🇦加拿大鹅"
+    ]
+  },
+  {
+    "brand": "高奢服饰",
+    "name": "卫衣",
+    "slug": "item",
+    "productCount": 20,
+    "series": [
+      "卫衣"
+    ],
+    "versions": [
+      "卫衣"
+    ],
+    "models": [
+      "卫衣"
+    ]
+  },
+  {
+    "brand": "高奢服饰",
+    "name": "套装",
+    "slug": "item",
+    "productCount": 23,
+    "series": [
+      "套装"
+    ],
+    "versions": [
+      "套装"
+    ],
+    "models": [
+      "套装"
+    ]
+  },
+  {
+    "brand": "高奢服饰",
+    "name": "毛衣/开衫",
+    "slug": "item",
+    "productCount": 61,
+    "series": [
+      "毛衣/开衫"
+    ],
+    "versions": [
+      "毛衣/开衫"
+    ],
+    "models": [
+      "毛衣/开衫"
+    ]
+  },
+  {
+    "brand": "高奢服饰",
+    "name": "皮草/大衣",
+    "slug": "item",
+    "productCount": 130,
+    "series": [
+      "皮草/大衣"
+    ],
+    "versions": [
+      "皮草/大衣"
+    ],
+    "models": [
+      "皮草/大衣"
+    ]
+  },
+  {
+    "brand": "高奢服饰",
+    "name": "短袖",
+    "slug": "item",
+    "productCount": 96,
+    "series": [
+      "短袖"
+    ],
+    "versions": [
+      "短袖"
+    ],
+    "models": [
+      "短袖"
+    ]
+  },
+  {
+    "brand": "高奢服饰",
+    "name": "羽绒服",
+    "slug": "item",
+    "productCount": 2,
+    "series": [
+      "羽绒服"
+    ],
+    "versions": [
+      "羽绒服"
+    ],
+    "models": [
+      "羽绒服"
+    ]
+  },
+  {
+    "brand": "高奢服饰",
+    "name": "背心/吊带/抹胸",
+    "slug": "item",
+    "productCount": 51,
+    "series": [
+      "背心/吊带/抹胸"
+    ],
+    "versions": [
+      "背心/吊带/抹胸"
+    ],
+    "models": [
+      "背心/吊带/抹胸"
+    ]
+  },
+  {
+    "brand": "高奢服饰",
+    "name": "衬衫",
+    "slug": "item",
+    "productCount": 37,
+    "series": [
+      "衬衫"
+    ],
+    "versions": [
+      "衬衫"
+    ],
+    "models": [
+      "衬衫"
+    ]
+  },
+  {
+    "brand": "高奢服饰",
+    "name": "裤子",
+    "slug": "item",
+    "productCount": 57,
+    "series": [
+      "裤子"
+    ],
+    "versions": [
+      "裤子"
+    ],
+    "models": [
+      "裤子"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "AMIRI 骨头",
+    "slug": "amiri",
+    "productCount": 19,
+    "series": [
+      "AMIRI 骨头"
+    ],
+    "versions": [
+      "AMIRI 骨头"
+    ],
+    "models": [
+      "AMIRI 骨头"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "BAPE SK8 STA",
+    "slug": "bape-sk8-sta",
+    "productCount": 132,
+    "series": [
+      "BAPE SK8 STA"
+    ],
+    "versions": [
+      "BAPE SK8 STA"
+    ],
+    "models": [
+      "BAPE SK8 STA"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "LP 休闲",
+    "slug": "lp",
+    "productCount": 31,
+    "series": [
+      "LP 休闲"
+    ],
+    "versions": [
+      "LP 休闲"
+    ],
+    "models": [
+      "LP 休闲"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "LV休闲",
+    "slug": "lv",
+    "productCount": 182,
+    "series": [
+      "LV休闲"
+    ],
+    "versions": [
+      "LV休闲"
+    ],
+    "models": [
+      "LV休闲"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "RV 休闲",
+    "slug": "rv",
+    "productCount": 11,
+    "series": [
+      "RV 休闲"
+    ],
+    "versions": [
+      "RV 休闲"
+    ],
+    "models": [
+      "RV 休闲"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "UGG",
+    "slug": "ugg",
+    "productCount": 32,
+    "series": [
+      "UGG"
+    ],
+    "versions": [
+      "UGG"
+    ],
+    "models": [
+      "UGG"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "三原康裕",
+    "slug": "item",
+    "productCount": 60,
+    "series": [
+      "三原康裕"
+    ],
+    "versions": [
+      "三原康裕"
+    ],
+    "models": [
+      "三原康裕"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "华伦天奴",
+    "slug": "item",
+    "productCount": 101,
+    "series": [
+      "华伦天奴"
+    ],
+    "versions": [
+      "华伦天奴"
+    ],
+    "models": [
+      "华伦天奴"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "卡特",
+    "slug": "item",
+    "productCount": 78,
+    "series": [
+      "卡特"
+    ],
+    "versions": [
+      "卡特"
+    ],
+    "models": [
+      "卡特"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "古驰休闲",
+    "slug": "item",
+    "productCount": 152,
+    "series": [
+      "古驰休闲"
+    ],
+    "versions": [
+      "古驰休闲"
+    ],
+    "models": [
+      "古驰休闲"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "吴建豪联名",
+    "slug": "item",
+    "productCount": 116,
+    "series": [
+      "吴建豪联名"
+    ],
+    "versions": [
+      "吴建豪联名"
+    ],
+    "models": [
+      "吴建豪联名"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "巴黎世家休闲",
+    "slug": "item",
+    "productCount": 399,
+    "series": [
+      "巴黎世家休闲"
+    ],
+    "versions": [
+      "巴黎世家休闲"
+    ],
+    "models": [
+      "巴黎世家休闲"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "普拉达 休闲",
+    "slug": "item",
+    "productCount": 38,
+    "series": [
+      "普拉达 休闲"
+    ],
+    "versions": [
+      "普拉达 休闲"
+    ],
+    "models": [
+      "普拉达 休闲"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "板鞋/运动鞋",
+    "slug": "item",
+    "productCount": 363,
+    "series": [
+      "板鞋/运动鞋"
+    ],
+    "versions": [
+      "板鞋/运动鞋"
+    ],
+    "models": [
+      "板鞋/运动鞋"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "浪凡",
+    "slug": "item",
+    "productCount": 7,
+    "series": [
+      "浪凡"
+    ],
+    "versions": [
+      "浪凡"
+    ],
+    "models": [
+      "浪凡"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "爱步",
+    "slug": "item",
+    "productCount": 89,
+    "series": [
+      "爱步"
+    ],
+    "versions": [
+      "爱步"
+    ],
+    "models": [
+      "爱步"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "爱马仕 休闲",
+    "slug": "item",
+    "productCount": 37,
+    "series": [
+      "爱马仕 休闲"
+    ],
+    "versions": [
+      "爱马仕 休闲"
+    ],
+    "models": [
+      "爱马仕 休闲"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "罗意威休闲",
+    "slug": "item",
+    "productCount": 35,
+    "series": [
+      "罗意威休闲"
+    ],
+    "versions": [
+      "罗意威休闲"
+    ],
+    "models": [
+      "罗意威休闲"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "芬迪休闲",
+    "slug": "item",
+    "productCount": 36,
+    "series": [
+      "芬迪休闲"
+    ],
+    "versions": [
+      "芬迪休闲"
+    ],
+    "models": [
+      "芬迪休闲"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "菲拉格慕",
+    "slug": "item",
+    "productCount": 50,
+    "series": [
+      "菲拉格慕"
+    ],
+    "versions": [
+      "菲拉格慕"
+    ],
+    "models": [
+      "菲拉格慕"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "谬谬 休闲",
+    "slug": "item",
+    "productCount": 28,
+    "series": [
+      "谬谬 休闲"
+    ],
+    "versions": [
+      "谬谬 休闲"
+    ],
+    "models": [
+      "谬谬 休闲"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "赛琳 休闲",
+    "slug": "item",
+    "productCount": 10,
+    "series": [
+      "赛琳 休闲"
+    ],
+    "versions": [
+      "赛琳 休闲"
+    ],
+    "models": [
+      "赛琳 休闲"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "迪奥 休闲",
+    "slug": "item",
+    "productCount": 60,
+    "series": [
+      "迪奥 休闲"
+    ],
+    "versions": [
+      "迪奥 休闲"
+    ],
+    "models": [
+      "迪奥 休闲"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "香奈儿 休闲",
+    "slug": "item",
+    "productCount": 413,
+    "series": [
+      "香奈儿 休闲"
+    ],
+    "versions": [
+      "香奈儿 休闲"
+    ],
+    "models": [
+      "香奈儿 休闲"
+    ]
+  },
+  {
+    "brand": "高奢潮鞋",
+    "name": "麦昆",
+    "slug": "item",
+    "productCount": 133,
+    "series": [
+      "麦昆"
+    ],
+    "versions": [
+      "麦昆"
+    ],
+    "models": [
+      "麦昆"
+    ]
+  },
+  {
+    "brand": "高奢男装",
+    "name": "男装",
+    "slug": "item",
+    "productCount": 12,
+    "series": [
+      "男装"
+    ],
+    "versions": [
+      "男装"
+    ],
+    "models": [
+      "男装"
+    ]
+  },
+  {
+    "brand": "高奢腰带",
+    "name": "BV腰带",
+    "slug": "bv",
+    "productCount": 431,
+    "series": [
+      "BV腰带"
+    ],
+    "versions": [
+      "BV腰带"
+    ],
+    "models": [
+      "BV腰带"
+    ]
+  },
+  {
+    "brand": "高奢腰带",
+    "name": "LV 腰带",
+    "slug": "lv",
+    "productCount": 213,
+    "series": [
+      "LV 腰带"
+    ],
+    "versions": [
+      "LV 腰带"
+    ],
+    "models": [
+      "LV 腰带"
+    ]
+  },
+  {
+    "brand": "高奢腰带",
+    "name": "Miumiu腰带",
+    "slug": "miumiu",
+    "productCount": 5,
+    "series": [
+      "Miumiu腰带"
+    ],
+    "versions": [
+      "Miumiu腰带"
+    ],
+    "models": [
+      "Miumiu腰带"
+    ]
+  },
+  {
+    "brand": "高奢腰带",
+    "name": "卡地亚 腰带",
+    "slug": "item",
+    "productCount": 24,
+    "series": [
+      "卡地亚 腰带"
+    ],
+    "versions": [
+      "卡地亚 腰带"
+    ],
+    "models": [
+      "卡地亚 腰带"
+    ]
+  },
+  {
+    "brand": "高奢腰带",
+    "name": "古驰 腰带",
+    "slug": "item",
+    "productCount": 328,
+    "series": [
+      "古驰 腰带"
+    ],
+    "versions": [
+      "古驰 腰带"
+    ],
+    "models": [
+      "古驰 腰带"
+    ]
+  },
+  {
+    "brand": "高奢腰带",
+    "name": "圣罗兰 腰带",
+    "slug": "item",
+    "productCount": 20,
+    "series": [
+      "圣罗兰 腰带"
+    ],
+    "versions": [
+      "圣罗兰 腰带"
+    ],
+    "models": [
+      "圣罗兰 腰带"
+    ]
+  },
+  {
+    "brand": "高奢腰带",
+    "name": "巴宝莉 腰带",
+    "slug": "item",
+    "productCount": 126,
+    "series": [
+      "巴宝莉 腰带"
+    ],
+    "versions": [
+      "巴宝莉 腰带"
+    ],
+    "models": [
+      "巴宝莉 腰带"
+    ]
+  },
+  {
+    "brand": "高奢腰带",
+    "name": "普拉达 腰带",
+    "slug": "item",
+    "productCount": 74,
+    "series": [
+      "普拉达 腰带"
+    ],
+    "versions": [
+      "普拉达 腰带"
+    ],
+    "models": [
+      "普拉达 腰带"
+    ]
+  },
+  {
+    "brand": "高奢腰带",
+    "name": "爱马仕 腰带",
+    "slug": "item",
+    "productCount": 76,
+    "series": [
+      "爱马仕 腰带"
+    ],
+    "versions": [
+      "爱马仕 腰带"
+    ],
+    "models": [
+      "爱马仕 腰带"
+    ]
+  },
+  {
+    "brand": "高奢腰带",
+    "name": "罗意威 腰带",
+    "slug": "item",
+    "productCount": 117,
+    "series": [
+      "罗意威 腰带"
+    ],
+    "versions": [
+      "罗意威 腰带"
+    ],
+    "models": [
+      "罗意威 腰带"
+    ]
+  },
+  {
+    "brand": "高奢腰带",
+    "name": "芬迪 腰带",
+    "slug": "item",
+    "productCount": 64,
+    "series": [
+      "芬迪 腰带"
+    ],
+    "versions": [
+      "芬迪 腰带"
+    ],
+    "models": [
+      "芬迪 腰带"
+    ]
+  },
+  {
+    "brand": "高奢腰带",
+    "name": "菲拉格慕腰带",
+    "slug": "item",
+    "productCount": 278,
+    "series": [
+      "菲拉格慕腰带"
+    ],
+    "versions": [
+      "菲拉格慕腰带"
+    ],
+    "models": [
+      "菲拉格慕腰带"
+    ]
+  },
+  {
+    "brand": "高奢腰带",
+    "name": "赛琳 腰带",
+    "slug": "item",
     "productCount": 39,
     "series": [
-      "山度士 40mm"
+      "赛琳 腰带"
     ],
     "versions": [
-      "Premium Version",
-      "Standard Version"
+      "赛琳 腰带"
+    ],
+    "models": [
+      "赛琳 腰带"
     ]
   },
   {
-    "brand": "Cartier",
-    "name": "Tank",
-    "slug": "cartier-tank",
-    "productCount": 1,
+    "brand": "高奢腰带",
+    "name": "迪奥 腰带",
+    "slug": "item",
+    "productCount": 100,
     "series": [
-      "坦克"
+      "迪奥 腰带"
     ],
     "versions": [
-      "Standard Version"
+      "迪奥 腰带"
+    ],
+    "models": [
+      "迪奥 腰带"
     ]
   },
   {
-    "brand": "Cartier",
+    "brand": "高奢腰带",
+    "name": "香奈儿 腰带",
+    "slug": "item",
+    "productCount": 81,
+    "series": [
+      "香奈儿 腰带"
+    ],
+    "versions": [
+      "香奈儿 腰带"
+    ],
+    "models": [
+      "香奈儿 腰带"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "克罗心Chrome Hearts",
+    "slug": "chrome-hearts",
+    "productCount": 191,
+    "series": [
+      "克罗心Chrome Hearts"
+    ],
+    "versions": [
+      "克罗心Chrome Hearts"
+    ],
+    "models": [
+      "克罗心Chrome Hearts"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "卡地亚Cartier",
+    "slug": "cartier",
+    "productCount": 641,
+    "series": [
+      "卡地亚Cartier"
+    ],
+    "versions": [
+      "卡地亚Cartier"
+    ],
+    "models": [
+      "卡地亚Cartier"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "发夹/帽子",
+    "slug": "item",
+    "productCount": 104,
+    "series": [
+      "发夹/帽子"
+    ],
+    "versions": [
+      "发夹/帽子"
+    ],
+    "models": [
+      "发夹/帽子"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "古驰GUCCI",
+    "slug": "gucci",
+    "productCount": 114,
+    "series": [
+      "古驰GUCCI"
+    ],
+    "versions": [
+      "古驰GUCCI"
+    ],
+    "models": [
+      "古驰GUCCI"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "圣罗兰Yves Saint Laurent",
+    "slug": "yves-saint-laurent",
+    "productCount": 30,
+    "series": [
+      "圣罗兰Yves Saint Laurent"
+    ],
+    "versions": [
+      "圣罗兰Yves Saint Laurent"
+    ],
+    "models": [
+      "圣罗兰Yves Saint Laurent"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "宝格丽BVLGARI",
+    "slug": "bvlgari",
+    "productCount": 930,
+    "series": [
+      "宝格丽BVLGARI"
+    ],
+    "versions": [
+      "宝格丽BVLGARI"
+    ],
+    "models": [
+      "宝格丽BVLGARI"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "尚美CHAVMET",
+    "slug": "chavmet",
+    "productCount": 44,
+    "series": [
+      "尚美CHAVMET"
+    ],
+    "versions": [
+      "尚美CHAVMET"
+    ],
+    "models": [
+      "尚美CHAVMET"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "戒指",
+    "slug": "item",
+    "productCount": 243,
+    "series": [
+      "戒指"
+    ],
+    "versions": [
+      "戒指"
+    ],
+    "models": [
+      "戒指"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "手镯/手链",
+    "slug": "item",
+    "productCount": 202,
+    "series": [
+      "手镯/手链"
+    ],
+    "versions": [
+      "手镯/手链"
+    ],
+    "models": [
+      "手镯/手链"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "施华洛世奇SWAROVSKI",
+    "slug": "swarovski",
+    "productCount": 47,
+    "series": [
+      "施华洛世奇SWAROVSKI"
+    ],
+    "versions": [
+      "施华洛世奇SWAROVSKI"
+    ],
+    "models": [
+      "施华洛世奇SWAROVSKI"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "梵克雅宝Van Cleef & Aroels",
+    "slug": "van-cleef-aroels",
+    "productCount": 2714,
+    "series": [
+      "梵克雅宝Van Cleef & Aroels"
+    ],
+    "versions": [
+      "梵克雅宝Van Cleef & Aroels"
+    ],
+    "models": [
+      "梵克雅宝Van Cleef & Aroels"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "爱马仕HERMES",
+    "slug": "hermes",
+    "productCount": 583,
+    "series": [
+      "爱马仕HERMES"
+    ],
+    "versions": [
+      "爱马仕HERMES"
+    ],
+    "models": [
+      "爱马仕HERMES"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "真金定制合集",
+    "slug": "item",
+    "productCount": 981,
+    "series": [
+      "真金定制合集"
+    ],
+    "versions": [
+      "真金定制合集"
+    ],
+    "models": [
+      "真金定制合集"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "纪梵希GIVENCHY",
+    "slug": "givenchy",
+    "productCount": 3,
+    "series": [
+      "纪梵希GIVENCHY"
+    ],
+    "versions": [
+      "纪梵希GIVENCHY"
+    ],
+    "models": [
+      "纪梵希GIVENCHY"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "缪缪MiuMiu",
+    "slug": "miumiu",
+    "productCount": 73,
+    "series": [
+      "缪缪MiuMiu"
+    ],
+    "versions": [
+      "缪缪MiuMiu"
+    ],
+    "models": [
+      "缪缪MiuMiu"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "罗意威Loewe(饰品）",
+    "slug": "loewe",
+    "productCount": 159,
+    "series": [
+      "罗意威Loewe(饰品）"
+    ],
+    "versions": [
+      "罗意威Loewe(饰品）"
+    ],
+    "models": [
+      "罗意威Loewe(饰品）"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "耳钉/耳环",
+    "slug": "item",
+    "productCount": 933,
+    "series": [
+      "耳钉/耳环"
+    ],
+    "versions": [
+      "耳钉/耳环"
+    ],
+    "models": [
+      "耳钉/耳环"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "胸针",
+    "slug": "item",
+    "productCount": 226,
+    "series": [
+      "胸针"
+    ],
+    "versions": [
+      "胸针"
+    ],
+    "models": [
+      "胸针"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "芬迪FENDI",
+    "slug": "fendi",
+    "productCount": 23,
+    "series": [
+      "芬迪FENDI"
+    ],
+    "versions": [
+      "芬迪FENDI"
+    ],
+    "models": [
+      "芬迪FENDI"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "蒂芙尼Tiffany&Co.",
+    "slug": "tiffany-co",
+    "productCount": 1079,
+    "series": [
+      "蒂芙尼Tiffany&Co."
+    ],
+    "versions": [
+      "蒂芙尼Tiffany&Co."
+    ],
+    "models": [
+      "蒂芙尼Tiffany&Co."
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "赛琳 CELINE",
+    "slug": "celine",
+    "productCount": 49,
+    "series": [
+      "赛琳 CELINE"
+    ],
+    "versions": [
+      "赛琳 CELINE"
+    ],
+    "models": [
+      "赛琳 CELINE"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "路易威登LOUIS VUITTON",
+    "slug": "louis-vuitton",
+    "productCount": 253,
+    "series": [
+      "路易威登LOUIS VUITTON"
+    ],
+    "versions": [
+      "路易威登LOUIS VUITTON"
+    ],
+    "models": [
+      "路易威登LOUIS VUITTON"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "迪奥DIOR",
+    "slug": "dior",
+    "productCount": 2966,
+    "series": [
+      "迪奥DIOR"
+    ],
+    "versions": [
+      "迪奥DIOR"
+    ],
+    "models": [
+      "迪奥DIOR"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "项链/腰链/毛衣链",
+    "slug": "item",
+    "productCount": 716,
+    "series": [
+      "项链/腰链/毛衣链"
+    ],
+    "versions": [
+      "项链/腰链/毛衣链"
+    ],
+    "models": [
+      "项链/腰链/毛衣链"
+    ]
+  },
+  {
+    "brand": "高奢饰品",
+    "name": "麒麟Oeelin",
+    "slug": "oeelin",
+    "productCount": 175,
+    "series": [
+      "麒麟Oeelin"
+    ],
+    "versions": [
+      "麒麟Oeelin"
+    ],
+    "models": [
+      "麒麟Oeelin"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "Dior 凉鞋",
+    "slug": "dior",
+    "productCount": 19,
+    "series": [
+      "Dior 凉鞋"
+    ],
+    "versions": [
+      "Dior 凉鞋"
+    ],
+    "models": [
+      "Dior 凉鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "Dior 平底",
+    "slug": "dior",
+    "productCount": 15,
+    "series": [
+      "Dior 平底"
+    ],
+    "versions": [
+      "Dior 平底"
+    ],
+    "models": [
+      "Dior 平底"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "Dior 拖鞋",
+    "slug": "dior",
+    "productCount": 170,
+    "series": [
+      "Dior 拖鞋"
+    ],
+    "versions": [
+      "Dior 拖鞋"
+    ],
+    "models": [
+      "Dior 拖鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "Dior 高跟",
+    "slug": "dior",
+    "productCount": 25,
+    "series": [
+      "Dior 高跟"
+    ],
+    "versions": [
+      "Dior 高跟"
+    ],
+    "models": [
+      "Dior 高跟"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "Dior靴子",
+    "slug": "dior",
+    "productCount": 9,
+    "series": [
+      "Dior靴子"
+    ],
+    "versions": [
+      "Dior靴子"
+    ],
+    "models": [
+      "Dior靴子"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "JC 凉鞋",
+    "slug": "jc",
+    "productCount": 13,
+    "series": [
+      "JC 凉鞋"
+    ],
+    "versions": [
+      "JC 凉鞋"
+    ],
+    "models": [
+      "JC 凉鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "JC 平底",
+    "slug": "jc",
+    "productCount": 18,
+    "series": [
+      "JC 平底"
+    ],
+    "versions": [
+      "JC 平底"
+    ],
+    "models": [
+      "JC 平底"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "JC 高跟",
+    "slug": "jc",
+    "productCount": 424,
+    "series": [
+      "JC 高跟"
+    ],
+    "versions": [
+      "JC 高跟"
+    ],
+    "models": [
+      "JC 高跟"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "LP 平底",
+    "slug": "lp",
+    "productCount": 50,
+    "series": [
+      "LP 平底"
+    ],
+    "versions": [
+      "LP 平底"
+    ],
+    "models": [
+      "LP 平底"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "LP 拖鞋",
+    "slug": "lp",
+    "productCount": 65,
+    "series": [
+      "LP 拖鞋"
+    ],
+    "versions": [
+      "LP 拖鞋"
+    ],
+    "models": [
+      "LP 拖鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "Miumiu乐福鞋",
+    "slug": "miumiu",
+    "productCount": 46,
+    "series": [
+      "Miumiu乐福鞋"
+    ],
+    "versions": [
+      "Miumiu乐福鞋"
+    ],
+    "models": [
+      "Miumiu乐福鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "Miumiu凉鞋",
+    "slug": "miumiu",
+    "productCount": 21,
+    "series": [
+      "Miumiu凉鞋"
+    ],
+    "versions": [
+      "Miumiu凉鞋"
+    ],
+    "models": [
+      "Miumiu凉鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "Miumiu平底鞋",
+    "slug": "miumiu",
+    "productCount": 14,
+    "series": [
+      "Miumiu平底鞋"
+    ],
+    "versions": [
+      "Miumiu平底鞋"
+    ],
+    "models": [
+      "Miumiu平底鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "RV 乐福鞋",
+    "slug": "rv",
+    "productCount": 40,
+    "series": [
+      "RV 乐福鞋"
+    ],
+    "versions": [
+      "RV 乐福鞋"
+    ],
+    "models": [
+      "RV 乐福鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "RV 凉鞋",
+    "slug": "rv",
+    "productCount": 49,
+    "series": [
+      "RV 凉鞋"
+    ],
+    "versions": [
+      "RV 凉鞋"
+    ],
+    "models": [
+      "RV 凉鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "RV 平底",
+    "slug": "rv",
+    "productCount": 106,
+    "series": [
+      "RV 平底"
+    ],
+    "versions": [
+      "RV 平底"
+    ],
+    "models": [
+      "RV 平底"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "RV 拖鞋",
+    "slug": "rv",
+    "productCount": 102,
+    "series": [
+      "RV 拖鞋"
+    ],
+    "versions": [
+      "RV 拖鞋"
+    ],
+    "models": [
+      "RV 拖鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "RV 靴子",
+    "slug": "rv",
+    "productCount": 25,
+    "series": [
+      "RV 靴子"
+    ],
+    "versions": [
+      "RV 靴子"
+    ],
+    "models": [
+      "RV 靴子"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "RV 高跟",
+    "slug": "rv",
+    "productCount": 319,
+    "series": [
+      "RV 高跟"
+    ],
+    "versions": [
+      "RV 高跟"
+    ],
+    "models": [
+      "RV 高跟"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "YSL 高跟",
+    "slug": "ysl",
+    "productCount": 17,
+    "series": [
+      "YSL 高跟"
+    ],
+    "versions": [
+      "YSL 高跟"
+    ],
+    "models": [
+      "YSL 高跟"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "华伦天奴 凉鞋",
+    "slug": "item",
+    "productCount": 23,
+    "series": [
+      "华伦天奴 凉鞋"
+    ],
+    "versions": [
+      "华伦天奴 凉鞋"
+    ],
+    "models": [
+      "华伦天奴 凉鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "华伦天奴 平底",
+    "slug": "item",
+    "productCount": 27,
+    "series": [
+      "华伦天奴 平底"
+    ],
+    "versions": [
+      "华伦天奴 平底"
+    ],
+    "models": [
+      "华伦天奴 平底"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "华伦天奴 拖鞋",
+    "slug": "item",
+    "productCount": 30,
+    "series": [
+      "华伦天奴 拖鞋"
+    ],
+    "versions": [
+      "华伦天奴 拖鞋"
+    ],
+    "models": [
+      "华伦天奴 拖鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "华伦天奴高跟",
+    "slug": "item",
+    "productCount": 251,
+    "series": [
+      "华伦天奴高跟"
+    ],
+    "versions": [
+      "华伦天奴高跟"
+    ],
+    "models": [
+      "华伦天奴高跟"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "古驰 拖鞋",
+    "slug": "item",
+    "productCount": 202,
+    "series": [
+      "古驰 拖鞋"
+    ],
+    "versions": [
+      "古驰 拖鞋"
+    ],
+    "models": [
+      "古驰 拖鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "古驰 皮鞋",
+    "slug": "item",
+    "productCount": 175,
+    "series": [
+      "古驰 皮鞋"
+    ],
+    "versions": [
+      "古驰 皮鞋"
+    ],
+    "models": [
+      "古驰 皮鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "古驰 靴子",
+    "slug": "item",
+    "productCount": 50,
+    "series": [
+      "古驰 靴子"
+    ],
+    "versions": [
+      "古驰 靴子"
+    ],
+    "models": [
+      "古驰 靴子"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "古驰 高跟",
+    "slug": "item",
+    "productCount": 174,
+    "series": [
+      "古驰 高跟"
+    ],
+    "versions": [
+      "古驰 高跟"
+    ],
+    "models": [
+      "古驰 高跟"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "圣罗兰 高跟",
+    "slug": "item",
+    "productCount": 61,
+    "series": [
+      "圣罗兰 高跟"
+    ],
+    "versions": [
+      "圣罗兰 高跟"
+    ],
+    "models": [
+      "圣罗兰 高跟"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "巴黎世家 靴子",
+    "slug": "item",
+    "productCount": 34,
+    "series": [
+      "巴黎世家 靴子"
+    ],
+    "versions": [
+      "巴黎世家 靴子"
+    ],
+    "models": [
+      "巴黎世家 靴子"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "巴黎世家 高跟",
+    "slug": "item",
+    "productCount": 27,
+    "series": [
+      "巴黎世家 高跟"
+    ],
+    "versions": [
+      "巴黎世家 高跟"
+    ],
+    "models": [
+      "巴黎世家 高跟"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "普拉达 拖鞋",
+    "slug": "item",
+    "productCount": 4,
+    "series": [
+      "普拉达 拖鞋"
+    ],
+    "versions": [
+      "普拉达 拖鞋"
+    ],
+    "models": [
+      "普拉达 拖鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "普拉达 靴子",
+    "slug": "item",
+    "productCount": 8,
+    "series": [
+      "普拉达 靴子"
+    ],
+    "versions": [
+      "普拉达 靴子"
+    ],
+    "models": [
+      "普拉达 靴子"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "普拉达 高跟",
+    "slug": "item",
+    "productCount": 34,
+    "series": [
+      "普拉达 高跟"
+    ],
+    "versions": [
+      "普拉达 高跟"
+    ],
+    "models": [
+      "普拉达 高跟"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "爱马仕 乐福鞋",
+    "slug": "item",
+    "productCount": 49,
+    "series": [
+      "爱马仕 乐福鞋"
+    ],
+    "versions": [
+      "爱马仕 乐福鞋"
+    ],
+    "models": [
+      "爱马仕 乐福鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "爱马仕 凉鞋",
+    "slug": "item",
+    "productCount": 139,
+    "series": [
+      "爱马仕 凉鞋"
+    ],
+    "versions": [
+      "爱马仕 凉鞋"
+    ],
+    "models": [
+      "爱马仕 凉鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "爱马仕 （半）拖鞋",
+    "slug": "item",
+    "productCount": 398,
+    "series": [
+      "爱马仕 （半）拖鞋"
+    ],
+    "versions": [
+      "爱马仕 （半）拖鞋"
+    ],
+    "models": [
+      "爱马仕 （半）拖鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "爱马仕靴子",
+    "slug": "item",
+    "productCount": 2,
+    "series": [
+      "爱马仕靴子"
+    ],
+    "versions": [
+      "爱马仕靴子"
+    ],
+    "models": [
+      "爱马仕靴子"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "芬迪 拖鞋",
+    "slug": "item",
+    "productCount": 41,
+    "series": [
+      "芬迪 拖鞋"
+    ],
+    "versions": [
+      "芬迪 拖鞋"
+    ],
+    "models": [
+      "芬迪 拖鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "芬迪靴子",
+    "slug": "item",
+    "productCount": 2,
+    "series": [
+      "芬迪靴子"
+    ],
+    "versions": [
+      "芬迪靴子"
+    ],
+    "models": [
+      "芬迪靴子"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "芬迪高跟鞋",
+    "slug": "item",
+    "productCount": 6,
+    "series": [
+      "芬迪高跟鞋"
+    ],
+    "versions": [
+      "芬迪高跟鞋"
+    ],
+    "models": [
+      "芬迪高跟鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "菲拉格慕 平底",
+    "slug": "item",
+    "productCount": 48,
+    "series": [
+      "菲拉格慕 平底"
+    ],
+    "versions": [
+      "菲拉格慕 平底"
+    ],
+    "models": [
+      "菲拉格慕 平底"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "菲拉格慕 高跟",
+    "slug": "item",
+    "productCount": 15,
+    "series": [
+      "菲拉格慕 高跟"
+    ],
+    "versions": [
+      "菲拉格慕 高跟"
+    ],
+    "models": [
+      "菲拉格慕 高跟"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "赛琳 平底",
+    "slug": "item",
+    "productCount": 10,
+    "series": [
+      "赛琳 平底"
+    ],
+    "versions": [
+      "赛琳 平底"
+    ],
+    "models": [
+      "赛琳 平底"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "路易威登 平底鞋",
+    "slug": "item",
+    "productCount": 2,
+    "series": [
+      "路易威登 平底鞋"
+    ],
+    "versions": [
+      "路易威登 平底鞋"
+    ],
+    "models": [
+      "路易威登 平底鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "路易威登 拖鞋",
+    "slug": "item",
+    "productCount": 98,
+    "series": [
+      "路易威登 拖鞋"
+    ],
+    "versions": [
+      "路易威登 拖鞋"
+    ],
+    "models": [
+      "路易威登 拖鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "路易威登 靴子",
+    "slug": "item",
+    "productCount": 67,
+    "series": [
+      "路易威登 靴子"
+    ],
+    "versions": [
+      "路易威登 靴子"
+    ],
+    "models": [
+      "路易威登 靴子"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "路易威登 高跟",
+    "slug": "item",
+    "productCount": 23,
+    "series": [
+      "路易威登 高跟"
+    ],
+    "versions": [
+      "路易威登 高跟"
+    ],
+    "models": [
+      "路易威登 高跟"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "香奈儿 乐福鞋",
+    "slug": "item",
+    "productCount": 112,
+    "series": [
+      "香奈儿 乐福鞋"
+    ],
+    "versions": [
+      "香奈儿 乐福鞋"
+    ],
+    "models": [
+      "香奈儿 乐福鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "香奈儿 凉鞋",
+    "slug": "item",
+    "productCount": 407,
+    "series": [
+      "香奈儿 凉鞋"
+    ],
+    "versions": [
+      "香奈儿 凉鞋"
+    ],
+    "models": [
+      "香奈儿 凉鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "香奈儿 平底鞋",
+    "slug": "item",
+    "productCount": 203,
+    "series": [
+      "香奈儿 平底鞋"
+    ],
+    "versions": [
+      "香奈儿 平底鞋"
+    ],
+    "models": [
+      "香奈儿 平底鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "香奈儿 拖鞋",
+    "slug": "item",
+    "productCount": 351,
+    "series": [
+      "香奈儿 拖鞋"
+    ],
+    "versions": [
+      "香奈儿 拖鞋"
+    ],
+    "models": [
+      "香奈儿 拖鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "香奈儿 高跟",
+    "slug": "item",
+    "productCount": 125,
+    "series": [
+      "香奈儿 高跟"
+    ],
+    "versions": [
+      "香奈儿 高跟"
+    ],
+    "models": [
+      "香奈儿 高跟"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "香奈儿靴子",
+    "slug": "item",
+    "productCount": 2,
+    "series": [
+      "香奈儿靴子"
+    ],
+    "versions": [
+      "香奈儿靴子"
+    ],
+    "models": [
+      "香奈儿靴子"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "马吉拉 凉鞋",
+    "slug": "item",
+    "productCount": 12,
+    "series": [
+      "马吉拉 凉鞋"
+    ],
+    "versions": [
+      "马吉拉 凉鞋"
+    ],
+    "models": [
+      "马吉拉 凉鞋"
+    ]
+  },
+  {
+    "brand": "高定女鞋",
+    "name": "马吉拉 平底",
+    "slug": "item",
+    "productCount": 16,
+    "series": [
+      "马吉拉 平底"
+    ],
+    "versions": [
+      "马吉拉 平底"
+    ],
+    "models": [
+      "马吉拉 平底"
+    ]
+  },
+  {
+    "brand": "高端腕表",
+    "name": "AP爱彼",
+    "slug": "ap",
+    "productCount": 90,
+    "series": [
+      "AP爱彼"
+    ],
+    "versions": [
+      "AP爱彼"
+    ],
+    "models": [
+      "AP爱彼"
+    ]
+  },
+  {
+    "brand": "高端腕表",
+    "name": "万国",
+    "slug": "item",
+    "productCount": 30,
+    "series": [
+      "万国"
+    ],
+    "versions": [
+      "万国"
+    ],
+    "models": [
+      "万国"
+    ]
+  },
+  {
+    "brand": "高端腕表",
+    "name": "伯爵",
+    "slug": "item",
+    "productCount": 8,
+    "series": [
+      "伯爵"
+    ],
+    "versions": [
+      "伯爵"
+    ],
+    "models": [
+      "伯爵"
+    ]
+  },
+  {
+    "brand": "高端腕表",
+    "name": "劳力士",
+    "slug": "item",
+    "productCount": 368,
+    "series": [
+      "劳力士"
+    ],
+    "versions": [
+      "劳力士"
+    ],
+    "models": [
+      "劳力士"
+    ]
+  },
+  {
+    "brand": "高端腕表",
     "name": "卡地亚",
-    "slug": "cartier-卡地亚",
-    "productCount": 1,
+    "slug": "item",
+    "productCount": 87,
     "series": [
       "卡地亚"
     ],
     "versions": [
-      "Standard Version"
+      "卡地亚"
+    ],
+    "models": [
+      "卡地亚"
     ]
   },
   {
-    "brand": "Hublot",
-    "name": "BIG BANG",
-    "slug": "hublot-big-bang",
-    "productCount": 2,
+    "brand": "高端腕表",
+    "name": "宇舶",
+    "slug": "item",
+    "productCount": 30,
     "series": [
-      "BIG BANG"
+      "宇舶"
     ],
     "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Hublot",
-    "name": "经典款",
-    "slug": "hublot-经典款",
-    "productCount": 19,
-    "series": [
-      "经典款"
+      "宇舶"
     ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
+    "models": [
+      "宇舶"
     ]
   },
   {
-    "brand": "IWC",
-    "name": "Pilot",
-    "slug": "iwc-pilot",
+    "brand": "高端腕表",
+    "name": "宝格丽⌚️",
+    "slug": "item",
     "productCount": 13,
     "series": [
-      "飞行员"
+      "宝格丽⌚️"
     ],
     "versions": [
-      "Premium Version",
-      "Standard Version"
+      "宝格丽⌚️"
+    ],
+    "models": [
+      "宝格丽⌚️"
     ]
   },
   {
-    "brand": "IWC",
-    "name": "Portofino",
-    "slug": "iwc-portofino",
-    "productCount": 4,
-    "series": [
-      "柏涛菲诺"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "IWC",
-    "name": "Portugieser",
-    "slug": "iwc-portugieser",
+    "brand": "高端腕表",
+    "name": "宝玑",
+    "slug": "item",
     "productCount": 9,
     "series": [
-      "葡萄牙系列"
+      "宝玑"
     ],
     "versions": [
-      "Premium Version",
-      "Standard Version"
+      "宝玑"
+    ],
+    "models": [
+      "宝玑"
     ]
   },
   {
-    "brand": "IWC",
-    "name": "工程师",
-    "slug": "iwc-工程师",
-    "productCount": 2,
-    "series": [
-      "工程师"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Jaeger-LeCoultre",
-    "name": "积家",
-    "slug": "jaeger-lecoultre-积家",
-    "productCount": 1,
-    "series": [
-      "积家"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Longines",
-    "name": "康卡斯",
-    "slug": "longines-康卡斯",
-    "productCount": 3,
-    "series": [
-      "康卡斯"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Omega",
-    "name": "Constellation",
-    "slug": "omega-constellation",
-    "productCount": 2,
-    "series": [
-      "星座系列"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Omega",
-    "name": "De Ville",
-    "slug": "omega-de-ville",
-    "productCount": 2,
-    "series": [
-      "碟飞系列"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Omega",
-    "name": "Seamaster",
-    "slug": "omega-seamaster",
-    "productCount": 73,
-    "series": [
-      "海马系列"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Omega",
-    "name": "Speedmaster",
-    "slug": "omega-speedmaster",
-    "productCount": 6,
-    "series": [
-      "超霸系列"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Panerai",
-    "name": "沛纳海",
-    "slug": "panerai-沛纳海",
-    "productCount": 5,
-    "series": [
-      "沛纳海"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Patek Philippe",
-    "name": "Aquanaut",
-    "slug": "patek-philippe-aquanaut",
-    "productCount": 6,
-    "series": [
-      "AQUANAUT"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Patek Philippe",
-    "name": "Nautilus",
-    "slug": "patek-philippe-nautilus",
-    "productCount": 34,
-    "series": [
-      "运动优雅系列【鹦鹉螺】"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Patek Philippe",
-    "name": "古典系列",
-    "slug": "patek-philippe-古典系列",
-    "productCount": 3,
-    "series": [
-      "古典系列"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Patek Philippe",
-    "name": "超级复杂功能时计（星空款）",
-    "slug": "patek-philippe-超级复杂功能时计-星空款",
-    "productCount": 2,
-    "series": [
-      "超级复杂功能时计（星空款）"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Richard Mille",
-    "name": "理查德米勒",
-    "slug": "richard-mille-理查德米勒",
-    "productCount": 6,
-    "series": [
-      "理查德米勒"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Rolex",
-    "name": "Air-King",
-    "slug": "rolex-air-king",
-    "productCount": 2,
-    "series": [
-      "空中霸王"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Rolex",
-    "name": "Datejust",
-    "slug": "rolex-datejust",
-    "productCount": 99,
-    "series": [
-      "日志 28mm",
-      "日志 31mm",
-      "日志 36mm",
-      "日志 40mm"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Rolex",
-    "name": "Day-Date",
-    "slug": "rolex-day-date",
-    "productCount": 52,
-    "series": [
-      "日志双历",
-      "日志双历 36mm"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Rolex",
-    "name": "Daytona",
-    "slug": "rolex-daytona",
-    "productCount": 85,
-    "series": [
-      "迪通拿"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Rolex",
-    "name": "Deepsea",
-    "slug": "rolex-deepsea",
-    "productCount": 12,
-    "series": [
-      "鬼王"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Rolex",
-    "name": "Explorer",
-    "slug": "rolex-explorer",
+    "brand": "高端腕表",
+    "name": "帝陀",
+    "slug": "item",
     "productCount": 4,
     "series": [
-      "探险家"
+      "帝陀"
     ],
     "versions": [
-      "Premium Version",
-      "Standard Version"
+      "帝陀"
+    ],
+    "models": [
+      "帝陀"
     ]
   },
   {
-    "brand": "Rolex",
-    "name": "GMT",
-    "slug": "rolex-gmt",
-    "productCount": 18,
+    "brand": "高端腕表",
+    "name": "梵克雅宝",
+    "slug": "item",
+    "productCount": 4,
     "series": [
-      "格林尼治"
+      "梵克雅宝"
     ],
     "versions": [
-      "Premium Version",
-      "Standard Version"
+      "梵克雅宝"
+    ],
+    "models": [
+      "梵克雅宝"
     ]
   },
   {
-    "brand": "Rolex",
-    "name": "Land-Dweller",
-    "slug": "rolex-land-dweller",
-    "productCount": 7,
+    "brand": "高端腕表",
+    "name": "欧米茄",
+    "slug": "item",
+    "productCount": 59,
     "series": [
-      "陆使"
+      "欧米茄"
     ],
     "versions": [
-      "Premium Version",
-      "Standard Version"
+      "欧米茄"
+    ],
+    "models": [
+      "欧米茄"
     ]
   },
   {
-    "brand": "Rolex",
-    "name": "Milgauss",
-    "slug": "rolex-milgauss",
-    "productCount": 8,
-    "series": [
-      "格磁型"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Rolex",
-    "name": "Oyster Perpetual",
-    "slug": "rolex-oyster-perpetual",
-    "productCount": 10,
-    "series": [
-      "蚝式恒动"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Rolex",
-    "name": "Sky-Dweller",
-    "slug": "rolex-sky-dweller",
-    "productCount": 8,
-    "series": [
-      "天行者"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Rolex",
-    "name": "Submariner",
-    "slug": "rolex-submariner",
-    "productCount": 7,
-    "series": [
-      "水鬼"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Rolex",
-    "name": "Yacht-Master",
-    "slug": "rolex-yacht-master",
-    "productCount": 11,
-    "series": [
-      "游艇名仕"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Rolex",
-    "name": "切利尼日历型",
-    "slug": "rolex-切利尼日历型",
-    "productCount": 1,
-    "series": [
-      "切利尼日历型"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "TAG Heuer",
-    "name": "F1 系列",
-    "slug": "tag-heuer-f1-系列",
-    "productCount": 6,
-    "series": [
-      "F1 系列"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Tudor",
-    "name": "Black Bay",
-    "slug": "tudor-black-bay",
-    "productCount": 9,
-    "series": [
-      "碧湾系列"
-    ],
-    "versions": [
-      "Premium Version",
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Tudor",
-    "name": "Pelagos",
-    "slug": "tudor-pelagos",
-    "productCount": 2,
-    "series": [
-      "领潜系列"
-    ],
-    "versions": [
-      "Premium Version"
-    ]
-  },
-  {
-    "brand": "Tudor",
-    "name": "启承系列",
-    "slug": "tudor-启承系列",
-    "productCount": 2,
-    "series": [
-      "启承系列"
-    ],
-    "versions": [
-      "Standard Version"
-    ]
-  },
-  {
-    "brand": "Vacheron Constantin",
+    "brand": "高端腕表",
     "name": "江诗丹顿",
-    "slug": "vacheron-constantin-江诗丹顿",
-    "productCount": 5,
+    "slug": "item",
+    "productCount": 21,
     "series": [
       "江诗丹顿"
     ],
     "versions": [
-      "Standard Version"
+      "江诗丹顿"
+    ],
+    "models": [
+      "江诗丹顿"
+    ]
+  },
+  {
+    "brand": "高端腕表",
+    "name": "沛纳海",
+    "slug": "item",
+    "productCount": 7,
+    "series": [
+      "沛纳海"
+    ],
+    "versions": [
+      "沛纳海"
+    ],
+    "models": [
+      "沛纳海"
+    ]
+  },
+  {
+    "brand": "高端腕表",
+    "name": "法兰克穆勒",
+    "slug": "item",
+    "productCount": 10,
+    "series": [
+      "法兰克穆勒"
+    ],
+    "versions": [
+      "法兰克穆勒"
+    ],
+    "models": [
+      "法兰克穆勒"
+    ]
+  },
+  {
+    "brand": "高端腕表",
+    "name": "浪琴",
+    "slug": "item",
+    "productCount": 18,
+    "series": [
+      "浪琴"
+    ],
+    "versions": [
+      "浪琴"
+    ],
+    "models": [
+      "浪琴"
+    ]
+  },
+  {
+    "brand": "高端腕表",
+    "name": "爱马仕⌚️",
+    "slug": "item",
+    "productCount": 5,
+    "series": [
+      "爱马仕⌚️"
+    ],
+    "versions": [
+      "爱马仕⌚️"
+    ],
+    "models": [
+      "爱马仕⌚️"
+    ]
+  },
+  {
+    "brand": "高端腕表",
+    "name": "理查德·米勒",
+    "slug": "item",
+    "productCount": 61,
+    "series": [
+      "理查德·米勒"
+    ],
+    "versions": [
+      "理查德·米勒"
+    ],
+    "models": [
+      "理查德·米勒"
+    ]
+  },
+  {
+    "brand": "高端腕表",
+    "name": "百年灵",
+    "slug": "item",
+    "productCount": 14,
+    "series": [
+      "百年灵"
+    ],
+    "versions": [
+      "百年灵"
+    ],
+    "models": [
+      "百年灵"
+    ]
+  },
+  {
+    "brand": "高端腕表",
+    "name": "百达翡丽",
+    "slug": "item",
+    "productCount": 72,
+    "series": [
+      "百达翡丽"
+    ],
+    "versions": [
+      "百达翡丽"
+    ],
+    "models": [
+      "百达翡丽"
+    ]
+  },
+  {
+    "brand": "高端腕表",
+    "name": "积家",
+    "slug": "item",
+    "productCount": 14,
+    "series": [
+      "积家"
+    ],
+    "versions": [
+      "积家"
+    ],
+    "models": [
+      "积家"
+    ]
+  },
+  {
+    "brand": "高端腕表",
+    "name": "肖邦",
+    "slug": "item",
+    "productCount": 14,
+    "series": [
+      "肖邦"
+    ],
+    "versions": [
+      "肖邦"
+    ],
+    "models": [
+      "肖邦"
+    ]
+  },
+  {
+    "brand": "高端腕表",
+    "name": "香奈儿 表",
+    "slug": "item",
+    "productCount": 10,
+    "series": [
+      "香奈儿 表"
+    ],
+    "versions": [
+      "香奈儿 表"
+    ],
+    "models": [
+      "香奈儿 表"
     ]
   }
 ]
