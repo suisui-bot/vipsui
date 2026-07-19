@@ -108,7 +108,16 @@ class WeCatalogClient:
         self.origin = "https://www.wecatalog.cn"
         self.token = ""
 
-    def request(self, path: str, *, method: str = "GET", params: dict[str, Any] | None = None, data: Any = None, timeout: int = 15) -> Any:
+    def request(
+        self,
+        path: str,
+        *,
+        method: str = "GET",
+        params: dict[str, Any] | None = None,
+        data: Any = None,
+        timeout: int = 15,
+        retries: int = 3,
+    ) -> Any:
         url = self.origin + path
         if params:
             url += ("&" if "?" in url else "?") + urllib.parse.urlencode(params)
@@ -123,10 +132,19 @@ class WeCatalogClient:
         if data is not None:
             body = json.dumps(data, ensure_ascii=False).encode("utf-8")
             headers["Content-Type"] = "application/json;charset=UTF-8"
-        request = urllib.request.Request(url, data=body, headers=headers, method=method)
-        with urllib.request.urlopen(request, timeout=timeout) as response:
-            payload = response.read().decode("utf-8")
-        return json.loads(payload)
+        last_error: Exception | None = None
+        for attempt in range(1, retries + 1):
+            try:
+                request = urllib.request.Request(url, data=body, headers=headers, method=method)
+                with urllib.request.urlopen(request, timeout=timeout) as response:
+                    payload = response.read().decode("utf-8")
+                return json.loads(payload)
+            except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError) as error:
+                last_error = error
+                if attempt == retries:
+                    break
+                time.sleep(0.6 * attempt)
+        raise last_error or RuntimeError(f"Request failed: {url}")
 
     def open_public_store(self) -> None:
         request = urllib.request.Request(self.store_url, headers={"User-Agent": USER_AGENT})
@@ -140,13 +158,15 @@ class WeCatalogClient:
         if "id=\"container\"" not in body:
             raise RuntimeError("The public store page did not return the expected WeCatalog app shell.")
 
-    def list_products(self, *, tag_id: str = "", slip_type: int | None = None, timestamp: Any = "", timeout: int = 15) -> Any:
+    def list_products(self, *, tag_id: str = "", slip_type: int | None = None, timestamp: Any = "", limit: int | None = None, timeout: int = 15) -> Any:
         params: dict[str, Any] = {
             "albumId": self.store_id,
             "startDate": "",
             "endDate": "",
             "requestDataType": "",
         }
+        if limit:
+            params["limit"] = limit
         if tag_id:
             params["tagList"] = tag_id
         if slip_type is not None:
@@ -166,10 +186,10 @@ class WeCatalogClient:
     def filter_config(self) -> Any:
         return self.request("/album/api/v3/decorate/getAlbumShopFilterConfig", method="POST", params={"shopId": self.store_id})
 
-    def source_tags(self) -> Any:
+    def source_tags(self, *, hide_uncategorized: bool = False) -> Any:
         return self.request(
             "/commodity/tags",
-            params={"hasVideo": 0, "hideUnCategorized": "true", "albumId": self.store_id},
+            params={"hasVideo": 0, "hideUnCategorized": "true" if hide_uncategorized else "false", "albumId": self.store_id},
         )
 
     def download_image(self, url: str, destination: Path) -> tuple[str, str] | None:
@@ -232,8 +252,12 @@ def parse_source_category_tree(source_tags_payload: dict[str, Any]) -> tuple[lis
     for group_order, group in enumerate(result.get("tagGroups") or []):
         group_id = str(group.get("groupId"))
         children: list[dict[str, Any]] = []
+        group_seen_tags: set[str] = set()
         for tag_order, tag_id_raw in enumerate(group.get("childrenTag") or []):
             tag_id = str(tag_id_raw)
+            if tag_id in group_seen_tags:
+                continue
+            group_seen_tags.add(tag_id)
             tag = all_tags.get(tag_id)
             if not tag:
                 continue
@@ -316,7 +340,7 @@ def fetch_products_for_tag(client: WeCatalogClient, tag_id: str, *, max_pages: i
     slip_type: int | None = None
     while True:
         pages += 1
-        payload = client.list_products(tag_id=tag_id, slip_type=slip_type, timestamp=timestamp, timeout=15)
+        payload = client.list_products(tag_id=tag_id, slip_type=slip_type, timestamp=timestamp, limit=200, timeout=15)
         result = payload.get("result") or {}
         for item in result.get("items") or []:
             goods_id = clean(item.get("goods_id"))
@@ -561,6 +585,33 @@ def load_discovery_from_disk() -> dict[str, Any] | None:
     }
 
 
+def preserve_existing_category_mappings(discovery: dict[str, Any], existing: dict[str, Any] | None) -> dict[str, Any]:
+    if not existing:
+        return discovery
+    existing_index = existing.get("productIndex") or {}
+    existing_summaries = existing.get("productSummaries") or {}
+    recovered: list[dict[str, Any]] = []
+    category_counts_by_id = {item.get("categoryId"): item for item in discovery["report"].get("categoryCounts", [])}
+    for inaccessible in discovery["report"].get("inaccessibleCategories", []):
+        category_id = inaccessible.get("categoryId")
+        previous_ids = existing_index.get(category_id) or []
+        if not category_id or not previous_ids:
+            continue
+        discovery["productIndex"][category_id] = previous_ids
+        for goods_id in previous_ids:
+            if goods_id in existing_summaries and goods_id not in discovery["productSummaries"]:
+                discovery["productSummaries"][goods_id] = existing_summaries[goods_id]
+        count = category_counts_by_id.get(category_id)
+        if count:
+            count["productCount"] = len(previous_ids)
+            count["preservedFromPreviousImport"] = True
+        recovered.append({"categoryId": category_id, "path": inaccessible.get("path"), "preservedProductCount": len(previous_ids)})
+    if recovered:
+        discovery["report"]["preservedCategoryMappings"] = recovered
+        discovery["report"]["uniqueProductsDiscovered"] = len(discovery["productSummaries"])
+    return discovery
+
+
 def save_full_import_checkpoint(products: list[dict[str, Any]], images: list[dict[str, Any]], failed: list[dict[str, str]], processed: set[str]) -> None:
     write_json("products.json", products)
     write_json("product_images.json", images)
@@ -754,6 +805,156 @@ def collect_items(client: WeCatalogClient, limit: int | None) -> tuple[list[dict
             return products, first_meta
         page = client.list_products(slip_type=1, timestamp=pagination.get("pageTimestamp") or 1)
         result = page.get("result") or {}
+
+
+def summarize_source_item(item: dict[str, Any]) -> dict[str, Any]:
+    goods_id = clean(item.get("goods_id"))
+    return {
+        "goodsId": goods_id,
+        "productNumber": clean(item.get("mark_code") or item.get("goodsNum")),
+        "title": clean(item.get("title")),
+        "imageCountHint": len(item.get("imgsSrc") or item.get("imgs") or []),
+        "coverImage": canonical_image_url((item.get("imgsSrc") or item.get("imgs") or [""])[0] if (item.get("imgsSrc") or item.get("imgs")) else ""),
+        "updatedAtSource": item.get("update_time") or item.get("time_stamp"),
+        "timeStamp": item.get("time_stamp"),
+    }
+
+
+def scan_all_source_products(client: WeCatalogClient, *, expected_displayed_total: int = 65648) -> dict[str, Any]:
+    summaries: dict[str, dict[str, Any]] = {}
+    ordered_ids: list[str] = []
+    refs = 0
+    duplicate_refs = 0
+    pages = 0
+    first_meta: dict[str, Any] = {}
+    timestamp: Any = ""
+    slip_type: int | None = None
+    pagination_exists = False
+    started = time.time()
+
+    while True:
+        pages += 1
+        payload = client.list_products(slip_type=slip_type, timestamp=timestamp, limit=2000, timeout=60)
+        result = payload.get("result") or {}
+        if not first_meta:
+            first_meta = {
+                "targetAlbum": result.get("targetAlbum") or {},
+                "album": result.get("album") or {},
+                "pagination": result.get("pagination") or {},
+            }
+        items = result.get("items") or []
+        refs += len(items)
+        for item in items:
+            goods_id = clean(item.get("goods_id"))
+            if not goods_id:
+                continue
+            if goods_id in summaries:
+                duplicate_refs += 1
+                continue
+            summaries[goods_id] = summarize_source_item(item)
+            ordered_ids.append(goods_id)
+
+        if pages == 1 or pages % 25 == 0:
+            elapsed = max(time.time() - started, 1)
+            print(
+                f"Global source scan page {pages}: unique {len(summaries)}; refs {refs}; rate {len(summaries)/elapsed:.2f}/s",
+                file=sys.stderr,
+                flush=True,
+            )
+            write_json(
+                "source_all_product_scan_checkpoint.json",
+                {
+                    "pages": pages,
+                    "uniqueProductsDiscovered": len(summaries),
+                    "productReferencesScanned": refs,
+                    "duplicateReferencesInGlobalFeed": duplicate_refs,
+                    "updatedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                },
+            )
+
+        pagination = result.get("pagination") or {}
+        if pagination.get("isLoadMore"):
+            pagination_exists = True
+        if not pagination.get("isLoadMore"):
+            break
+        slip_type = 1
+        timestamp = pagination.get("pageTimestamp") or 1
+
+    report = {
+        "source": "wecatalog",
+        "generatedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "storeUrl": client.store_url,
+        "publicStoreId": client.store_id,
+        "sourceDisplayedTotalProvidedByUser": expected_displayed_total,
+        "sourceApiTotalItemCount": first_meta.get("targetAlbum", {}).get("totalItemCount"),
+        "sourceApiNewItemCount": first_meta.get("targetAlbum", {}).get("newItemCount"),
+        "uniqueProductsDiscovered": len(summaries),
+        "productReferencesScanned": refs,
+        "duplicateReferencesInGlobalFeed": duplicate_refs,
+        "pages": pages,
+        "paginationExists": pagination_exists,
+        "allPagesDiscovered": True,
+        "firstPageMeta": first_meta,
+    }
+    write_json("source_all_product_ids.json", ordered_ids)
+    write_json("source_all_product_summaries.json", summaries)
+    write_json("source_all_product_scan_report.json", report)
+    return {"ids": ordered_ids, "summaries": summaries, "report": report}
+
+
+def ensure_global_products_in_discovery(discovery: dict[str, Any], all_scan: dict[str, Any]) -> dict[str, Any]:
+    discovery["productSummaries"].update(all_scan["summaries"])
+    return discovery
+
+
+def completeness_report(discovery: dict[str, Any], all_scan: dict[str, Any], products: list[dict[str, Any]], images: list[dict[str, Any]], failures: list[dict[str, Any]] | None = None) -> dict[str, Any]:
+    source_ids = set(all_scan["summaries"])
+    category_ids = set(discovery["productSummaries"])
+    category_index_ids = set(product_id for ids in discovery["productIndex"].values() for product_id in ids)
+    imported_ids = {clean(product.get("id") or product.get("albumId")) for product in products if clean(product.get("id") or product.get("albumId"))}
+    category_refs = sum(len(ids) for ids in discovery["productIndex"].values())
+    source_image_urls = [clean(image.get("sourceUrl") or image.get("localPath")) for image in images if clean(image.get("sourceUrl") or image.get("localPath"))]
+    products_without_images = [clean(product.get("id") or product.get("albumId")) for product in products if not product.get("galleryImages")]
+    report = {
+        "sourceDisplayedTotal": all_scan["report"].get("sourceDisplayedTotalProvidedByUser"),
+        "sourceApiTotalItemCount": all_scan["report"].get("sourceApiTotalItemCount"),
+        "sourceApiNewItemCount": all_scan["report"].get("sourceApiNewItemCount"),
+        "uniqueSourceProductsDiscovered": len(source_ids),
+        "uniqueProductsInCategoryTree": len(category_index_ids),
+        "productsImported": len(imported_ids),
+        "productsMissing": len(source_ids - imported_ids),
+        "missingProductIds": sorted(source_ids - imported_ids)[:1000],
+        "truncatedMissingProductIds": max(0, len(source_ids - imported_ids) - 1000),
+        "productsOutsideCategoryTree": len(source_ids - category_index_ids),
+        "productsOutsideCategoryTreeIds": sorted(source_ids - category_index_ids)[:1000],
+        "truncatedProductsOutsideCategoryTreeIds": max(0, len(source_ids - category_index_ids) - 1000),
+        "categoryOnlyProductIds": sorted(category_index_ids - source_ids)[:1000],
+        "truncatedCategoryOnlyProductIds": max(0, len(category_index_ids - source_ids) - 1000),
+        "duplicateReferences": category_refs - len(category_index_ids),
+        "globalFeedDuplicateReferences": all_scan["report"].get("duplicateReferencesInGlobalFeed", 0),
+        "totalGalleryImageUrlsDiscovered": len(source_image_urls),
+        "totalUniqueImages": len(set(source_image_urls)),
+        "imagesSuccessfullyImported": len(source_image_urls),
+        "missingFailedImages": len(products_without_images) + len(failures or []),
+        "productsWithoutImages": products_without_images[:1000],
+        "truncatedProductsWithoutImages": max(0, len(products_without_images) - 1000),
+        "failedProductDetails": len(failures or []),
+        "failedProductDetailIds": [failure.get("goodsId") for failure in (failures or [])[:1000]],
+        "sourceCategoryNodes": discovery["report"].get("totalCategoriesGroupsTags"),
+        "sourceGroups": discovery["report"].get("totalGroups"),
+        "sourceTags": discovery["report"].get("totalTags"),
+        "inaccessibleCategories": discovery["report"].get("inaccessibleCategories", []),
+        "pagination": {
+            "globalFeed": {
+                "pages": all_scan["report"].get("pages"),
+                "paginationExists": all_scan["report"].get("paginationExists"),
+                "allPagesDiscovered": all_scan["report"].get("allPagesDiscovered"),
+            },
+            "categories": discovery["report"].get("pagination", {}),
+        },
+    }
+    write_json("completeness_audit_report.json", report)
+    return report
 
 
 def map_tags_for_items(client: WeCatalogClient, tags: list[dict[str, Any]], item_ids: set[str], max_tags: int) -> dict[str, list[str]]:
@@ -1176,19 +1377,51 @@ def main() -> None:
     parser.add_argument("--discover-categories", action="store_true", help="Discover the full public WeCatalog source category/tag/group tree and product counts.")
     parser.add_argument("--category-test", action="store_true", help="After discovery, import a small test set selected from different source categories.")
     parser.add_argument("--full-category-import", action="store_true", help="Import all discovered accessible products using exact source category membership.")
+    parser.add_argument("--completeness-audit", action="store_true", help="Scan the global source feed, compare against imported products, and import missing public products.")
+    parser.add_argument("--expected-source-total", type=int, default=65648, help="Displayed source total to compare against during completeness audit.")
     parser.add_argument("--resume", action="store_true", help="Resume a previous full category import checkpoint.")
     parser.add_argument("--max-pages-per-category", type=int, default=0, help="Limit pages per category during discovery. 0 means discover all pages.")
     parser.add_argument("--workers", type=int, default=6, help="Concurrent public category requests during discovery.")
     args = parser.parse_args()
     if args.limit == 0:
         args.limit = None
+    if args.completeness_audit:
+        client = WeCatalogClient(args.store_url)
+        client.open_public_store()
+        existing_discovery = load_discovery_from_disk()
+        if existing_discovery and not args.discover_categories:
+            discovery = existing_discovery
+        else:
+            max_pages = args.max_pages_per_category or None
+            discovery = discover_source_categories(client, max_pages_per_category=max_pages, workers=args.workers)
+            discovery = preserve_existing_category_mappings(discovery, existing_discovery)
+            write_discovery(discovery)
+        all_scan = scan_all_source_products(client, expected_displayed_total=args.expected_source_total)
+        discovery = ensure_global_products_in_discovery(discovery, all_scan)
+        write_discovery(discovery)
+
+        products, images, failures, _ = load_full_import_checkpoint()
+        pre_report = completeness_report(discovery, all_scan, products, images, failures)
+        if pre_report["productsMissing"] > 0:
+            print(
+                f"Completeness audit found {pre_report['productsMissing']} missing products. Resuming import for missing IDs.",
+                file=sys.stderr,
+                flush=True,
+            )
+            run_full_category_import(client, discovery, download_images=not args.no_download_images, resume=True, workers=args.workers)
+            products, images, failures, _ = load_full_import_checkpoint()
+        final_report = completeness_report(discovery, all_scan, products, images, failures)
+        print(json.dumps(final_report, ensure_ascii=False, indent=2))
+        return
     if args.full_category_import:
         client = WeCatalogClient(args.store_url)
         client.open_public_store()
         discovery = load_discovery_from_disk()
         if discovery is None or args.discover_categories:
+            existing_discovery = load_discovery_from_disk()
             max_pages = args.max_pages_per_category or None
             discovery = discover_source_categories(client, max_pages_per_category=max_pages, workers=args.workers)
+            discovery = preserve_existing_category_mappings(discovery, existing_discovery)
             write_discovery(discovery)
         report = run_full_category_import(client, discovery, download_images=not args.no_download_images, resume=args.resume, workers=args.workers)
         print(json.dumps(report, ensure_ascii=False, indent=2))
