@@ -1,0 +1,28 @@
+{
+  "storeUrl": "https://www.wecatalog.cn/weshop/store/A202006301754324710116144?groupIds=&tagWayType=0",
+  "publicStoreId": "A202006301754324710116144",
+  "mode": "full-category-import",
+  "classificationRule": "1:1 copy from WeCatalog source category/tag/group membership. No title/image inference.",
+  "totalCategoriesGroupsTags": 256,
+  "totalGroups": 12,
+  "totalTags": 244,
+  "productsDiscovered": 65649,
+  "productsImported": 65649,
+  "imagesImported": 437544,
+  "localImagesDownloaded": 0,
+  "failed": 0,
+  "failures": [],
+  "truncatedFailures": 0,
+  "inaccessibleCategories": [
+    {
+      "categoryId": "tag:71652817",
+      "path": "高奢墨镜 > 香奈儿🕶️",
+      "error": "IncompleteRead(7853 bytes read)"
+    }
+  ],
+  "pagination": {
+    "categoriesWithPagination": 166,
+    "allPaginatedCategoriesFullyDiscovered": false,
+    "maxPagesPerCategory": null
+  }
+}
