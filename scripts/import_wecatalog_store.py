@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "wecatalog"
 APP_DATA_DIR = ROOT / "app" / "data"
 PUBLIC_DIR = ROOT / "public" / "wecatalog-gallery"
+PUBLIC_PRODUCT_SHARDS_DIR = ROOT / "public" / "product-shards"
 PUBLIC_PRICE_LABEL = "Price on Request"
 
 DEFAULT_STORE_URL = "https://www.wecatalog.cn/weshop/store/A202006301754324710116144?groupIds=&tagWayType=0"
@@ -1043,8 +1044,20 @@ def write_catalog_dataset(catalog: dict[str, Any], products: list[dict[str, Any]
     write_app_json("brands.json", catalog["brands"])
     write_app_json("collections.json", catalog["collections"])
     write_app_json("productIndex.json", app_product_index)
-    write_app_json("products.json", app_products)
     write_app_json("catalog.json", app_catalog)
+    PUBLIC_PRODUCT_SHARDS_DIR.mkdir(parents=True, exist_ok=True)
+    for old_shard in PUBLIC_PRODUCT_SHARDS_DIR.glob("*.json"):
+        old_shard.unlink()
+    shards: dict[str, list[dict[str, Any]]] = {}
+    for product in app_products:
+        match = re.search(r"\d+", clean(product.get("productNumber")))
+        shard = (match.group(0)[:3] if match else "misc") or "misc"
+        shards.setdefault(shard, []).append(product)
+    for shard, shard_products in shards.items():
+        (PUBLIC_PRODUCT_SHARDS_DIR / f"{shard}.json").write_text(
+            json.dumps(shard_products, ensure_ascii=False, separators=(",", ":")),
+            encoding="utf-8",
+        )
 
 
 def load_existing_products() -> list[dict[str, Any]]:
