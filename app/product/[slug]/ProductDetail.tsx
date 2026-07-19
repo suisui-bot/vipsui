@@ -6,7 +6,7 @@ import type { CatalogProduct } from "../../data/catalog";
 import { imagePath } from "../../data/catalog";
 
 export default function ProductDetail({ product }: { product: CatalogProduct }) {
-  const gallery = product.galleryImages.length > 0 ? product.galleryImages : [product.coverImage];
+  const gallery = product.galleryImages && product.galleryImages.length > 0 ? product.galleryImages : [product.coverImage];
   const [activeIndex, setActiveIndex] = useState(0);
   const [zoomOpen, setZoomOpen] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);

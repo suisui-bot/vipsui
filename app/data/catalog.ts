@@ -1,5 +1,5 @@
 import catalogData from "./catalog.json";
-import productsData from "./products.json";
+import productIndexData from "./productIndex.json";
 
 export type CatalogProduct = {
   albumId: string;
@@ -13,7 +13,7 @@ export type CatalogProduct = {
   categoryPath: string[];
   exactCategoryName: string;
   coverImage: string;
-  galleryImages: string[];
+  galleryImages?: string[];
   imageCount: number;
   yupooUrl: string;
   internalPrice: number | null;
@@ -62,13 +62,9 @@ export type Catalog = {
 };
 
 export const catalog = catalogData as Catalog;
-export const catalogProducts = productsData as CatalogProduct[];
+export const catalogProducts = productIndexData as CatalogProduct[];
 export const catalogBrands = catalog.brands;
 export const catalogCollections = catalog.collections;
-
-export function getProductBySlug(slug: string) {
-  return catalogProducts.find((product) => product.slug === slug);
-}
 
 export function imagePath(url: string) {
   return url;

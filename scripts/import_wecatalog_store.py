@@ -971,7 +971,7 @@ def write_json(name: str, payload: Any) -> None:
 
 def write_app_json(name: str, payload: Any) -> None:
     APP_DATA_DIR.mkdir(parents=True, exist_ok=True)
-    (APP_DATA_DIR / name).write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    (APP_DATA_DIR / name).write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
 def write_catalog_dataset(catalog: dict[str, Any], products: list[dict[str, Any]], images: list[dict[str, Any]], report: dict[str, Any]) -> None:
@@ -1007,6 +1007,33 @@ def write_catalog_dataset(catalog: dict[str, Any], products: list[dict[str, Any]
         }
         for product in products
     ]
+    app_product_index = [
+        {
+            "albumId": product.get("albumId"),
+            "slug": product.get("slug"),
+            "productNumber": product.get("productNumber"),
+            "brand": product.get("brand"),
+            "collection": product.get("collection"),
+            "series": product.get("series"),
+            "version": product.get("version"),
+            "categoryPath": product.get("categoryPath"),
+            "coverImage": product.get("coverImage"),
+            "imageCount": product.get("imageCount"),
+            "publicPriceLabel": product.get("publicPriceLabel"),
+            "searchText": " ".join(
+                str(value or "")
+                for value in [
+                    product.get("productNumber"),
+                    product.get("brand"),
+                    product.get("collection"),
+                    product.get("series"),
+                    product.get("version"),
+                    " ".join(product.get("categoryPath") or []),
+                ]
+            ).lower(),
+        }
+        for product in products
+    ]
     app_catalog = {
         key: value
         for key, value in catalog.items()
@@ -1015,6 +1042,7 @@ def write_catalog_dataset(catalog: dict[str, Any], products: list[dict[str, Any]
     app_catalog["products"] = []
     write_app_json("brands.json", catalog["brands"])
     write_app_json("collections.json", catalog["collections"])
+    write_app_json("productIndex.json", app_product_index)
     write_app_json("products.json", app_products)
     write_app_json("catalog.json", app_catalog)
 

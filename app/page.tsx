@@ -90,12 +90,12 @@ export default function Home() {
 
         <div className="relative mx-auto grid min-h-[calc(92vh-4rem)] max-w-7xl items-end gap-10 px-4 pb-14 sm:px-6 lg:grid-cols-[0.78fr_0.52fr] lg:px-8 lg:pb-20">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.56em] text-[#d6b45a]">Yupoo master catalog</p>
+            <p className="text-xs uppercase tracking-[0.56em] text-[#d6b45a]">WeCatalog source catalog</p>
             <h1 className="mt-5 max-w-4xl text-5xl font-semibold leading-[0.98] text-white sm:text-7xl lg:text-8xl">
               {catalog.stats.totalProducts} watches, structured by collection.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-[#d9d0bd] sm:text-lg">
-              VIPSUI now follows the Yupoo hierarchy: brand, collection, series, version, and complete product galleries.
+              VIPSUI now follows the WeCatalog hierarchy: source category, brand, collection, and complete product galleries.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
