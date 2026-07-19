@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { CatalogProduct } from "../../data/catalog";
-import { imagePath } from "../../data/catalog";
+import { imagePath } from "../../data/images";
 
 export default function ProductDetail({ product }: { product: CatalogProduct }) {
   const gallery = product.galleryImages && product.galleryImages.length > 0 ? product.galleryImages : [product.coverImage];

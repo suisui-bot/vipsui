@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { catalog, catalogBrands, catalogProducts, imagePath } from "./data/catalog";
+import { catalog, catalogBrands, catalogProducts } from "./data/catalog";
+import { imagePath } from "./data/images";
 
 const allOption = "All";
 const visibleProductLimit = 180;

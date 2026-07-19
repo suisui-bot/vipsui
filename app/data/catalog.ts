@@ -65,7 +65,3 @@ export const catalog = catalogData as Catalog;
 export const catalogProducts = productIndexData as CatalogProduct[];
 export const catalogBrands = catalog.brands;
 export const catalogCollections = catalog.collections;
-
-export function imagePath(url: string) {
-  return url;
-}
