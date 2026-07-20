@@ -153,8 +153,13 @@ export default function ShopClient() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {visibleProducts.map((product, index) => (
             <Link key={product.albumId} href={`/product/${product.slug}`} className="group rounded-[24px] bg-white p-3 ring-1 ring-[#d2d2d7]/70 transition hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.10)]">
-              <div className="aspect-[4/5] overflow-hidden rounded-[20px] bg-[#f5f5f7]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[20px] bg-[#f5f5f7]">
                 <img src={imagePath(product.coverImage)} alt={product.productNumber} loading={index < 8 ? "eager" : "lazy"} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                {product.hasVideo && (
+                  <span className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-black/70 text-xs text-white backdrop-blur">
+                    ▶
+                  </span>
+                )}
               </div>
               <div className="px-2 py-4">
                 <p className="truncate text-xs font-medium text-[#6e6e73]">{displayPath(product.categoryPath)}</p>

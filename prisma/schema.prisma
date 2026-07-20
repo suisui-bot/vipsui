@@ -1,0 +1,168 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id           String         @id
+  email        String         @unique
+  name         String
+  passwordHash String         @map("password_hash")
+  role         String         @default("admin")
+  active       Boolean        @default(true)
+  createdAt    DateTime       @default(now()) @map("created_at")
+  updatedAt    DateTime       @updatedAt @map("updated_at")
+  sessions     AdminSession[]
+
+  @@map("admin_users")
+}
+
+model AdminSession {
+  id        String    @id
+  userId    String    @map("user_id")
+  tokenHash String    @unique @map("token_hash")
+  expiresAt DateTime  @map("expires_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+  revokedAt DateTime? @map("revoked_at")
+  user      AdminUser @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("admin_sessions")
+}
+
+model Customer {
+  id        String       @id
+  name      String
+  country   String
+  whatsapp  String?
+  email     String?
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+  orders    QuickOrder[]
+
+  @@map("customers")
+}
+
+model QuickOrder {
+  id            String      @id
+  orderNumber   String      @unique @map("order_number")
+  checkoutToken String      @unique @map("checkout_token")
+  customerId    String      @map("customer_id")
+  subtotal      Float
+  shipping      Float
+  discount      Float
+  total         Float
+  currency      String      @default("USD")
+  paymentStatus String      @default("unpaid") @map("payment_status")
+  orderStatus   String      @default("awaiting_payment") @map("order_status")
+  paidAt        DateTime?   @map("paid_at")
+  createdAt     DateTime    @default(now()) @map("created_at")
+  updatedAt     DateTime    @updatedAt @map("updated_at")
+  customer      Customer    @relation(fields: [customerId], references: [id])
+  items         OrderItem[]
+  payments      Payment[]
+  auditLogs     PaymentAuditLog[]
+
+  @@index([customerId])
+  @@index([paymentStatus])
+  @@index([orderStatus])
+  @@map("quick_orders")
+}
+
+model OrderItem {
+  id            String     @id
+  orderId       String     @map("order_id")
+  productId     String?    @map("product_id")
+  image         String
+  name          String
+  productNumber String     @map("product_number")
+  specs         String
+  quantity      Int
+  unitPrice     Float      @map("unit_price")
+  order         QuickOrder @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@map("order_items")
+}
+
+model PaymentProvider {
+  providerName               String   @id @map("provider_name")
+  providerType               String   @map("provider_type")
+  enabled                    Boolean  @default(false)
+  displayName                String   @map("display_name")
+  description                String
+  paymentInstructions        String   @map("payment_instructions")
+  supportsAutoConfirmation   Boolean  @default(false) @map("supports_auto_confirmation")
+  supportsRefund             Boolean  @default(false) @map("supports_refund")
+  supportsWebhook            Boolean  @default(false) @map("supports_webhook")
+  environment                String
+  configurationStatus        String   @map("configuration_status")
+  allowedCountries           Json     @default("[\"ALL\"]") @map("allowed_countries")
+  publicConfig               Json     @default("{}") @map("public_config")
+  secretPreview              Json?    @map("secret_preview")
+  createdAt                  DateTime @default(now()) @map("created_at")
+  updatedAt                  DateTime @updatedAt @map("updated_at")
+
+  @@map("payment_providers")
+}
+
+model Payment {
+  id                         String            @id
+  orderId                    String            @map("order_id")
+  provider                   String
+  providerPaymentId          String?           @map("provider_payment_id")
+  providerOrderId            String?           @map("provider_order_id")
+  paymentMethod              String            @map("payment_method")
+  amount                     Float
+  currency                   String            @default("USD")
+  status                     String
+  manualVerificationRequired Boolean           @default(false) @map("manual_verification_required")
+  submittedAt                DateTime?         @map("submitted_at")
+  verifiedAt                 DateTime?         @map("verified_at")
+  verifiedBy                 String?           @map("verified_by")
+  failedReason               String?           @map("failed_reason")
+  metadata                   Json              @default("{}")
+  createdAt                  DateTime          @default(now()) @map("created_at")
+  updatedAt                  DateTime          @updatedAt @map("updated_at")
+  order                      QuickOrder        @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  auditLogs                  PaymentAuditLog[]
+
+  @@unique([provider, providerOrderId])
+  @@index([orderId])
+  @@index([provider])
+  @@index([status])
+  @@map("payments")
+}
+
+model PaymentAuditLog {
+  id             String     @id
+  paymentId      String     @map("payment_id")
+  orderId        String     @map("order_id")
+  action         String
+  performedBy    String     @map("performed_by")
+  previousStatus String     @map("previous_status")
+  newStatus      String     @map("new_status")
+  notes          String?
+  createdAt      DateTime   @default(now()) @map("created_at")
+  payment        Payment    @relation(fields: [paymentId], references: [id], onDelete: Cascade)
+  order          QuickOrder @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([paymentId])
+  @@index([orderId])
+  @@map("payment_audit_logs")
+}
+
+model ProcessedWebhook {
+  id          String   @id
+  provider    String
+  processedAt DateTime @default(now()) @map("processed_at")
+  payload     Json?
+
+  @@index([provider])
+  @@map("processed_webhooks")
+}

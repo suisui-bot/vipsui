@@ -14,7 +14,16 @@ export type CatalogProduct = {
   exactCategoryName: string;
   coverImage: string;
   galleryImages?: string[];
+  galleryMedia?: Array<{
+    type: "image" | "video";
+    url: string;
+    poster?: string;
+    sourceMediaId?: string;
+  }>;
   imageCount: number;
+  videoCount?: number;
+  mediaCount?: number;
+  hasVideo?: boolean;
   yupooUrl: string;
   internalPrice: number | null;
   publicPriceLabel: "Price on Request";
@@ -49,6 +58,8 @@ export type Catalog = {
     totalCollections: number;
     totalProducts: number;
     totalImages: number;
+    totalVideos?: number;
+    productsContainingVideos?: number;
     unassignedProducts: number;
     publicCategories: number;
     sourceGroups: number;

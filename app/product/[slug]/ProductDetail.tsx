@@ -8,14 +8,23 @@ import { displayLabel, displayPath } from "../../data/display";
 import { imagePath } from "../../data/images";
 
 export default function ProductDetail({ product }: { product: CatalogProduct }) {
-  const gallery = product.galleryImages && product.galleryImages.length > 0 ? product.galleryImages : [product.coverImage];
+  const gallery =
+    product.galleryMedia && product.galleryMedia.length > 0
+      ? product.galleryMedia
+      : (product.galleryImages && product.galleryImages.length > 0 ? product.galleryImages : [product.coverImage]).map((url) => ({
+          type: "image" as const,
+          url,
+          sourceMediaId: url,
+        }));
   const [activeIndex, setActiveIndex] = useState(0);
   const [zoomOpen, setZoomOpen] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
-  const activeImage = gallery[activeIndex] ?? product.coverImage;
+  const activeMedia = gallery[activeIndex] ?? gallery[0];
+  const activeImage = activeMedia?.type === "video" ? activeMedia.poster || product.coverImage : activeMedia?.url || product.coverImage;
   const canMove = gallery.length > 1;
   const category = displayPath(product.categoryPath);
   const collection = displayLabel(product.collection);
+  const videoCount = product.videoCount || gallery.filter((item) => item.type === "video").length;
 
   function showPrevious() {
     setActiveIndex((current) => (current === 0 ? gallery.length - 1 : current - 1));
@@ -50,10 +59,27 @@ export default function ProductDetail({ product }: { product: CatalogProduct }) 
             onTouchStart={(event) => setTouchStart(event.touches[0]?.clientX ?? null)}
             onTouchEnd={(event) => handleTouchEnd(event.changedTouches[0]?.clientX ?? 0)}
           >
-            <img src={imagePath(activeImage)} alt={product.productNumber} className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]" />
+            {activeMedia?.type === "video" ? (
+              <video
+                key={activeMedia.url}
+                src={activeMedia.url}
+                poster={imagePath(activeMedia.poster || product.coverImage)}
+                controls
+                playsInline
+                preload="metadata"
+                className="h-full w-full bg-black object-contain"
+              />
+            ) : (
+              <img src={imagePath(activeImage)} alt={product.productNumber} className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]" />
+            )}
             <div className="absolute left-4 top-4 rounded-full bg-white/86 px-3 py-2 text-xs font-semibold text-[#1d1d1f] backdrop-blur">
               {activeIndex + 1} / {gallery.length}
             </div>
+            {activeMedia?.type === "video" && (
+              <div className="absolute right-4 top-4 rounded-full bg-black/70 px-3 py-2 text-xs font-semibold text-white backdrop-blur">
+                Video
+              </div>
+            )}
             <button
               type="button"
               onClick={() => setZoomOpen(true)}
@@ -74,19 +100,27 @@ export default function ProductDetail({ product }: { product: CatalogProduct }) 
           </div>
 
           <div className="mt-4 flex gap-3 overflow-x-auto pb-2 [-webkit-overflow-scrolling:touch]">
-            {gallery.map((image, index) => (
+            {gallery.map((media, index) => {
+              const thumb = media.type === "video" ? media.poster || product.coverImage : media.url;
+              return (
               <button
-                key={`${image}-${index}`}
+                key={`${media.type}-${media.url}-${index}`}
                 type="button"
-                aria-label={`View image ${index + 1}`}
+                aria-label={`View ${media.type} ${index + 1}`}
                 onClick={() => setActiveIndex(index)}
                 className={`relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl bg-white ring-2 transition sm:h-24 sm:w-24 ${
                   activeIndex === index ? "ring-[#1d1d1f]" : "ring-transparent hover:ring-[#d2d2d7]"
                 }`}
               >
-                <img src={imagePath(image)} alt="" loading="lazy" className="h-full w-full object-cover" />
+                <img src={imagePath(thumb)} alt="" loading="lazy" className="h-full w-full object-cover" />
+                {media.type === "video" && (
+                  <span className="absolute inset-0 flex items-center justify-center bg-black/18 text-white">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black/70 text-xs">▶</span>
+                  </span>
+                )}
               </button>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -100,7 +134,7 @@ export default function ProductDetail({ product }: { product: CatalogProduct }) 
           {product.description && <p className="mt-6 max-w-xl whitespace-pre-line text-base leading-8 text-[#6e6e73]">{product.description}</p>}
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            <Info label="Gallery" value={`${gallery.length} images`} />
+            <Info label="Gallery" value={videoCount ? `${product.imageCount} images · ${videoCount} videos` : `${gallery.length} images`} />
             <Info label="Category" value={category} />
             <Info label="Collection" value={collection} />
             <Info label="Availability" value="Ask us" />
@@ -154,7 +188,19 @@ export default function ProductDetail({ product }: { product: CatalogProduct }) 
             </>
           )}
           <div className="flex h-full w-full items-center justify-center p-4 sm:p-8">
-            <img src={imagePath(activeImage)} alt={product.productNumber} className="max-h-full max-w-full object-contain" />
+            {activeMedia?.type === "video" ? (
+              <video
+                key={activeMedia.url}
+                src={activeMedia.url}
+                poster={imagePath(activeMedia.poster || product.coverImage)}
+                controls
+                playsInline
+                autoPlay
+                className="max-h-full max-w-full bg-black object-contain"
+              />
+            ) : (
+              <img src={imagePath(activeImage)} alt={product.productNumber} className="max-h-full max-w-full object-contain" />
+            )}
           </div>
         </div>
       )}
