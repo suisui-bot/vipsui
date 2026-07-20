@@ -48,10 +48,10 @@ export default function ProductDetailLoader({ slug }: { slug: string }) {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#050604] px-6 text-center text-[#f7f0df]">
+    <main className="flex min-h-screen items-center justify-center bg-[#f5f5f7] px-6 text-center text-[#1d1d1f]">
       <div>
-        <p className="text-xs uppercase tracking-[0.54em] text-[#d6b45a]">VIPSUI</p>
-        <h1 className="mt-5 text-3xl font-semibold text-white">{missing ? "Product unavailable" : "Loading product"}</h1>
+        <p className="text-xs font-semibold tracking-[0.28em]">VIPSUI</p>
+        <h1 className="mt-5 text-3xl font-semibold">{missing ? "Product unavailable" : "Loading product"}</h1>
       </div>
     </main>
   );
