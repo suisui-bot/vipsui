@@ -6,22 +6,57 @@
   "totalCategoriesGroupsTags": 256,
   "totalGroups": 12,
   "totalTags": 244,
-  "productsDiscovered": 65649,
-  "productsImported": 65649,
-  "imagesImported": 437544,
+  "productsDiscovered": 65752,
+  "productsImported": 65752,
+  "imagesImported": 438290,
   "localImagesDownloaded": 0,
   "failed": 0,
   "failures": [],
   "truncatedFailures": 0,
   "inaccessibleCategories": [
     {
-      "categoryId": "tag:71652817",
-      "path": "高奢墨镜 > 香奈儿🕶️",
+      "categoryId": "tag:71650455",
+      "path": "高奢女装 > MiuMiu",
+      "error": "IncompleteRead(73389 bytes read)"
+    },
+    {
+      "categoryId": "tag:71650457",
+      "path": "高奢服饰 > 裤子",
+      "error": "IncompleteRead(73389 bytes read)"
+    },
+    {
+      "categoryId": "tag:71652615",
+      "path": "高奢饰品 > 古驰GUCCI",
+      "error": "IncompleteRead(7803 bytes read)"
+    },
+    {
+      "categoryId": "tag:71650438",
+      "path": "高奢名包 > 香奈儿",
+      "error": "IncompleteRead(7803 bytes read)"
+    },
+    {
+      "categoryId": "tag:71650440",
+      "path": "高奢名包 > 路易威登",
+      "error": "IncompleteRead(7803 bytes read)"
+    },
+    {
+      "categoryId": "tag:71652129",
+      "path": "高定女鞋 > 古驰 拖鞋",
+      "error": "IncompleteRead(7853 bytes read)"
+    },
+    {
+      "categoryId": "tag:71655766",
+      "path": "高端腕表 > 劳力士",
+      "error": "IncompleteRead(73389 bytes read)"
+    },
+    {
+      "categoryId": "tag:71655851",
+      "path": "高端腕表 > 理查德·米勒",
       "error": "IncompleteRead(7853 bytes read)"
     }
   ],
   "pagination": {
-    "categoriesWithPagination": 166,
+    "categoriesWithPagination": 159,
     "allPaginatedCategoriesFullyDiscovered": false,
     "maxPagesPerCategory": null
   }
