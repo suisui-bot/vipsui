@@ -23,7 +23,7 @@ function clean(value) {
 
 function decodeSupplierCostRMB(productNumber) {
   const digits = clean(productNumber).replace(/\D/g, "");
-  if (digits.length === 6 || digits.length === 7) return Number(digits.slice(2, 5));
+  if (digits.length === 7) return Number(digits.slice(2, 5));
   if (digits.length === 8) return Number(digits.slice(2, 6));
   return null;
 }
@@ -34,7 +34,8 @@ function roundCustomerPriceUSD(rawSellingPriceUSD) {
 }
 
 function calculatePrice(product, settings, calculatedAt) {
-  const supplierCostRMB = decodeSupplierCostRMB(product.productNumber);
+  if (product.verifiedYupooImageMatch !== true || product.validSupplierNumericCode !== true) return null;
+  const supplierCostRMB = decodeSupplierCostRMB(product.matchedYupooNumericCode || "");
   if (!supplierCostRMB || supplierCostRMB <= 0) return null;
 
   const baseCostRMB = supplierCostRMB + settings.shippingCostRMB + settings.packagingCostRMB;

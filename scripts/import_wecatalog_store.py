@@ -1009,7 +1009,7 @@ def load_watch_pricing_settings() -> dict[str, Any]:
 
 def decode_supplier_cost_rmb(product_number: str) -> int | None:
     digits = re.sub(r"\D", "", product_number)
-    if len(digits) in {6, 7}:
+    if len(digits) == 7:
         return int(digits[2:5])
     if len(digits) == 8:
         return int(digits[2:6])
@@ -1060,10 +1060,22 @@ def apply_watch_pricing(product: dict[str, Any]) -> None:
         return
     if product.get("priceLocked") is True:
         return
-    breakdown = calculate_watch_price(clean(product.get("productNumber")), load_watch_pricing_settings())
-    if not breakdown:
+    if not (
+        product.get("verifiedYupooImageMatch") is True
+        and product.get("validSupplierNumericCode") is True
+        and clean(product.get("matchedYupooNumericCode"))
+    ):
+        product["internalPrice"] = None
+        product["publicPriceLabel"] = PUBLIC_PRICE_LABEL
         product["pricingStatus"] = "needs_review"
-        product["pricingSource"] = "unpriced"
+        product["pricingSource"] = "unverified_no_yupoo_match"
+        return
+    breakdown = calculate_watch_price(clean(product.get("matchedYupooNumericCode")), load_watch_pricing_settings())
+    if not breakdown:
+        product["internalPrice"] = None
+        product["publicPriceLabel"] = PUBLIC_PRICE_LABEL
+        product["pricingStatus"] = "needs_review"
+        product["pricingSource"] = "invalid_yupoo_supplier_code"
         return
     product["internalPrice"] = breakdown["finalSellingPriceUSD"]
     product["publicPriceLabel"] = f"${breakdown['finalSellingPriceUSD']}"

@@ -59,7 +59,7 @@ export function normalizePricingSettings(input: Partial<PricingSettings> = {}): 
 
 export function decodeSupplierCostRMB(productNumber: string) {
   const digits = productNumber.replace(/\D/g, "");
-  if (digits.length === 6 || digits.length === 7) return Number(digits.slice(2, 5));
+  if (digits.length === 7) return Number(digits.slice(2, 5));
   if (digits.length === 8) return Number(digits.slice(2, 6));
   return null;
 }
