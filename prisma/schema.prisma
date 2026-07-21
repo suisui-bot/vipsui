@@ -157,6 +157,22 @@ model PaymentAuditLog {
   @@map("payment_audit_logs")
 }
 
+model PricingSetting {
+  scope                     String   @id
+  shippingCostRMB           Float    @default(100) @map("shipping_cost_rmb")
+  packagingCostRMB          Float    @default(10) @map("packaging_cost_rmb")
+  paymentFeePercent         Float    @default(4.5) @map("payment_fee_percent")
+  exchangeRateBufferPercent Float    @default(2) @map("exchange_rate_buffer_percent")
+  riskReservePercent        Float    @default(5) @map("risk_reserve_percent")
+  exchangeRateRMBPerUSD     Float    @default(7.2) @map("exchange_rate_rmb_per_usd")
+  profitMultiplier          Float    @default(1.45) @map("profit_multiplier")
+  paymentFeeModel           String   @default("cost_reserve") @map("payment_fee_model")
+  createdAt                 DateTime @default(now()) @map("created_at")
+  updatedAt                 DateTime @updatedAt @map("updated_at")
+
+  @@map("pricing_settings")
+}
+
 model ProcessedWebhook {
   id          String   @id
   provider    String

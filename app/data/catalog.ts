@@ -26,7 +26,12 @@ export type CatalogProduct = {
   hasVideo?: boolean;
   yupooUrl: string;
   internalPrice: number | null;
-  publicPriceLabel: "Price on Request";
+  publicPriceLabel: string;
+  pricingStatus?: "priced" | "needs_review";
+  pricingSource?: string;
+  priceLocked?: boolean;
+  pricingCalculatedAt?: string;
+  matchConfidence?: string;
   description: string;
   specs: string[];
   size: string;

@@ -48,6 +48,9 @@ export default async function AdminDashboardPage() {
             <Link href="/admin/settings/payments" className="rounded-full bg-white px-5 py-3 text-sm font-semibold ring-1 ring-[#d2d2d7]">
               Payment Settings
             </Link>
+            <Link href="/admin/settings/pricing" className="rounded-full bg-white px-5 py-3 text-sm font-semibold ring-1 ring-[#d2d2d7]">
+              Pricing Settings
+            </Link>
             <Link href="/checkout/demo-checkout" className="rounded-full bg-[#1d1d1f] px-5 py-3 text-sm font-semibold text-white">
               Demo Checkout
             </Link>

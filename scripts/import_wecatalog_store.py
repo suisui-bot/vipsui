@@ -20,7 +20,9 @@ DATA_DIR = ROOT / "data" / "wecatalog"
 APP_DATA_DIR = ROOT / "app" / "data"
 PUBLIC_DIR = ROOT / "public" / "wecatalog-gallery"
 PUBLIC_PRODUCT_SHARDS_DIR = ROOT / "public" / "product-shards"
+PRICING_SETTINGS_PATH = ROOT / "data" / "pricing" / "default-watch-pricing-settings.json"
 PUBLIC_PRICE_LABEL = "Price on Request"
+WATCH_TOP_CATEGORY = "高端腕表"
 
 DEFAULT_STORE_URL = "https://www.wecatalog.cn/weshop/store/A202006301754324710116144?groupIds=&tagWayType=0"
 USER_AGENT = "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 MicroMessenger/8.0"
@@ -985,6 +987,93 @@ def price_payload(commodity: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def load_watch_pricing_settings() -> dict[str, Any]:
+    defaults = {
+        "shippingCostRMB": 100,
+        "packagingCostRMB": 10,
+        "paymentFeePercent": 4.5,
+        "exchangeRateBufferPercent": 2,
+        "riskReservePercent": 5,
+        "exchangeRateRMBPerUSD": 7.2,
+        "profitMultiplier": 1.45,
+        "paymentFeeModel": "cost_reserve",
+    }
+    if not PRICING_SETTINGS_PATH.exists():
+        return defaults
+    try:
+        loaded = json.loads(PRICING_SETTINGS_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return defaults
+    return {**defaults, **loaded}
+
+
+def decode_supplier_cost_rmb(product_number: str) -> int | None:
+    digits = re.sub(r"\D", "", product_number)
+    if len(digits) in {6, 7}:
+        return int(digits[2:5])
+    if len(digits) == 8:
+        return int(digits[2:6])
+    return None
+
+
+def round_customer_price_usd(raw_selling_price_usd: float) -> int:
+    minimum = int(raw_selling_price_usd) if raw_selling_price_usd == int(raw_selling_price_usd) else int(raw_selling_price_usd) + 1
+    return ((minimum + 1 + 9) // 10) * 10 - 1
+
+
+def calculate_watch_price(product_number: str, settings: dict[str, Any]) -> dict[str, Any] | None:
+    supplier_cost_rmb = decode_supplier_cost_rmb(product_number)
+    if not supplier_cost_rmb:
+        return None
+    base_cost_rmb = supplier_cost_rmb + float(settings["shippingCostRMB"]) + float(settings["packagingCostRMB"])
+    operating_reserve_percent = (
+        float(settings["paymentFeePercent"])
+        + float(settings["exchangeRateBufferPercent"])
+        + float(settings["riskReservePercent"])
+    ) / 100
+    adjusted_cost_rmb = base_cost_rmb * (1 + operating_reserve_percent)
+    raw_selling_price_usd = adjusted_cost_rmb * float(settings["profitMultiplier"]) / float(settings["exchangeRateRMBPerUSD"])
+    final_selling_price_usd = round_customer_price_usd(raw_selling_price_usd)
+    calculated_at = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    return {
+        "supplierCostRMB": supplier_cost_rmb,
+        "shippingCostRMB": float(settings["shippingCostRMB"]),
+        "packagingCostRMB": float(settings["packagingCostRMB"]),
+        "paymentFeePercent": float(settings["paymentFeePercent"]),
+        "exchangeRateBufferPercent": float(settings["exchangeRateBufferPercent"]),
+        "riskReservePercent": float(settings["riskReservePercent"]),
+        "operatingReservePercent": operating_reserve_percent,
+        "baseCostRMB": base_cost_rmb,
+        "adjustedCostRMB": adjusted_cost_rmb,
+        "exchangeRateRMBPerUSD": float(settings["exchangeRateRMBPerUSD"]),
+        "profitMultiplier": float(settings["profitMultiplier"]),
+        "rawSellingPriceUSD": raw_selling_price_usd,
+        "finalSellingPriceUSD": final_selling_price_usd,
+        "pricingSource": "source_numeric_code",
+        "pricingCalculatedAt": calculated_at,
+        "matchConfidence": "source_numeric_code",
+    }
+
+
+def apply_watch_pricing(product: dict[str, Any]) -> None:
+    if not (product.get("categoryPath") or [""])[0] == WATCH_TOP_CATEGORY:
+        return
+    if product.get("priceLocked") is True:
+        return
+    breakdown = calculate_watch_price(clean(product.get("productNumber")), load_watch_pricing_settings())
+    if not breakdown:
+        product["pricingStatus"] = "needs_review"
+        product["pricingSource"] = "unpriced"
+        return
+    product["internalPrice"] = breakdown["finalSellingPriceUSD"]
+    product["publicPriceLabel"] = f"${breakdown['finalSellingPriceUSD']}"
+    product["pricingStatus"] = "priced"
+    product["pricingSource"] = breakdown["pricingSource"]
+    product["pricingCalculatedAt"] = breakdown["pricingCalculatedAt"]
+    product["matchConfidence"] = breakdown["matchConfidence"]
+    product["pricingBreakdownInternal"] = breakdown
+
+
 def source_url(store_id: str, goods_id: str) -> str:
     return f"https://www.wecatalog.cn/weshop/goods/{store_id}/{goods_id}"
 
@@ -1096,6 +1185,7 @@ def build_product(
         },
         "searchText": " ".join([product_number, title, brand, collection, series, " ".join(category["sourceName"] for category in source_categories)]).lower(),
     }
+    apply_watch_pricing(product)
     return product, image_records
 
 
@@ -1201,6 +1291,11 @@ def write_catalog_dataset(catalog: dict[str, Any], products: list[dict[str, Any]
             "yupooUrl": product.get("yupooUrl"),
             "internalPrice": product.get("internalPrice"),
             "publicPriceLabel": product.get("publicPriceLabel"),
+            "pricingStatus": product.get("pricingStatus"),
+            "pricingSource": product.get("pricingSource"),
+            "priceLocked": product.get("priceLocked", False),
+            "pricingCalculatedAt": product.get("pricingCalculatedAt"),
+            "matchConfidence": product.get("matchConfidence"),
             "description": product.get("description"),
             "specs": product.get("specs"),
             "size": product.get("size"),
@@ -1222,6 +1317,12 @@ def write_catalog_dataset(catalog: dict[str, Any], products: list[dict[str, Any]
             "coverImage": product.get("coverImage"),
             "imageCount": product.get("imageCount"),
             "publicPriceLabel": product.get("publicPriceLabel"),
+            "internalPrice": product.get("internalPrice"),
+            "pricingStatus": product.get("pricingStatus"),
+            "pricingSource": product.get("pricingSource"),
+            "priceLocked": product.get("priceLocked", False),
+            "pricingCalculatedAt": product.get("pricingCalculatedAt"),
+            "matchConfidence": product.get("matchConfidence"),
             "searchText": " ".join(
                 str(value or "")
                 for value in [

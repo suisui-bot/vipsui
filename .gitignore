@@ -24,6 +24,10 @@
 /data/wecatalog/
 /public/wecatalog-gallery/
 
+# internal pricing reports
+/data/pricing/watch-price-breakdowns.json
+/data/pricing/watch-pricing-pilot-report.json
+
 # misc
 .DS_Store
 *.pem

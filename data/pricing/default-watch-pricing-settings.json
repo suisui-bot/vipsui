@@ -1,0 +1,11 @@
+{
+  "scope": "watches",
+  "shippingCostRMB": 100,
+  "packagingCostRMB": 10,
+  "paymentFeePercent": 4.5,
+  "exchangeRateBufferPercent": 2,
+  "riskReservePercent": 5,
+  "exchangeRateRMBPerUSD": 7.2,
+  "profitMultiplier": 1.45,
+  "paymentFeeModel": "cost_reserve"
+}

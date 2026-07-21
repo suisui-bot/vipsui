@@ -25,6 +25,7 @@ export default function ProductDetail({ product }: { product: CatalogProduct }) 
   const category = displayPath(product.categoryPath);
   const collection = displayLabel(product.collection);
   const videoCount = product.videoCount || gallery.filter((item) => item.type === "video").length;
+  const hasPublicPrice = product.publicPriceLabel.startsWith("$");
 
   function showPrevious() {
     setActiveIndex((current) => (current === 0 ? gallery.length - 1 : current - 1));
@@ -148,10 +149,14 @@ export default function ProductDetail({ product }: { product: CatalogProduct }) 
               Contact on WhatsApp
             </a>
             <a
-              href={`https://wa.me/8617336648172?text=${encodeURIComponent(`Hello, please share the price for product ${product.productNumber}.`)}`}
+              href={`https://wa.me/8617336648172?text=${encodeURIComponent(
+                hasPublicPrice
+                  ? `Hello, I am interested in product ${product.productNumber} listed at ${product.publicPriceLabel}.`
+                  : `Hello, please share the price for product ${product.productNumber}.`,
+              )}`}
               className="rounded-full bg-white px-6 py-4 text-center text-sm font-semibold text-[#1d1d1f] ring-1 ring-[#d2d2d7] transition hover:ring-[#1d1d1f]"
             >
-              Ask for Price
+              {hasPublicPrice ? "Ask About This Watch" : "Ask for Price"}
             </a>
           </div>
         </aside>
