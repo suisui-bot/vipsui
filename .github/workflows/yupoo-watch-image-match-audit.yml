@@ -1,0 +1,91 @@
+name: Yupoo Watch Image Match Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/yupoo_watch_image_match_audit.py"
+      - ".github/workflows/yupoo-watch-image-match-audit.yml"
+      - "data/products.json"
+      - "app/data/productIndex.json"
+      - "public/yupoo-gallery/**"
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install image matching dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pillow imagehash numpy scipy PyWavelets
+
+      - name: Run Yupoo watch image matching audit
+        run: |
+          mkdir -p data/pricing
+          python scripts/yupoo_watch_image_match_audit.py > data/pricing/yupoo-watch-image-match-audit-run.log
+
+      - name: Summarize audit
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report_path = Path("data/pricing/yupoo-watch-image-match-audit-report.json")
+          summary_path = Path("data/pricing/yupoo-watch-image-match-audit-summary.md")
+
+          if not report_path.exists():
+              summary = "# Yupoo Watch Image Match Audit\n\nAudit report was not generated.\n"
+          else:
+              report = json.loads(report_path.read_text())
+              rows = report.get("verifiedMatches", [])[:20]
+              lines = [
+                  "# Yupoo Watch Image Match Audit",
+                  "",
+                  f"- Yupoo displayed total: {report.get('yupooSourceAudit', {}).get('displayedTotal')}",
+                  f"- Yupoo products in matching pool: {report.get('yupooProducts')}",
+                  f"- Yupoo image features: {report.get('yupooImageFeatures')}",
+                  f"- Audited VIPSUI Watches: {report.get('auditedWatches')}",
+                  f"- Verified high-confidence matches: {report.get('verifiedHighConfidenceMatches')}",
+                  f"- Needs review: {report.get('needsReview')}",
+                  "",
+                  "## First Verified Matches",
+                  "",
+              ]
+              if rows:
+                  lines.append("| VIPSUI product | Yupoo product | Similarity | Confidence |")
+                  lines.append("| --- | --- | ---: | --- |")
+                  for row in rows:
+                      lines.append(
+                          f"| {row.get('vipsuiProductNumber')} | {row.get('possibleYupooMatch')} | "
+                          f"{row.get('similarityScore')} | {row.get('confidence')} |"
+                      )
+              else:
+                  lines.append("No high-confidence matches passed the safety threshold.")
+              summary = "\n".join(lines) + "\n"
+          summary_path.write_text(summary)
+          print(summary)
+          PY
+
+      - name: Upload audit artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yupoo-watch-image-match-audit
+          path: |
+            data/pricing/yupoo-watch-image-match-audit-report.json
+            data/pricing/yupoo-watch-image-match-audit-summary.md
+            data/pricing/yupoo-watch-image-match-audit-run.log
+          if-no-files-found: warn

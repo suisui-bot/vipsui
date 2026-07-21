@@ -27,6 +27,7 @@
 # internal pricing reports
 /data/pricing/watch-price-breakdowns.json
 /data/pricing/watch-pricing-pilot-report.json
+/data/pricing/yupoo-watch-image-match-audit-report.json
 /data/pricing/yupoo-watch-image-match-pilot-report.json
 /data/pricing/yupoo-watch-image-match-cache/
 
