@@ -8,25 +8,50 @@
   "totalTags": 244,
   "productsDiscovered": 66176,
   "productsImported": 66176,
-  "imagesImported": 437807,
+  "imagesImported": 437798,
   "localImagesDownloaded": 0,
   "failed": 0,
   "failures": [],
   "truncatedFailures": 0,
   "inaccessibleCategories": [
     {
-      "categoryId": "tag:71651933",
-      "path": "高奢饰品 > 迪奥DIOR",
+      "categoryId": "tag:71652383",
+      "path": "高奢女装 > 迪奥.",
       "error": "IncompleteRead(73389 bytes read)"
     },
     {
-      "categoryId": "tag:71652812",
-      "path": "高奢墨镜 > 赛琳🕶️",
+      "categoryId": "tag:71652818",
+      "path": "高奢服饰 > 短袖",
+      "error": "IncompleteRead(73389 bytes read)"
+    },
+    {
+      "categoryId": "tag:71650438",
+      "path": "高奢名包 > 香奈儿",
+      "error": "IncompleteRead(7853 bytes read)"
+    },
+    {
+      "categoryId": "tag:71650440",
+      "path": "高奢名包 > 路易威登",
+      "error": "IncompleteRead(7853 bytes read)"
+    },
+    {
+      "categoryId": "tag:71650439",
+      "path": "高奢名包 > 迪奥",
+      "error": "IncompleteRead(73389 bytes read)"
+    },
+    {
+      "categoryId": "tag:71650447",
+      "path": "高奢名包 > 缪缪（MiuMiu）",
+      "error": "IncompleteRead(73389 bytes read)"
+    },
+    {
+      "categoryId": "tag:71655636",
+      "path": "高定女鞋 > 爱马仕 凉鞋",
       "error": "IncompleteRead(7853 bytes read)"
     }
   ],
   "pagination": {
-    "categoriesWithPagination": 167,
+    "categoriesWithPagination": 162,
     "allPaginatedCategoriesFullyDiscovered": false,
     "maxPagesPerCategory": null
   }
