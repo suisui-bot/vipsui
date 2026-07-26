@@ -95,6 +95,15 @@ def canonical_image_url(url: str) -> str:
     return url.replace("cmp_", "")
 
 
+def normalize_video_url(url: str) -> str:
+    return (url or "").split("?", 1)[0].strip()
+
+
+def media_id(url: str, prefix: str) -> str:
+    parsed = re.sub(r"[^a-zA-Z0-9]+", "-", url.split("?", 1)[0]).strip("-")
+    return f"{prefix}:{parsed[-96:]}"
+
+
 def image_extension(url: str, content_type: str = "") -> str:
     suffix = Path(urllib.parse.urlparse(url).path).suffix.lower()
     if suffix in {".jpg", ".jpeg", ".png", ".webp", ".gif"}:
@@ -1109,13 +1118,37 @@ def build_product(
         "sourceId": "",
         "id": "uncategorized",
     }
+    video_url = normalize_video_url(clean(commodity.get("videoUrl") or commodity.get("videoURL") or commodity.get("replayUrl") or item.get("videoUrl") or item.get("videoURL") or item.get("replayUrl")))
+    video_poster = canonical_image_url(clean(commodity.get("videoThumbImg") or item.get("videoThumbImg")))
     image_urls = [canonical_image_url(url) for url in (commodity.get("imgsSrc") or commodity.get("imgs") or item.get("imgsSrc") or item.get("imgs") or []) if clean(url)]
     image_urls = list(dict.fromkeys(image_urls))
 
     product_dir = PUBLIC_DIR / slugify(client.store_id) / slugify(goods_id)
     image_records: list[dict[str, Any]] = []
     gallery: list[str] = []
+    gallery_media: list[dict[str, Any]] = []
+    seen_media: set[tuple[str, str]] = set()
+
+    def add_video() -> None:
+        if not video_url:
+            return
+        key = ("video", video_url)
+        if key in seen_media:
+            return
+        seen_media.add(key)
+        gallery_media.append(
+            {
+                "type": "video",
+                "url": video_url,
+                "poster": video_poster or (gallery[0] if gallery else ""),
+                "sourceMediaId": media_id(video_url, "video"),
+            }
+        )
+
     for index, image_url in enumerate(image_urls, start=1):
+        if video_url and video_poster and image_url == video_poster:
+            add_video()
+            continue
         public_path = image_url
         image_hash = ""
         if download_images:
@@ -1124,6 +1157,10 @@ def build_product(
             if downloaded:
                 public_path, image_hash = downloaded
         gallery.append(public_path)
+        key = ("image", public_path)
+        if key not in seen_media:
+            seen_media.add(key)
+            gallery_media.append({"type": "image", "url": public_path, "sourceMediaId": media_id(public_path, "image")})
         image_records.append(
             {
                 "productId": goods_id,
@@ -1133,6 +1170,17 @@ def build_product(
                 "imageHash": image_hash,
             }
         )
+    if video_url and not any(item.get("type") == "video" for item in gallery_media):
+        gallery_media.insert(
+            0,
+            {
+                "type": "video",
+                "url": video_url,
+                "poster": video_poster or (gallery[0] if gallery else ""),
+                "sourceMediaId": media_id(video_url, "video"),
+            },
+        )
+    video_count = sum(1 for item in gallery_media if item.get("type") == "video")
 
     description_parts = [clean(commodity.get("subTitle"))]
     for note in commodity.get("noteArr") or []:
@@ -1180,9 +1228,13 @@ def build_product(
         "classificationSource": "wecatalog-source-category",
         "classificationConfidence": "source",
         "needsReview": not source_categories,
-        "coverImage": gallery[0] if gallery else "",
+        "coverImage": gallery[0] if gallery else (video_poster if video_url else ""),
         "galleryImages": gallery,
+        "galleryMedia": gallery_media,
         "imageCount": len(gallery),
+        "videoCount": video_count,
+        "mediaCount": len(gallery_media),
+        "hasVideo": bool(video_count),
         "priceInternal": price_payload(commodity),
         "internalPrice": None,
         "publicPriceLabel": PUBLIC_PRICE_LABEL,

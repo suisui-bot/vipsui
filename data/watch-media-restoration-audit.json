@@ -1,0 +1,518 @@
+{
+  "generatedAt": "2026-07-26T04:23:06Z",
+  "totalWatches": 519,
+  "before": {
+    "imageReferences": 2135,
+    "videos": 256
+  },
+  "totalWatchImageReferences": 2135,
+  "totalUniqueWatchImages": 2126,
+  "totalWatchVideos": 256,
+  "watchesWithVideo": 256,
+  "brokenImages": 0,
+  "brokenVideos": 0,
+  "playableVideos": 256,
+  "missingPosterImages": 0,
+  "productsWithMissingMedia": [
+    {
+      "productId": "_dzLqfzSaworhryrEGVMsKwjK_Mtb5o0Uv-hUjWw",
+      "productNumber": "260920",
+      "slug": "wecatalog-260920-uv-hujww",
+      "categoryPath": [
+        "高端腕表",
+        "肖邦"
+      ],
+      "reason": "no_cover_or_gallery"
+    }
+  ],
+  "duplicateImagesRemoved": 0,
+  "duplicatePosterGalleryProblems": 0,
+  "duplicatePosterImagesRemoved": 255,
+  "recoveredImages": 0,
+  "recoveredVideos": 0,
+  "verificationSeconds": 176.71,
+  "brokenImageSamples": [],
+  "brokenVideoSamples": [],
+  "videoProductSamples": [
+    {
+      "productId": "_djFqfDbOZnr3FDA-FKaKhrDMgcuYMFwi2jwk2NA",
+      "productNumber": "259988",
+      "slug": "wecatalog-259988-i2jwk2na",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250503/i1746249943204_5186_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvodHD/2aa18c39/20250503/cmp_o1746249961103_920_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250503/i1746249943204_5186_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvodHD-2aa18c39-20250503-cmp-o1746249961103-920-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dmdqfKU7mqhJkjHVhEDn2HAbmBsMiQBt3jkwhkw",
+      "productNumber": "259993",
+      "slug": "wecatalog-259993-t3jkwhkw",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250503/i1746248752971_1634_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvodHD/2aa18c39/20250503/cmp_o1746248773537_5885_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250503/i1746248752971_1634_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvodHD-2aa18c39-20250503-cmp-o1746248773537-5885-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dgLqflhtk9E2hyR410Z0HE8x9pFlxxf_98qdjkA",
+      "productNumber": "259984",
+      "slug": "wecatalog-259984-98qdjka",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250503/i1746250801983_7593_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvodHD/2aa18c39/20250503/cmp_o1746250821654_590_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250503/i1746250801983_7593_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvodHD-2aa18c39-20250503-cmp-o1746250821654-590-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_d-jqfIVnvLYf0Wqbl_SdSvS7e-7JtE1fEXRYk2w",
+      "productNumber": "259995",
+      "slug": "wecatalog-259995-fexryk2w",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250430/i1746009049036_19_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvodHD/2aa18c39/20250430/cmp_o1746009069697_9843_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250430/i1746009049036_19_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvodHD-2aa18c39-20250430-cmp-o1746009069697-9843-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dnOqf7tzFzJmGDzpRPgOw2MHs3mnG_Ex3wg-ciQ",
+      "productNumber": "259997",
+      "slug": "wecatalog-259997-x3wg-ciq",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250430/i1746008776423_658_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvodHD/2aa18c39/20250430/cmp_o1746008799111_1406_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250430/i1746008776423_658_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvodHD-2aa18c39-20250430-cmp-o1746008799111-1406-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dlJqfxlSPL_RKKC4XcoPPMLs7QG-zd5Q4dXZwZw",
+      "productNumber": "259999",
+      "slug": "wecatalog-259999-q4dxzwzw",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250430/i1746008718374_214_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvodHD/2aa18c39/20250430/cmp_o1746008735525_9979_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250430/i1746008718374_214_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvodHD-2aa18c39-20250430-cmp-o1746008735525-9979-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_drjqf7iM5tvAfSa0Us3KXYflc1Paj7bk5tJrDwg",
+      "productNumber": "259986",
+      "slug": "wecatalog-259986-k5tjrdwg",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250503/i1746250152961_8681_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvodHD/2aa18c39/20250503/cmp_o1746250170033_8981_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250503/i1746250152961_8681_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvodHD-2aa18c39-20250503-cmp-o1746250170033-8981-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dx5qf5_luSlmqtuZtsspoy3s16vWzHgKEqT0Yvg",
+      "productNumber": "260026",
+      "slug": "wecatalog-260026-keqt0yvg",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250425/i1745557819084_4205_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvodHD/2aa18c39/20250425/cmp_o1745557859828_924_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250425/i1745557819084_4205_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvodHD-2aa18c39-20250425-cmp-o1745557859828-924-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dwSqfz8PhToj6RjZNX75G08pyFQ-4gYjFd6Q1Rg",
+      "productNumber": "260028",
+      "slug": "wecatalog-260028-jfd6q1rg",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250425/i1745557402858_7675_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvodHD/2aa18c39/20250425/cmp_o1745557446327_9455_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250425/i1745557402858_7675_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvodHD-2aa18c39-20250425-cmp-o1745557446327-9455-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_d9RqfMr9EGLSpmTsiO6Ov5U35q-Dk4fQH_2fbEQ",
+      "productNumber": "260041",
+      "slug": "wecatalog-260041-qh-2fbeq",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250419/i1745039968431_4472_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvodHD/2aa18c39/20250419/cmp_o1745039988930_2394_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250419/i1745039968431_4472_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvodHD-2aa18c39-20250419-cmp-o1745039988930-2394-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_drbqfEfcxmky-KbfNRdQO6MK4gn1M5fsUoHfCNA",
+      "productNumber": "260049",
+      "slug": "wecatalog-260049-suohfcna",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250419/i1745039570177_9757_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvodHD/2aa18c39/20250419/cmp_o1745039590206_3151_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250419/i1745039570177_9757_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvodHD-2aa18c39-20250419-cmp-o1745039590206-3151-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_da5qfHBvYCoul0nT3MDtCGRAkTkhXxPPJ-7LFLA",
+      "productNumber": "260090",
+      "slug": "wecatalog-260090-pj-7lfla",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250414/i1744617342998_977_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvodHD/2aa18c39/20250414/cmp_o1744620462257_968_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250414/i1744617342998_977_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvodHD-2aa18c39-20250414-cmp-o1744620462257-968-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dkzqf2Wt3BiSJTvISIyzTDCMLK6okbVyRaGqNVg",
+      "productNumber": "260094",
+      "slug": "wecatalog-260094-yragqnvg",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250414/i1744616812779_410_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvodHD/2aa18c39/20250414/cmp_o1744616835470_9318_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250414/i1744616812779_410_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvodHD-2aa18c39-20250414-cmp-o1744616835470-9318-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dvwqfBvMkoUsIWHpAVigFi9s8gV7rXIZ_XNPNzw",
+      "productNumber": "260129",
+      "slug": "wecatalog-260129-z-xnpnzw",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250330/i1743315898812_9527_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250330/o1743315982180_984_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250330/i1743315898812_9527_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250330-o1743315982180-984-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dvOqf1M6tTjVaD-zMAzvCram2cUMrQXqbC8b9ag",
+      "productNumber": "260131",
+      "slug": "wecatalog-260131-qbc8b9ag",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250330/i1743315877479_39_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250330/o1743315918343_6577_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250330/i1743315877479_39_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250330-o1743315918343-6577-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dtoqfNgxhmFNLr1aP8eByAFpQbyaHnGtWFdWBlg",
+      "productNumber": "260188",
+      "slug": "wecatalog-260188-twfdwblg",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250323/i1742707472467_7564_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250323/o1742707512300_2740_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250323/i1742707472467_7564_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250323-o1742707512300-2740-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_diKqft5czxSR8Y9FwOAUANhTRrBgAH0-0Bo-KaA",
+      "productNumber": "260190",
+      "slug": "wecatalog-260190-0bo-kaa",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250323/i1742707249661_990_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250323/o1742707291001_2413_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250323/i1742707249661_990_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250323-o1742707291001-2413-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_djWqfeCXVULRHceKzkd2Sq9r8VkWkUACewzRlOw",
+      "productNumber": "260193",
+      "slug": "wecatalog-260193-cewzrlow",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250323/i1742706135870_8497_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250323/o1742706168012_4867_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250323/i1742706135870_8497_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250323-o1742706168012-4867-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dmPqfpKT6d0YmmPJPaXSXz-SJzygfVnMA58Hd9Q",
+      "productNumber": "260220",
+      "slug": "wecatalog-260220-ma58hd9q",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250224/i1740412973234_1916_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250224/o1740413018603_4063_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250224/i1740412973234_1916_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250224-o1740413018603-4063-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dujqfMqY1yHFZB8pEk1s5a25zcHI475oFa2BIng",
+      "productNumber": "260239",
+      "slug": "wecatalog-260239-ofa2bing",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250222/i1740219342700_3903_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250222/o1740219381611_1548_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250222/i1740219342700_3903_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250222-o1740219381611-1548-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_d_tqfzkWcQM7cvxUKI6Ok2YG4wPRJm31P2FR6Hg",
+      "productNumber": "260243",
+      "slug": "wecatalog-260243-1p2fr6hg",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250222/i1740206933721_4967_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250222/o1740206976749_9239_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250222/i1740206933721_4967_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250222-o1740206976749-9239-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dtQqfD2CP47L_cdhZw0ScrnG8mi2ElqpV213lGw",
+      "productNumber": "260245",
+      "slug": "wecatalog-260245-pv213lgw",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250217/i1739725293665_6091_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250217/o1739725331464_6030_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250217/i1739725293665_6091_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250217-o1739725331464-6030-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dq9qfczWtID8SFqX51Laf264FIdBp5V-3WRAbEg",
+      "productNumber": "260247",
+      "slug": "wecatalog-260247-3wrabeg",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250217/i1739724821789_2021_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250217/o1739725265640_4921_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250217/i1739724821789_2021_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250217-o1739725265640-4921-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_d_sqfSWG8BjGepljgBYymwt-Nzgzcu_dajdM9_Q",
+      "productNumber": "260249",
+      "slug": "wecatalog-260249-dajdm9-q",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250217/i1739724203093_5722_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250217/o1739724242458_3393_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250217/i1739724203093_5722_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250217-o1739724242458-3393-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_d9dqfApl-mKbA6ZqyUQXfYk5CWy7na6ezwM-zmQ",
+      "productNumber": "260255",
+      "slug": "wecatalog-260255-ezwm-zmq",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250217/i1739721911975_9220_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250217/o1739721951088_1898_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250217/i1739721911975_9220_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250217-o1739721951088-1898-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_djtqfMWUZPwf0DgX-80j7eVmrTejXVHiiRDgbRg",
+      "productNumber": "260311",
+      "slug": "wecatalog-260311-iirdgbrg",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250208/i1739003922599_9278_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250208/o1739003934204_1631_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250208/i1739003922599_9278_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250208-o1739003934204-1631-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dbFqfBZkmDyVoyg1pu1ESfOJvGoogLx-t7ylmug",
+      "productNumber": "260321",
+      "slug": "wecatalog-260321-t7ylmug",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250208/i1738998869646_5423_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250208/o1738998890196_7668_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250208/i1738998869646_5423_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250208-o1738998890196-7668-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dKPqf-rcyTCMY7D6wrbvDBul0BOBpRmy9YecqwQ",
+      "productNumber": "260386",
+      "slug": "wecatalog-260386-y9yecqwq",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250101/i1735720389026_4010_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250101/o1735720399314_8213_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250101/i1735720389026_4010_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250101-o1735720399314-8213-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dbrqfYEFlUEAMNxciCQM547Lb48ZXA8wOaeK3RQ",
+      "productNumber": "260388",
+      "slug": "wecatalog-260388-woaek3rq",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20250101/i1735720172698_4033_0_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20250101/o1735720190543_3584_0_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20250101/i1735720172698_4033_0_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20250101-o1735720190543-3584-0-0-mp4"
+      }
+    },
+    {
+      "productId": "_dnYqf5BqcuNLH0Dm6JWjQjUxYW6quBh-HvBGrxw",
+      "productNumber": "260452",
+      "slug": "wecatalog-260452-hvbgrxw",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20241223/i1734935389_8298_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20241223/o1734935397_220_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20241223/i1734935389_8298_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20241223-o1734935397-220-0-mp4"
+      }
+    },
+    {
+      "productId": "_dg4qfrr1FoaNUtSx6hEPQO2V6Ouh30Sor3mqCVw",
+      "productNumber": "260454",
+      "slug": "wecatalog-260454-or3mqcvw",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20241223/i1734935363_3717_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20241223/o1734935373_9344_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20241223/i1734935363_3717_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20241223-o1734935373-9344-0-mp4"
+      }
+    },
+    {
+      "productId": "_d-Rqf-5FItKz85KA7fZSl8LpNrW2Tw7HD5UXZXg",
+      "productNumber": "260456",
+      "slug": "wecatalog-260456-hd5uxzxg",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20241223/i1734935336_9600_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20241223/o1734935346_2369_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20241223/i1734935336_9600_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20241223-o1734935346-2369-0-mp4"
+      }
+    },
+    {
+      "productId": "_druqfDjaiyif2RaB3w-bN6TSrVd4JFRbgIzuaHA",
+      "productNumber": "260488",
+      "slug": "wecatalog-260488-bgizuaha",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20241223/i1734931510_3252_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20241223/o1734931523_6354_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20241223/i1734931510_3252_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20241223-o1734931523-6354-0-mp4"
+      }
+    },
+    {
+      "productId": "_dqNqfw33qVmzb4Px9Jyax4B6rBNCD5SHIKRwETw",
+      "productNumber": "260526",
+      "slug": "wecatalog-260526-hikrwetw",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20241218/i1734505701_3123_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20241218/o1734505712_571_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20241218/i1734505701_3123_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20241218-o1734505712-571-0-mp4"
+      }
+    },
+    {
+      "productId": "_doBqf94khB_qcXohwvx-2wmJFRwRLMiW4R6zPPQ",
+      "productNumber": "260556",
+      "slug": "wecatalog-260556-w4r6zppq",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20241203/i1733214545_6655_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20241203/o1733214555_3862_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20241203/i1733214545_6655_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20241203-o1733214555-3862-0-mp4"
+      }
+    },
+    {
+      "productId": "_dfJqfFtlkA5W8_qG3fJvki0W4IPqzu06ZReApIQ",
+      "productNumber": "260616",
+      "slug": "wecatalog-260616-6zreapiq",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20241128/i1732781598_1953_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20241128/o1732781607_2027_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20241128/i1732781598_1953_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20241128-o1732781607-2027-0-mp4"
+      }
+    },
+    {
+      "productId": "_dxkqfb7XuUEamY-h2K0Su38RIrEBYXb5f4W77-g",
+      "productNumber": "260618",
+      "slug": "wecatalog-260618-5f4w77-g",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20241128/i1732781573_3936_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20241128/o1732781584_6834_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20241128/i1732781573_3936_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20241128-o1732781584-6834-0-mp4"
+      }
+    },
+    {
+      "productId": "_dl3qfK05QUUna7QUbiF6i6DPdd2pkoV9Ogu56pw",
+      "productNumber": "260666",
+      "slug": "wecatalog-260666-9ogu56pw",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20241119/i1731998571_7022_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20241119/o1731998965_7362_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20241119/i1731998571_7022_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20241119-o1731998965-7362-0-mp4"
+      }
+    },
+    {
+      "productId": "_d-kqfWL0VWMmY1_VbftlhVa8ffxLWIKb9GDCLPQ",
+      "productNumber": "260674",
+      "slug": "wecatalog-260674-b9gdclpq",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20241114/i1731564447_3740_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20241114/o1731564456_9606_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20241114/i1731564447_3740_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20241114-o1731564456-9606-0-mp4"
+      }
+    },
+    {
+      "productId": "_dmqqfWe_dsNzp9y9WQyLlOtRgvQC3wXRB13h_-Q",
+      "productNumber": "260698",
+      "slug": "wecatalog-260698-rb13h-q",
+      "coverImage": "https://xcimg.szwego.com/img/2aa18c39/20241111/i1731304285_1683_0.jpg",
+      "video": {
+        "type": "video",
+        "url": "https://xcimg.szwego.com/pvod/2aa18c39/20241111/o1731304296_5385_0.mp4",
+        "poster": "https://xcimg.szwego.com/img/2aa18c39/20241111/i1731304285_1683_0.jpg",
+        "sourceMediaId": "video:https-xcimg-szwego-com-pvod-2aa18c39-20241111-o1731304296-5385-0-mp4"
+      }
+    }
+  ]
+}
