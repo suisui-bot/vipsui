@@ -134,7 +134,7 @@ export default function ShopClient() {
             >
               All Collections
             </button>
-            {collectionOptions.slice(0, 28).map(([raw, label]) => (
+            {collectionOptions.map(([raw, label]) => (
               <button
                 key={raw}
                 type="button"

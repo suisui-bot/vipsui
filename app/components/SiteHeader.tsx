@@ -88,7 +88,7 @@ export default function SiteHeader() {
 
       <div onMouseLeave={() => setActive(null)} className={active ? "border-t border-[#d2d2d7]/70 bg-[#fbfbfd]/96 backdrop-blur-xl" : "hidden"}>
         {active && activeCategory && (
-          <div className="mx-auto hidden max-w-7xl gap-10 px-6 py-8 md:grid md:grid-cols-[0.28fr_1fr] lg:px-8">
+          <div className="mx-auto hidden max-h-[calc(100vh-3.5rem)] max-w-7xl gap-10 overflow-y-auto px-6 py-8 md:grid md:grid-cols-[0.28fr_1fr] lg:px-8">
             <div>
               <p className="text-xs font-medium uppercase text-[#6e6e73]">Shop</p>
               <Link href={categoryHref(activeCategory)} className="mt-3 block text-3xl font-semibold hover:text-[#b89b5e]">
@@ -100,7 +100,7 @@ export default function SiteHeader() {
             </div>
 
             <div className="grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-4">
-              {(activeCategory.children || []).slice(0, 24).map((child) => (
+              {(activeCategory.children || []).map((child) => (
                 <Link
                   key={`${activeCategory.id}-${child.id}`}
                   href={categoryHref(activeCategory, child)}
@@ -145,7 +145,7 @@ export default function SiteHeader() {
                   <Link onClick={() => setMobileOpen(false)} href={categoryHref(category)} className="py-2 text-sm font-medium text-[#0066cc]">
                     View All {displayLabel(category.name)}
                   </Link>
-                  {(category.children || []).slice(0, 32).map((child) => (
+                  {(category.children || []).map((child) => (
                     <Link key={child.id} onClick={() => setMobileOpen(false)} href={categoryHref(category, child)} className="py-2 text-sm text-[#424245]">
                       {displayLabel(child.name)}
                     </Link>
