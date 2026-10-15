@@ -7,6 +7,9 @@ import SiteHeader from "../components/SiteHeader";
 import { catalogProducts, type CatalogProduct } from "../data/catalog";
 import { displayLabel, displayPath, pathKey, topNavigationCategories } from "../data/display";
 import { imagePath } from "../data/images";
+import seoMembershipData from "../data/seoCategoryMemberships.json";
+
+const seoMemberships = seoMembershipData as { labels: Record<string, string>; members: Record<string, string[]> };
 
 const pageSize = 72;
 
@@ -24,13 +27,19 @@ export default function ShopClient() {
   const initialCategory = params.get("category") || "";
   const initialSearch = params.get("search") || "";
   const [categoryKey, setCategoryKey] = useState(initialCategory);
+  const requestedSeoKey = params.get("seoCategory")
+    ? [params.get("seoCategory"), params.get("seoSubcategory")].filter(Boolean).join("/") : "";
+  const [seoCategoryKey, setSeoCategoryKey] = useState(seoMemberships.members[requestedSeoKey] ? requestedSeoKey : "");
   const [collection, setCollection] = useState("");
   const [query, setQuery] = useState(initialSearch);
   const [visible, setVisible] = useState(pageSize);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const categories = useMemo(() => topNavigationCategories(), []);
 
-  const categoryProducts = useMemo(() => catalogProducts.filter((product) => matchesCategory(product, categoryKey)), [categoryKey]);
+  const categoryProducts = useMemo(() => {
+    const members = seoCategoryKey ? new Set(seoMemberships.members[seoCategoryKey]) : null;
+    return catalogProducts.filter((product) => matchesCategory(product, categoryKey) && (!members || members.has(product.albumId)));
+  }, [categoryKey, seoCategoryKey]);
   const collectionOptions = useMemo(() => {
     const options = new Map<string, string>();
     for (const product of categoryProducts) {
@@ -50,7 +59,7 @@ export default function ShopClient() {
   }, [categoryProducts, collection, query]);
 
   const visibleProducts = filteredProducts.slice(0, visible);
-  const activeCategoryLabel = categoryKey ? displayPath(categoryKey.split(">")) : "All Categories";
+  const activeCategoryLabel = seoCategoryKey ? seoMemberships.labels[seoCategoryKey] : categoryKey ? displayPath(categoryKey.split(">")) : "All Categories";
 
   function resetVisible() {
     setVisible(pageSize);
@@ -92,10 +101,11 @@ export default function ShopClient() {
               type="button"
               onClick={() => {
                 setCategoryKey("");
+                setSeoCategoryKey("");
                 setCollection("");
                 resetVisible();
               }}
-              className={`rounded-full px-4 py-2 text-sm font-semibold ring-1 ring-[#d2d2d7] ${!categoryKey ? "bg-[#1d1d1f] text-white" : "bg-white text-[#424245]"}`}
+              className={`rounded-full px-4 py-2 text-sm font-semibold ring-1 ring-[#d2d2d7] ${!categoryKey && !seoCategoryKey ? "bg-[#1d1d1f] text-white" : "bg-white text-[#424245]"}`}
             >
               All
             </button>
@@ -107,6 +117,7 @@ export default function ShopClient() {
                   type="button"
                   onClick={() => {
                     setCategoryKey(key);
+                  setSeoCategoryKey("");
                     setCollection("");
                     resetVisible();
                   }}

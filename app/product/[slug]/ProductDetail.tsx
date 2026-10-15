@@ -1,13 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import SiteHeader from "../../components/SiteHeader";
 import type { CatalogProduct } from "../../data/catalog";
 import { displayLabel, displayPath } from "../../data/display";
 import { imagePath } from "../../data/images";
 
-export default function ProductDetail({ product }: { product: CatalogProduct }) {
+export default function ProductDetail({ product, breadcrumb, relatedLinks }: {
+  product: CatalogProduct;
+  breadcrumb?: ReactNode;
+  relatedLinks?: ReactNode;
+}) {
   const gallery =
     product.galleryMedia && product.galleryMedia.length > 0
       ? product.galleryMedia
@@ -52,6 +56,7 @@ export default function ProductDetail({ product }: { product: CatalogProduct }) 
   return (
     <main className="min-h-screen bg-[#f5f5f7] text-[#1d1d1f]">
       <SiteHeader />
+      {breadcrumb}
 
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[1.08fr_0.72fr] lg:px-8 lg:py-12">
         <div className="min-w-0">
@@ -161,6 +166,8 @@ export default function ProductDetail({ product }: { product: CatalogProduct }) 
           </div>
         </aside>
       </section>
+
+      {relatedLinks}
 
       <a
         href="https://wa.me/8617336648172"
