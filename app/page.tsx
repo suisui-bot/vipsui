@@ -4,6 +4,14 @@ import featuredProducts from "./data/featuredProducts.json";
 import type { CatalogProduct } from "./data/catalog";
 import { categoryByName, displayLabel, displayPath, heroCategoryNames, pathKey } from "./data/display";
 import { imagePath } from "./data/images";
+import { CategoryNavigation } from "./components/CatalogListing";
+import { productSeo } from "./lib/seo-catalog";
+
+export const metadata = {
+  title: "VIPSUI | Fashion & Lifestyle Collections",
+  description: "Explore watches, bags, shoes, clothing and accessories at VIPSUI. Browse original item photographs and request confirmed specifications and pricing.",
+  alternates: { canonical: "https://vipsui.vercel.app/" },
+};
 
 const products = featuredProducts as CatalogProduct[];
 const heroProduct = products.find((product) => product.categoryPath?.[0] === "高端腕表") || products[0];
@@ -43,7 +51,7 @@ export default function Home() {
         <div className="relative mx-auto flex min-h-[78vh] max-w-7xl items-end px-4 pb-14 pt-24 sm:px-6 lg:px-8 lg:pb-20">
           <div className="max-w-2xl">
             <p className="text-sm font-medium text-[#6e6e73]">VIPSUI curated catalog</p>
-            <h1 className="mt-4 text-5xl font-semibold leading-[1.02] sm:text-7xl">Discover Something Exceptional.</h1>
+            <h1 className="mt-4 text-5xl font-semibold leading-tight sm:text-6xl">VIPSUI Fashion &amp; Lifestyle Collections</h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-[#424245]">
               Explore a carefully selected collection of watches, fashion, jewelry and accessories.
             </p>
@@ -58,6 +66,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8"><CategoryNavigation /></div>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-end justify-between gap-6">
@@ -144,14 +154,16 @@ export default function Home() {
 }
 
 function ProductCard({ product }: { product: CatalogProduct }) {
+  const seo = productSeo(product);
   return (
     <Link href={`/product/${product.slug}`} className="group rounded-[24px] bg-[#f5f5f7] p-3 transition hover:bg-[#ededf0]">
       <div className="aspect-[4/5] overflow-hidden rounded-[20px] bg-white">
-        <img src={imagePath(product.coverImage)} alt={product.productNumber} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+        <img src={imagePath(product.coverImage)} alt={`${seo.name} - catalog photograph`} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
       </div>
       <div className="px-2 py-4">
         <p className="text-xs font-medium text-[#6e6e73]">{displayPath(product.categoryPath)}</p>
-        <h3 className="mt-1 text-lg font-semibold">{product.productNumber}</h3>
+        <h3 className="mt-1 break-words text-lg font-semibold">{seo.name}</h3>
+        <p className="mt-1 text-xs text-[#6e6e73]">Reference {product.productNumber}</p>
         <p className="mt-1 text-sm text-[#6e6e73]">{product.publicPriceLabel}</p>
       </div>
     </Link>

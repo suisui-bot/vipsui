@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  htmlLimitedBots: /.*/,
   outputFileTracingIncludes: {
     "/product/*": ["./public/product-shards/*.json"],
   },

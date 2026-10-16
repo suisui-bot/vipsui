@@ -9,7 +9,7 @@ function shardForSlug(slug: string) {
   return match?.[1]?.slice(0, 3) || "misc";
 }
 
-export default function ProductDetailLoader({ slug }: { slug: string }) {
+export default function ProductDetailLoader({ slug, seo }: { slug: string; seo: { name: string; description: string } }) {
   const [product, setProduct] = useState<CatalogProduct | null>(null);
   const [missing, setMissing] = useState(false);
   const shard = useMemo(() => shardForSlug(slug), [slug]);
@@ -44,7 +44,7 @@ export default function ProductDetailLoader({ slug }: { slug: string }) {
   }, [shard, slug]);
 
   if (product) {
-    return <ProductDetail product={product} />;
+    return <ProductDetail product={product} seo={seo} />;
   }
 
   return (

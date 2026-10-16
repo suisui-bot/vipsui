@@ -7,15 +7,16 @@ import type { CatalogProduct } from "../../data/catalog";
 import { displayLabel, displayPath } from "../../data/display";
 import { imagePath } from "../../data/images";
 
-export default function ProductDetail({ product, breadcrumb, relatedLinks }: {
+export default function ProductDetail({ product, seo, breadcrumb, relatedLinks }: {
   product: CatalogProduct;
+  seo: { name: string; description: string };
   breadcrumb?: ReactNode;
   relatedLinks?: ReactNode;
 }) {
   const gallery =
     product.galleryMedia && product.galleryMedia.length > 0
       ? product.galleryMedia
-      : (product.galleryImages && product.galleryImages.length > 0 ? product.galleryImages : [product.coverImage]).map((url) => ({
+      : (product.galleryImages && product.galleryImages.length > 0 ? product.galleryImages : [product.coverImage]).filter(Boolean).map((url) => ({
           type: "image" as const,
           url,
           sourceMediaId: url,
@@ -75,11 +76,11 @@ export default function ProductDetail({ product, breadcrumb, relatedLinks }: {
                 preload="metadata"
                 className="h-full w-full bg-black object-contain"
               />
-            ) : (
-              <img src={imagePath(activeImage)} alt={product.productNumber} className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]" />
-            )}
+            ) : activeImage ? (
+              <img src={imagePath(activeImage)} alt={`${seo.name} - product photo ${activeIndex + 1}`} className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]" />
+            ) : <div className="flex h-full items-center justify-center text-sm text-[#6e6e73]">Photo unavailable</div>}
             <div className="absolute left-4 top-4 rounded-full bg-white/86 px-3 py-2 text-xs font-semibold text-[#1d1d1f] backdrop-blur">
-              {activeIndex + 1} / {gallery.length}
+              {gallery.length ? activeIndex + 1 : 0} / {gallery.length}
             </div>
             {activeMedia?.type === "video" && (
               <div className="absolute right-4 top-4 rounded-full bg-black/70 px-3 py-2 text-xs font-semibold text-white backdrop-blur">
@@ -88,6 +89,7 @@ export default function ProductDetail({ product, breadcrumb, relatedLinks }: {
             )}
             <button
               type="button"
+              disabled={!gallery.length}
               onClick={() => setZoomOpen(true)}
               className="absolute bottom-4 left-4 rounded-full bg-[#1d1d1f] px-5 py-3 text-sm font-semibold text-white transition hover:bg-black"
             >
@@ -118,7 +120,7 @@ export default function ProductDetail({ product, breadcrumb, relatedLinks }: {
                   activeIndex === index ? "ring-[#1d1d1f]" : "ring-transparent hover:ring-[#d2d2d7]"
                 }`}
               >
-                <img src={imagePath(thumb)} alt="" loading="lazy" className="h-full w-full object-cover" />
+                <img src={imagePath(thumb)} alt={`${seo.name} - ${media.type === "video" ? "video preview" : "gallery photo"} ${index + 1}`} loading="lazy" className="h-full w-full object-cover" />
                 {media.type === "video" && (
                   <span className="absolute inset-0 flex items-center justify-center bg-black/18 text-white">
                     <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black/70 text-xs">▶</span>
@@ -134,9 +136,12 @@ export default function ProductDetail({ product, breadcrumb, relatedLinks }: {
           <Link href={`/shop?category=${encodeURIComponent(product.categoryPath.join(">"))}`} className="text-sm font-semibold text-[#0066cc] hover:underline">
             {category}
           </Link>
-          <h1 className="mt-4 text-5xl font-semibold leading-tight sm:text-6xl">{product.productNumber}</h1>
+          <h1 className="mt-4 break-words text-3xl font-semibold leading-tight sm:text-4xl">{seo.name}</h1>
+          <p className="mt-2 text-sm text-[#6e6e73]">Reference {product.productNumber}</p>
           <p className="mt-4 text-xl text-[#424245]">{collection}</p>
           <p className="mt-3 text-base font-semibold text-[#1d1d1f]">{product.publicPriceLabel}</p>
+          <p className="mt-5 max-w-xl text-base leading-7 text-[#424245]">{seo.description}</p>
+          <p className="mt-2 text-sm leading-6 text-[#6e6e73]">Measurements, materials, functionality and availability are not confirmed unless specified in the original item details. Please confirm before ordering.</p>
           {product.description && <p className="mt-6 max-w-xl whitespace-pre-line text-base leading-8 text-[#6e6e73]">{product.description}</p>}
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -211,7 +216,7 @@ export default function ProductDetail({ product, breadcrumb, relatedLinks }: {
                 className="max-h-full max-w-full bg-black object-contain"
               />
             ) : (
-              <img src={imagePath(activeImage)} alt={product.productNumber} className="max-h-full max-w-full object-contain" />
+              <img src={imagePath(activeImage)} alt={`${seo.name} - enlarged product photo ${activeIndex + 1}`} className="max-h-full max-w-full object-contain" />
             )}
           </div>
         </div>

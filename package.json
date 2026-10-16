@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && NODE_OPTIONS=--max-old-space-size=8192 next build",
+    "build": "node scripts/build_seo_catalog.mjs && prisma generate && NODE_OPTIONS=--max-old-space-size=8192 next build",
     "start": "next start",
     "lint": "eslint",
     "test:internal-links": "node scripts/test_internal_links.mjs",
+    "test:seo": "node scripts/test_seo_release.cjs",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate deploy",
     "db:seed-admin": "node scripts/seed_admin.mjs",
